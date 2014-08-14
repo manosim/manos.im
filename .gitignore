@@ -1,2 +1,8 @@
+# Mac OS Files
+*.DS_Store
+
 # Virtual environment
 env/
+
+# Output Folter
+output
