@@ -68,9 +68,19 @@ a:hover {
 .profile p {
     color: #585858;
     font-family: 'Josefin Slab', serif;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: normal;
     line-height: 30px;
     margin: 0;
     padding: 0;
+}
+
+.profile .social-icons {
+    padding: 20px 0;
+    display: block;
+}
+
+.profile .social-icons a {
+
+    padding: 0 10px;
 }
