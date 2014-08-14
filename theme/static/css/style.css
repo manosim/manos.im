@@ -1,0 +1,76 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:300,400);
+
+/*
+** Main
+*/
+
+a {
+    color: #3686be;
+    -webkit-transition:all .4s;
+    -moz-transition:all .4s;
+    transition:all .4s;
+}
+
+a:hover {
+    color: #26628d;
+    text-decoration: none;
+}
+
+
+/*
+** Header
+*/
+
+.profile {
+    background: #f3f3f3;
+    padding: 80px 0px;
+    text-align: center;
+    margin: 0 -15px;
+
+    box-shadow: inset 0 -10px 5px -10px #000000;
+    -moz-box-shadow: inset 0 -10px 5px -10px #000000;
+    -webkit-box-shadow: inset 0 -10px 5px -10px #000000;
+}
+
+.profile h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    padding: 18px 0 7px 0;
+    line-height:55px;
+    color:#333;
+    -webkit-transition:all .4s;
+    -moz-transition:all .4s;
+    transition:all .4s;
+}
+
+.profile img {
+    border: 1px solid #3686be;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin: 0;
+    padding: 3px;
+    border-radius: 50%;
+
+    -webkit-transition:all .4s;
+    -moz-transition:all .4s;
+    transition:all .4s;
+}
+
+.profile img:hover{
+    opacity: 0.8;
+}
+
+.profile p {
+    color: #585858;
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+}
