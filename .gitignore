@@ -1,8 +1,12 @@
-# Mac OS Files
+# Files
 *.DS_Store
+*.py[cod]
 
 # Virtual environment
 env/
 
+# Cache
+cache/*
+
 # Output Folter
-output
+output/*

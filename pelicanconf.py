@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Emmanouil Konstantinidis'
-SITENAME = u'I am Emmanoui'
+SITENAME = u'I am Emmanouil'
 SITEURL = ''
 
 PATH = 'content'
@@ -16,6 +16,11 @@ DEFAULT_LANG = u'en'
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
+
+# Theme
+OUTPUT_PATH = "output"
+THEME = "theme"
+THEME_STATIC_DIR = "static"
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
