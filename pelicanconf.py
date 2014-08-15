@@ -41,7 +41,7 @@ LINKS = (
 SOCIAL = (
     ('fa-twitter', 'http://twitter.com/ekondis'),
     ('fa-github', 'http://github.com/ekonstantinidis'),
-    ('fa-linkedin', 'http://linkedin.com/uk/ekonstantinidis'),
+    ('fa-linkedin', 'http://uk.linkedin.com/in/ekonstantinidis'),
     ('fa-rss', '#'),
 )
 

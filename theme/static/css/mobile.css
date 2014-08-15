@@ -2,14 +2,13 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
     .navigation li a {
-        position: relative;
-        margin: 0 1em;
-        color: #D0DADC;
+        margin: 0 .8em;
         letter-spacing: -1px;
-        text-decoration: none;
-        text-transform: lowercase;
-        font-weight: 700;
         font-size: 1.3em;
+    }
+
+    .header .hamburger:before {
+       font-size: 30px;
     }
 
 }

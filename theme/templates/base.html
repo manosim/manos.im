@@ -27,13 +27,16 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="header">
+
+                    <div class="hamburger"><!-- <i class="fa fa-3x fa-bars"></i> --></div>
+
                     <a href="{{ SITEURL }}"><img src="static/images/profilepic.jpg" alt="Emmanouil Konstantinidis"></a>
                     <h2><a href="{{ SITEURL }}">Emmanouil Konstantinidis</a></h2>
                     <p>Web Developer, Engineer at <b>dabapps</b>.</p>
 
                     <div class="social-icons">
                         {% for title, link in SOCIAL %}
-                        <a href="{{ SITEURL }}/" class="fa fa-2x {{ title }}"></a>
+                        <a href="{{ link }}/" class="fa fa-2x {{ title }}"></a>
                         {% endfor %}
                     </div>
 
@@ -48,6 +51,9 @@
         </div>
     </div>
 
+
+
+    {% block content %}{% endblock %}
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
