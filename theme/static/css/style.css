@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:300,400);
 
 /*
-** Main
+** Base
 */
 
 a {
@@ -17,14 +17,26 @@ a:hover {
     text-decoration: none;
 }
 
+/* Text Selection */
+::selection {
+    text-shadow: none;
+    color: #f3f3f3;
+    background: #26628d;
+}
+
+::-moz-selection {
+    text-shadow: none;
+    color: #f3f3f3;
+    background: #26628d;
+}
 
 /*
 ** Header
 */
 
-.profile {
-    background: #f3f3f3;
-    padding: 80px 0px;
+.header {
+    background: #3686be;
+    padding: 80px 0px 30px 0px;
     text-align: center;
     margin: 0 -15px;
 
@@ -33,7 +45,15 @@ a:hover {
     -webkit-box-shadow: inset 0 -10px 5px -10px #000000;
 }
 
-.profile h2 {
+.header a {
+    color: #D0DADC;
+}
+
+.header a:hover {
+    color: #FFF;
+}
+
+.header h2 {
     font-family: 'Lato', sans-serif;
     font-size: 40px;
     font-weight: 900;
@@ -47,8 +67,8 @@ a:hover {
     transition:all .4s;
 }
 
-.profile img {
-    border: 1px solid #3686be;
+.header img {
+    border: 1px solid #FFF;
     display: inline-block;
     width: 120px;
     height: 120px;
@@ -61,12 +81,12 @@ a:hover {
     transition:all .4s;
 }
 
-.profile img:hover{
+.header img:hover{
     opacity: 0.8;
 }
 
-.profile p {
-    color: #585858;
+.header p {
+    color: #FFF;
     font-family: 'Josefin Slab', serif;
     font-size: 22px;
     font-weight: normal;
@@ -75,12 +95,42 @@ a:hover {
     padding: 0;
 }
 
-.profile .social-icons {
+.header .social-icons {
     padding: 20px 0;
     display: block;
 }
 
-.profile .social-icons a {
+.header .social-icons a {
 
     padding: 0 10px;
+}
+
+/*
+** Navigation
+*/
+
+.navigation {
+    position: relative;
+    display: block;
+    margin: .9em auto 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation li {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navigation li a {
+    position: relative;
+    margin: 0 1em;
+    color: #D0DADC;
+    letter-spacing: -3px;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-weight: 700;
+    font-size: 2.7em;
 }
