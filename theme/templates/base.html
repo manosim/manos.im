@@ -51,9 +51,20 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="hidden-xs hidden-sm col-md-2 col-lg-2"></div>
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="hidden-xs hidden-sm col-md-2 col-lg-2"></div>
+        </div>
+    </div>
 
-
-    {% block content %}{% endblock %}
+    <footer>
+        <div class="copyright">&copy; {{ AUTHOR }} 2014.</div>
+        <div class="thanks">Build with <a href="http://www.getpelican.com/" target="_blank">Pelican</a> in <a href="http://www.python.org">Python</a>. Hosted on <a href="http://www.github.com">Github</a>.</div>
+    </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>

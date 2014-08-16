@@ -8,6 +8,7 @@ SITEURL = 'http://www.iamemmanouil.com'
 
 PATH = 'content'
 
+DEFAULT_DATE_FORMAT = ' %Y %a %d %B'
 TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = u'en'
@@ -20,7 +21,7 @@ TRANSLATION_FEED_ATOM = None
 # Menu
 MENUITEMS = (
     ('About', 'about'),
-    ('Home', 'start'),
+    ('Home', '/'),
     ('Get in touch', 'get-in-touch'),
 )
 
@@ -57,4 +58,4 @@ DISQUS_SITENAME = "iamemmanouil"
 TWITTER_USERNAME = "ekondis"
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True

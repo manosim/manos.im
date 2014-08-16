@@ -5,6 +5,15 @@
 ** Base
 */
 
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+/*    font-family: 'Josefin Slab', serif;
+*/}
+
 a {
     color: #3686be;
     -webkit-transition:all .4s;
@@ -65,7 +74,6 @@ a:hover {
 }
 
 .header h2 {
-    font-family: 'Lato', sans-serif;
     font-size: 40px;
     font-weight: 900;
     margin: 0;
@@ -142,5 +150,57 @@ a:hover {
     text-decoration: none;
     text-transform: lowercase;
     font-weight: 700;
-    font-size: 2.7em;
+    font-size: 1.7em;
+}
+
+/*
+** Blog
+*/
+
+.post .title {
+    margin: 20px 0;
+    text-align: left;
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-weight: 800;
+}
+
+.post .title .date {
+    border-bottom: 1px dotted #3686be;
+    margin: 0 10px 0 0;
+}
+
+.post .post-content a {
+    display: block;
+    max-width: 17em;
+    text-align: center;
+    margin: 2em 0 0 0;
+    padding: 1.5em 2em;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    color: #3686be;
+    font-size: .7em;
+    background: none;
+    border: 2px solid #3686be;
+    border-radius: 4px;
+
+    -webkit-transition:all .6s;
+    -moz-transition:all .6s;
+    transition:all .6s;
+}
+
+.post .post-content a:hover {
+    color: #FFF;
+    background-color: #3686be;
+}
+
+/*
+** FOOTER
+*/
+
+footer {
+    font-size: 16px;
+    margin: 40px 0;
+    text-align: center;
 }
