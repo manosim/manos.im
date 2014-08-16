@@ -1,3 +1,5 @@
 {% if TWITTER_USERNAME %}
-<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="{{TWITTER_USERNAME}}">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+
+<a class="btn btn-primary btn-lg twitter" target="_blank" href="http://twitter.com/share?text={{ article.title }}&via={{TWITTER_USERNAME}}"><i class="fa fa-twitter"></i> tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+
 {% endif %}
