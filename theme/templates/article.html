@@ -15,39 +15,24 @@
 
 {% endblock %}
 
+{% block title %}{{ article.title }} | {{ SITENAME }}{%endblock%}
+
 {% block content %}
 <div class="post">
 
+    <h2 class="title">
+        <i class="fa fa-bookmark-o"></i> <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a> <span class="share">{% include 'share.html' %}</span>
+        <div class="date">{{ article.date.strftime("%d %B %Y") }}</div>
 
-        <h2 class="title">
-            <span class="date">{{ article.date.strftime("%d %b") }}</span><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-        </h2>
+    </h2>
 
-  <footer class="post-info">
-    <abbr class="published" title="{{ article.date.isoformat() }}">
-      {{ article.locale_date }}
-    </abbr>
-    {% if article.modified %}
-    <abbr class="modified" title="{{ article.modified.isoformat() }}">
-      {{ article.locale_modified }}
-    </abbr>
-    {% endif %}
-    {% if article.authors %}
-    <address class="vcard author">
-      By {% for author in article.authors %}
-          <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-        {% endfor %}
-    </address>
-    {% endif %}
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    {{ article.content }}
-  </div><!-- /.entry-content -->
-
+    <div class="post-content">
+        {{ article.content }}
+    </div>
 
     {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
     <div class="comments">
-      <h2>Comments !</h2>
+      <h3><i class="fa fa-comments-o"></i> any comments?</h3>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = '{{ DISQUS_SITENAME }}';

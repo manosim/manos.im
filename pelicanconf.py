@@ -24,7 +24,7 @@ TRANSLATION_FEED_ATOM = None
 # Menu
 MENUITEMS = (
     ('About', '/about/'),
-    ('Home', '/'),
+    ('Blog', '/'),
     ('Get in touch', 'get-in-touch'),
 )
 

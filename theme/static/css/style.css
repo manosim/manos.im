@@ -11,8 +11,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-/*    font-family: 'Josefin Slab', serif;
-*/}
+    color: #3686be;
+    font-family: 'Josefin Slab', serif;
+}
 
 a {
     color: #3686be;
@@ -160,15 +161,23 @@ a:hover {
 .post .title {
     margin: 20px 0;
     text-align: left;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 1.5;
     font-weight: 800;
 }
 
 .post .title .date {
-    border-bottom: 1px dotted #3686be;
+    font-size: .7em;
+    font-weight: normal;
+    text-transform: lowercase;
+    border-top: 1px dotted #333;
     margin: 0 10px 0 0;
 }
+
+.post .share {
+    float: right;
+}
+
 
 .post .post-content a {
     display: block;
@@ -193,6 +202,11 @@ a:hover {
 .post .post-content a:hover {
     color: #FFF;
     background-color: #3686be;
+}
+
+.post .comments h3 {
+    border-bottom: 1px dotted #333;
+    padding: 10px 0;
 }
 
 /*
