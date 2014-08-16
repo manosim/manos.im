@@ -23,7 +23,7 @@ TRANSLATION_FEED_ATOM = None
 
 # Menu
 MENUITEMS = (
-    ('About', 'about'),
+    ('About', '/about/'),
     ('Home', '/'),
     ('Get in touch', 'get-in-touch'),
 )
@@ -32,6 +32,15 @@ MENUITEMS = (
 OUTPUT_PATH = "output"
 THEME = "theme"
 THEME_STATIC_DIR = "static"
+
+
+# Pages Settings
+PAGE_URL = "{slug}"
+PAGE_SAVE_AS = 'pages/{slug}.html'
+
+# Articles Settings
+ARTICLE_URL = "blog/{slug}"
+ARTICLE_SAVE_AS = '{slug}.html'
 
 # Blogroll
 LINKS = (
