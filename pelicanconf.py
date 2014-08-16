@@ -6,6 +6,9 @@ AUTHOR = u'Emmanouil Konstantinidis'
 SITENAME = u'I am Emmanouil'
 SITEURL = 'http://www.iamemmanouil.com'
 
+# Document-relative URLs when developing
+RELATIVE_URLS = True
+
 PATH = 'content'
 
 DEFAULT_DATE_FORMAT = ' %Y %a %d %B'
@@ -56,6 +59,3 @@ DISQUS_SITENAME = "iamemmanouil"
 
 # Twitter Settings
 TWITTER_USERNAME = "ekondis"
-
-# Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
