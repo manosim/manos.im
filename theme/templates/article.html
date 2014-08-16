@@ -1,19 +1,4 @@
 {% extends "base.html" %}
-{% block head %}
-  {{ super() }}
-  {% for keyword in article.keywords %}
-    <meta name="keywords" contents="{{keyword}}" />
-  {% endfor %}
-
-  {% for description in article.description %}
-    <meta name="description" contents="{{description}}" />
-  {% endfor %}
-
-  {% for tag in article.tags %}
-    <meta name="tags" contents="{{tag}}" />
-  {% endfor %}
-
-{% endblock %}
 
 {% block title %}{{ article.title }} | {{ SITENAME }}{%endblock%}
 
@@ -23,12 +8,17 @@
     <h2 class="title">
         <i class="fa fa-bookmark-o"></i> <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a> <span class="share">{% include 'share.html' %}</span>
         <div class="date">{{ article.date.strftime("%d %B %Y") }}</div>
-
     </h2>
 
     <div class="post-content">
         {{ article.content }}
     </div>
+
+    {% if article.tags %}
+        <div class="tags">
+            <h3><i class="fa fa-tags"></i> tags : {% for tag in article.tags %}<span class="tag">{{ tag }}{% if not loop.last %}, {% endif %}</span>{% endfor %}</h3>
+        </div>
+    {% endif %}
 
     {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
     <div class="comments">
