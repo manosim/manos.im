@@ -11,7 +11,7 @@ RELATIVE_URLS = True
 
 PATH = 'content'
 
-DEFAULT_DATE_FORMAT = ' %Y %a %d %B'
+DEFAULT_DATE_FORMAT = '%Y %a %d %B'
 TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = u'en'
@@ -35,12 +35,12 @@ THEME_STATIC_DIR = "static"
 
 
 # Pages Settings
-PAGE_URL = "{slug}"
-PAGE_SAVE_AS = 'pages/{slug}.html'
+PAGE_URL = "{slug}/"
+PAGE_SAVE_AS = "{slug}/index.html"
 
 # Articles Settings
-ARTICLE_URL = "blog/{slug}"
-ARTICLE_SAVE_AS = '{slug}.html'
+ARTICLE_URL = "blog/{slug}/"
+ARTICLE_SAVE_AS = "blog/{slug}/index.html"
 
 # Blogroll
 LINKS = (
