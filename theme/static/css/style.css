@@ -167,12 +167,20 @@ a:hover {
     font-weight: 800;
 }
 
-.post .title .category, .post .title .date {
+.post .info {
+    border-top: 1px dotted #333;
     font-size: .7em;
     font-weight: normal;
     text-transform: lowercase;
-    border-top: 1px dotted #333;
     margin: 0 10px 0 0;
+}
+
+.post .info div {
+    padding: 0;
+}
+
+.post .info div i {
+    display: none;
 }
 
 .post .share {
@@ -191,6 +199,10 @@ a:hover {
     margin-bottom: 10px;
     margin-right: 10px;
 
+}
+
+.post .share .twitter:hover {
+    background-color: #3177ca;
 }
 
 .post .post-content a {

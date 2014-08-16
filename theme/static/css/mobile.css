@@ -11,4 +11,20 @@
        font-size: 30px;
     }
 
+    .post .share {
+        display: none;
+    }
+
+    .post .info {
+        padding-top: 5px;
+    }
+
+    .post .info div {
+        text-align: left;
+    }
+
+    .post .info div i {
+        display: inline-block;
+    }
+
 }
