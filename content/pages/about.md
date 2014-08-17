@@ -1,3 +1,3 @@
-Title: About Me
+Title: About
 Slug: about
 Template: about

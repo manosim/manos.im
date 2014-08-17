@@ -42,6 +42,11 @@ PAGE_SAVE_AS = "{slug}/index.html"
 ARTICLE_URL = "blog/{slug}/"
 ARTICLE_SAVE_AS = "blog/{slug}/index.html"
 
+# Extra Path Metadata
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+}
+
 # Blogroll
 LINKS = (
     ('Pelican', 'http://getpelican.com/'),
