@@ -12,7 +12,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     color: #3686be;
-    font-family: 'Josefin Slab', serif;
 }
 
 a {
@@ -164,7 +163,7 @@ a:hover {
 }
 
 .post .title {
-    margin: 20px 0;
+    margin: 50px 0;
     text-align: left;
     /*text-transform: uppercase;*/
     line-height: 1.5;
@@ -173,10 +172,10 @@ a:hover {
 
 .post .info {
     border-top: 1px dotted #333;
-    font-size: .7em;
-    font-weight: normal;
+    font-size: .6em;
+    font-weight: 100;
     text-transform: lowercase;
-    margin: 0 10px 0 0;
+    margin: 0 10px 10px 0;
 }
 
 .post .info div {
@@ -232,6 +231,10 @@ a:hover {
 .post .post-content a:hover {
     color: #FFF;
     background-color: #3686be;
+}
+
+.post div h3 {
+    font-weight: 100;
 }
 
 .post .tags h3 {
