@@ -1,5 +1,3 @@
-Title: About pagee
+Title: About Me
 Slug: about
-
-
-This is an about page!
+Template: about
