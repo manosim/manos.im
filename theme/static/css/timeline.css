@@ -3,9 +3,15 @@
 ** TIMELINE
 */
 
+.timeline-title h3 {
+    border-bottom: 1px dotted #333;
+    padding: 10px 0;
+}
+
 .timeline {
     list-style: none;
-    padding: 20px 0 20px;
+    margin-top: 50px;
+    padding: 50px 0;
     position: relative;
 }
 
@@ -91,7 +97,7 @@
             top: 16px;
             left: 50%;
             margin-left: -25px;
-            background-color: #999999;
+            background-color: #3686be;
             z-index: 100;
             border-top-right-radius: 50%;
             border-top-left-radius: 50%;
