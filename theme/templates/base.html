@@ -24,70 +24,85 @@
 </head>
 
 <body>
+<div id="site-wrapper">
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="header">
+    <div id="site-canvas">
 
-                    <div class="hamburger"><!-- <i class="fa fa-3x fa-bars"></i> --></div>
+         <div id="side-bar">
+            <p class="lead">Latest Tweets.</p>
 
-                    <a href="{{ SITEURL }}"><img src="/static/images/profilepic.jpg" alt="Emmanouil Konstantinidis"></a>
-                    <h2><a href="{{ SITEURL }}">Emmanouil Konstantinidis</a></h2>
-                    <p>Web Developer, Engineer at <b>dabapps</b>.</p>
+            <!-- <div id="tweets"></div> -->
+        </div>
 
-                    <div class="social-icons">
-                        {% for title, link in SOCIAL %}
-                        <a href="{{ link }}/" class="fa {{ title }}"></a>
-                        {% endfor %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="header">
+
+                        <div class="hamburger"><a href="#" class="toggle-nav"><i class="fa fa-bars"></i></a></div>
+
+                        <a href="{{ SITEURL }}"><img src="/static/images/profilepic.jpg" alt="Emmanouil Konstantinidis"></a>
+                        <h2><a href="{{ SITEURL }}">Emmanouil Konstantinidis</a></h2>
+                        <p>Web Developer, Engineer at <b>dabapps</b>.</p>
+
+                        <div class="social-icons">
+                            {% for title, link in SOCIAL %}
+                            <a href="{{ link }}/" class="fa {{ title }}"></a>
+                            {% endfor %}
+                        </div>
+
+                        <ul class="navigation">
+                            {% for title, link in MENUITEMS %}
+                                <li class="vs-nav-current"><a href="{{ link }}">{{ title }}</a></li>
+                            {% endfor %}
+                        </ul>
+
                     </div>
-
-                    <ul class="navigation">
-                        {% for title, link in MENUITEMS %}
-                            <li class="vs-nav-current"><a href="{{ link }}">{{ title }}</a></li>
-                        {% endfor %}
-                    </ul>
-
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="hidden-xs hidden-sm col-md-2 col-lg-2"></div>
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                {% block content %}{% endblock %}
+        <div class="container">
+            <div class="row">
+                <div class="hidden-xs hidden-sm col-md-2 col-lg-2"></div>
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    {% block content %}{% endblock %}
+                </div>
+                <div class="hidden-xs hidden-sm col-md-2 col-lg-2"></div>
             </div>
-            <div class="hidden-xs hidden-sm col-md-2 col-lg-2"></div>
         </div>
+
+        <footer>
+            <div class="copyright">&copy; {{ AUTHOR }} 2014.</div>
+            <div class="thanks">Build with <a href="http://www.getpelican.com/" target="_blank">Pelican</a> in <a href="http://www.python.org">Python</a>. Hosted on <a href="http://www.github.com">Github</a>.</div>
+        </footer>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="/static/js/bootstrap.min.js"></script>
+
+        <script src="/static/js/script.js"></script>
+
+        {% if GOOGLE_ANALYTICS %}
+        <!-- Google Analytics -->
+        <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{GOOGLE_ANALYTICS}}']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+        {% endif %}
+
+
+        </div>
+
     </div>
-
-    <footer>
-        <div class="copyright">&copy; {{ AUTHOR }} 2014.</div>
-        <div class="thanks">Build with <a href="http://www.getpelican.com/" target="_blank">Pelican</a> in <a href="http://www.python.org">Python</a>. Hosted on <a href="http://www.github.com">Github</a>.</div>
-    </footer>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/static/js/bootstrap.min.js"></script>
-
-    {% if GOOGLE_ANALYTICS %}
-    <!-- Google Analytics -->
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '{{GOOGLE_ANALYTICS}}']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-    {% endif %}
-
 </body>
 
 </html>
