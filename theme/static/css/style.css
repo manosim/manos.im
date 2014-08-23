@@ -179,14 +179,51 @@ a:hover {
     position: absolute;
     top: 0;
     left: -300px;
-    background: #555;
-    color: #FFF;
+    background: #e6e6e6;
+    color: #555;
     padding: 15px;
 }
 
 #site-wrapper.show-nav #site-canvas {
     -webkit-transform: translateX(300px);
     transform: translateX(300px);
+}
+
+.block {
+    margin: 20px 0;
+}
+
+.block div.title {
+    margin-bottom: 10px;
+    padding: 5px 0;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1.4;
+    border-bottom: 1px dotted #555;
+}
+
+.block ul {
+    list-style-type: square;
+}
+
+.latest-articles ul, .tags ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.latest-articles ul li {
+    margin: 10px 0;
+}
+
+.tags ul li {
+  display: inline;
+  margin: 5px;
+}
+
+.tags ul li:before {
+  content: '#';
+  font-size: 20px;
+  padding: 0 2px;
 }
 
 /*

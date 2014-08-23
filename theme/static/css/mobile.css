@@ -31,4 +31,14 @@
         display: inline-block;
     }
 
+    #side-bar {
+        width: 225px;
+        left: -225px;
+    }
+
+    #site-wrapper.show-nav #site-canvas {
+        -webkit-transform: translateX(225px);
+        transform: translateX(225px);
+    }
+
 }
