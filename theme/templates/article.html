@@ -18,6 +18,12 @@
 
     </h2>
 
+    {% if article.cover %}
+    <div class="post-cover">
+        <img class="img-responsive" src="/images/{{ article.cover }}" alt="{{ article.title }}" />
+    </div>
+    {% endif %}
+
     <div class="post-content">{{ article.content }}</div>
 
     {% if article.tags %}
