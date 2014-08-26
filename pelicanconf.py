@@ -66,7 +66,7 @@ SOCIAL = (
 DEFAULT_PAGINATION = 5
 
 # Google Analytics
-GOOGLE_ANALYTICS= "UA-6891078-38"
+GOOGLE_ANALYTICS = "UA-6891078-38"
 
 # Disqus Comments
 DISQUS_SITENAME = "iamemmanouil"
