@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:300,400);
 
 /*
-** Base
+*  Base
 */
 
 body {
@@ -41,7 +41,7 @@ a:hover {
 }
 
 /*
-** Header
+*  Header
 */
 
 .header {
@@ -124,7 +124,7 @@ a:hover {
 }
 
 /*
-** Navigation
+*  Navigation
 */
 
 .navigation {
@@ -154,7 +154,7 @@ a:hover {
 }
 
 /*
-** Sidebar Slider
+*  Sidebar Slider
 */
 
 #site-wrapper {
@@ -227,7 +227,7 @@ a:hover {
 }
 
 /*
-** Blog
+*  Blog
 */
 
 .post {
@@ -333,7 +333,7 @@ a:hover {
 }
 
 /*
-** PAGINATION
+*  PAGINATION
 */
 
 .paginator {
@@ -353,7 +353,22 @@ a:hover {
 }
 
 /*
-** FOOTER
+*  Get In Touch
+*/
+
+
+.get-in-touch h3 {
+    border-bottom: 1px dotted #333;
+    padding: 10px 0;
+}
+
+
+.get-in-touch i {
+    margin-right: 5px;
+}
+
+/*
+*  FOOTER
 */
 
 footer {
