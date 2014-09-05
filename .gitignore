@@ -1,6 +1,6 @@
 # Files
 *.DS_Store
-*.py[cod]
+*.pyc
 
 # Virtual environment
 env/
