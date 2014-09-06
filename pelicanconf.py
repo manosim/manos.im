@@ -45,6 +45,7 @@ ARTICLE_SAVE_AS = "blog/{slug}/index.html"
 # Extra Path Metadata
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/CNAME': {'path': 'CNAME'},
 }
 
 # Blogroll
