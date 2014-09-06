@@ -21,7 +21,7 @@ DELETE_OUTPUT_DIRECTORY = True
 # Following items are often useful when publishing
 
 # Google Analytics
-GOOGLE_ANALYTICS= "UA-6891078-38"
+GOOGLE_ANALYTICS = "UA-6891078-38"
 
 # Disqus Comments
 DISQUS_SITENAME = "iamemmanouil"
