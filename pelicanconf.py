@@ -42,7 +42,9 @@ PAGE_SAVE_AS = "{slug}/index.html"
 ARTICLE_URL = "blog/{slug}/"
 ARTICLE_SAVE_AS = "blog/{slug}/index.html"
 
+
 # Extra Path Metadata
+STATIC_PATHS = ['extra/robots.txt', 'extra/CNAME']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/CNAME': {'path': 'CNAME'},
