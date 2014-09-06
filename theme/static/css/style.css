@@ -288,7 +288,7 @@ a:hover {
     margin: 0 auto;
 }
 
-.post .post-content a {
+.post .post-content .btn {
     display: block;
     max-width: 17em;
     text-align: center;
