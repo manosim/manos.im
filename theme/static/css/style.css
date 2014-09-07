@@ -368,6 +368,55 @@ a:hover {
 }
 
 /*
+*  Code Block
+*/
+
+.codehilitetable pre {
+    padding: 0;
+}
+
+code {
+    font: 13px/21px"Source Code Pro", monospace;
+    font-weight: inherit;
+    padding: .1em .3em;
+    border-radius: 3px
+}
+.codehilitetable {
+    font: 12px/20px"Source Code Pro", monospace;
+    overflow: auto;
+    display: block;
+    border-radius: 3px;
+    background: #3f3f3f;
+}
+.linenos {
+    background: none;
+    border-right: 1px solid #cfd5ce;
+    padding: .5em .8em;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+.codehilite {
+    margin: 0 1em
+}
+.codehilite>pre {
+    padding-right: 1em
+}
+
+/*
+*  Pygments
+*/
+
+.codehilite code, .codehilite pre, .linenodiv pre {
+    color: #dcdccc;
+    background: none;
+    border-radius: 0;
+    border: 0;
+}
+
+/*
 *  FOOTER
 */
 
