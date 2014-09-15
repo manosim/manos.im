@@ -2,6 +2,12 @@
 
 {% block content %}
 
+{% if not articles_page.object_list %}
+<div class="alert alert-info no-articles" role="alert">
+    <strong>Oops!</strong> No articles yet? Maybe something is boiling...
+</div>
+{% endif %}
+
 {% for article in articles_page.object_list %}
 <article class="post">
 
