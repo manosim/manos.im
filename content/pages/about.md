@@ -1,3 +1,3 @@
 Title: About
 Slug: about
-Template: about123
+Template: about
