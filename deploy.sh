@@ -19,7 +19,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     rsync -rv --exclude=.git  ../$PELICAN_OUTPUT_FOLDER/* .
     #add, commit and push files
     git add -f .
-    git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
+    git commit -m "$TRAVIS_COMMIT"
     git push -fq origin $BRANCH > /dev/null
     echo -e "Deploy completed\n"
 fi
