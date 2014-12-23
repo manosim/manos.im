@@ -318,6 +318,10 @@ a:hover {
     background-color: #3686be;
 }
 
+.post .post-content .highlight {
+    margin: 25px 0;
+}
+
 .post div h3 {
     font-weight: 100;
 }
