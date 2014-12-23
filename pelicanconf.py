@@ -61,7 +61,6 @@ SOCIAL = (
     ('fa-twitter', 'http://twitter.com/iamemmanouil'),
     ('fa-github', 'http://github.com/ekonstantinidis'),
     ('fa-linkedin', 'http://uk.linkedin.com/in/ekonstantinidis'),
-    ('fa-rss', 'http://www.iamemmanouil.com/feeds/all.atom.xml'),
 )
 
 DEFAULT_PAGINATION = 5
