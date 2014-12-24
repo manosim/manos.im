@@ -18,5 +18,10 @@ install:
 script:
   - pelican -s publishconf.py
 
+notifications:
+  email:
+    on_success: always
+    on_failure: always
+
 after_success:
   - bash deploy.sh
