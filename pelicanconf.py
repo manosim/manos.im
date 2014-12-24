@@ -29,7 +29,7 @@ MENUITEMS = (
 )
 
 # Theme
-OUTPUT_PATH = "output"
+OUTPUT_PATH = "output/"
 THEME = "theme"
 THEME_STATIC_DIR = "static"
 
