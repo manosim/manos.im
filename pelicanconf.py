@@ -72,4 +72,4 @@ GOOGLE_ANALYTICS = "UA-6891078-38"
 DISQUS_SITENAME = "iamemmanouil"
 
 # Twitter Settings
-TWITTER_USERNAME = "ekondis"
+TWITTER_USERNAME = "iamemmanouil"
