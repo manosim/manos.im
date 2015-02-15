@@ -8,9 +8,6 @@ Authors: Emmanouil Konstantinidis
 Cover: back-to-car.png
 Summary: Kicking this 'blog' or whatever it looks like, I would like to to give an intro about my first personal, **major** and completed(yes, completed!) project. So what it's about? You are traveling around with your car. You park and go for walk, sightseeing or whatever. Then it's time to get back to your car isn't it? Clean interface with three buttons. **Park**, **find** and **save** locations. Available for both [App Store](https://itunes.apple.com/us/app/backtocar/id936488095?ls=1&mt=8) and [Google Play Store](https://play.google.com/store/apps/details?id=com.iamemmanouil.backtocar). To the technical bit...
 
-Kicking this 'blog' or whatever it looks like, I would like to to give an intro about my first personal, **major** and completed(yes, completed!) project. So what it's about? You are traveling around with your car. You park and go for walk, sightseeing or whatever. Then it's time to get back to your car isn't it? Clean interface with three buttons. **Park**, **find** and **save** locations. Available for both [App Store](https://itunes.apple.com/us/app/backtocar/id936488095?ls=1&mt=8) and [Google Play Store](https://play.google.com/store/apps/details?id=com.iamemmanouil.backtocar). To the technical bit...
-
-
     # Just a way to say my opinion on Ionic
     var app = angular.module('controllers.conclude', ['ionic']);
 

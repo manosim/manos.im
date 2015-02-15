@@ -24,7 +24,10 @@
     </div>
     {% endif %}
 
-    <div class="post-content">{{ article.content }}</div>
+    <div class="post-content">
+        {{ article.summary }}
+        {{ article.content }}
+    </div>
 
     {% if article.tags %}
     <div class="tags">
