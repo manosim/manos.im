@@ -19,7 +19,7 @@ Using fabric's `serve` to serve port 8000 and `regenerate`.
 
 ## Deployment
 
-Coming soon.
+Travis CI will handle the upload. For every commit on the branch `src`, Travis CI will publish the site with any changes (if the build passes).
 
 
 ## More Information
