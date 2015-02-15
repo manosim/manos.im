@@ -242,9 +242,12 @@ a:hover {
 .post .title {
     margin: 50px 0;
     text-align: left;
-    /*text-transform: uppercase;*/
     line-height: 1.5;
     font-weight: 800;
+}
+
+.post .title a {
+    padding-right: 75px;
 }
 
 .post .info {
