@@ -227,6 +227,14 @@ a:hover {
 }
 
 /*
+*  Homepage
+*/
+
+.homepage .post .title a {
+    padding-right: 0;
+}
+
+/*
 *  Blog
 */
 

@@ -2,43 +2,46 @@
 
 {% block content %}
 
-{% if not articles_page.object_list %}
-<div class="alert alert-info no-articles" role="alert">
-    <strong>Oops!</strong> No articles yet? Maybe something is boiling...
-</div>
-{% endif %}
-
-{% for article in articles_page.object_list %}
-<article class="post">
-
-    <h2 class="title">
-
-        <i class="fa fa-bookmark-o"></i> <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-
-        <div class="info">
-
-            <div class="col-xs-12 col-sm-12 col-md-6">{% if article.category %}<i class="fa fa-folder-open-o"></i> {{ article.category }}{% endif %}</div>
-            <div class="col-xs-12 col-sm-12 col-md-6 text-right"><i class="fa fa-calendar"></i> {{ article.date.strftime("%d %B %Y") }}</div>
-
-        </div>
-
-    </h2>
-
-    {% if article.cover %}
-    <div class="post-cover">
-        <img class="img-responsive" src="/images/{{ article.cover }}" alt="{{ article.title }}" />
+<div class="homepage">
+    {% if not articles_page.object_list %}
+    <div class="alert alert-info no-articles" role="alert">
+        <strong>Oops!</strong> No articles yet? Maybe something is boiling...
     </div>
     {% endif %}
 
-    <!-- .entry-content -->
-    <div class="post-content">
-        {{ article.summary }}
-        <a class="btn btn-primary btn-lg read-more" href="{{ SITEURL }}/{{ article.url }}">Continue reading <i class="fa fa-chevron-right"></i></a>
-    </div>
-    <!-- .entry-content -->
+    {% for article in articles_page.object_list %}
+    <article class="post">
 
-</article>
-{% endfor %}
+        <h2 class="title">
+
+            <i class="fa fa-bookmark-o"></i> <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+
+            <div class="info">
+
+                <div class="col-xs-12 col-sm-12 col-md-6">{% if article.category %}<i class="fa fa-folder-open-o"></i> {{ article.category }}{% endif %}</div>
+                <div class="col-xs-12 col-sm-12 col-md-6 text-right"><i class="fa fa-calendar"></i> {{ article.date.strftime("%d %B %Y") }}</div>
+
+            </div>
+
+        </h2>
+
+        {% if article.cover %}
+        <div class="post-cover">
+            <img class="img-responsive" src="/images/{{ article.cover }}" alt="{{ article.title }}" />
+        </div>
+        {% endif %}
+
+        <!-- .entry-content -->
+        <div class="post-content">
+            {{ article.summary }}
+            <a class="btn btn-primary btn-lg read-more" href="{{ SITEURL }}/{{ article.url }}">Continue reading <i class="fa fa-chevron-right"></i></a>
+        </div>
+        <!-- .entry-content -->
+
+    </article>
+    {% endfor %}
+
+</div>
 
 {% include 'pagination.html' %}
 
