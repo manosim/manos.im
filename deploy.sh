@@ -13,12 +13,13 @@ echo -e "$VARNAME"
         git config --global user.name "ekonstantinidis"
     fi
 
-    # Remove everything from the "master" branch
-    git --branch=$BRANCH rm -rf .
-    git commit -m "Rel 1.5 - Empty the branch before pushing($TRAVIS_BUILD_NUMBER)"
-
     #using token clone gh-pages branch
     git clone --quiet --branch=$BRANCH https://${GH_TOKEN}@github.com/$TARGET_REPO built_website > /dev/null
+
+    # Remove everything from the "master" branch
+    git rm -rf .
+    git commit -m "Rel 1.5 - Empty the branch before pushing($TRAVIS_BUILD_NUMBER)"
+
     #go into directory and copy data we're interested in to that directory
     cd built_website
     rsync -rv --exclude=.git  ../$PELICAN_OUTPUT_FOLDER/* .
