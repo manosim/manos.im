@@ -21,6 +21,7 @@ echo -e "$VARNAME"
     git rm -rf .
     git clean -f -d
     git commit -m "Rel 1.5 - Empty the branch before pushing($TRAVIS_BUILD_NUMBER)"
+    git push -fq origin $BRANCH > /dev/null
     git status
 
     # #go into directory and copy data we're interested in to that directory
