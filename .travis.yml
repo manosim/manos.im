@@ -22,5 +22,4 @@ script:
     - grunt deploy
 
 after_success:
-    - bash emptyrepo.sh
     - bash deploy.sh
