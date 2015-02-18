@@ -19,6 +19,7 @@ echo -e "$VARNAME"
     # Remove everything from the "master" branch
     git status
     git rm -rf .
+    git clean -f -d
     git commit -m "Rel 1.5 - Empty the branch before pushing($TRAVIS_BUILD_NUMBER)"
     git status
 
