@@ -6,7 +6,7 @@ PELICAN_OUTPUT_FOLDER=output
 echo -e "Testing travis-encrypt"
 echo -e "$VARNAME"
 
-if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+# if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     echo -e "Starting deployment on Github Pages\n"
     if [ "$TRAVIS" == "true" ]; then
         git config --global user.email "manos@iamemmanouil.com"
@@ -22,4 +22,4 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
     git push -fq origin $BRANCH > /dev/null
     echo -e "Deploy completed\n"
-fi
+# fi
