@@ -14,10 +14,10 @@ module.exports = function (grunt) {
 
     shell: {
       generate: {
-        command: 'env/bin/pelican -s pelicanconf.py'
+        command: 'env/bin/pelican content --settings=etc/pelicanconf.py'
       },
       deploy: {
-        command: 'pelican -s publishconf.py'
+        command: 'pelican content --settings=etc/publishconf.py'
       }
     },
 
