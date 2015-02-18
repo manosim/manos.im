@@ -27,7 +27,6 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     git clean -f -d
     git commit -m "Rel 1.5 - Empty the branch before pushing($TRAVIS_BUILD_NUMBER)"
     git push -fq origin $BRANCH > /dev/null
-    cd ..
 
     echo -e "Starting deployment on Github Pages\n"
 

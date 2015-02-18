@@ -1,6 +1,3 @@
-/* global module:false */
-"use strict";
-
 module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -14,10 +11,10 @@ module.exports = function (grunt) {
 
     shell: {
       generate: {
-        command: 'env/bin/pelican content --settings=etc/pelicanconf.py'
+        command: 'env/bin/pelican content -s pelicanconf.py'
       },
       deploy: {
-        command: 'env/bin/pelican content --settings=etc/publishconf.py'
+        command: 'pelican content -s publishconf.py'
       }
     },
 
