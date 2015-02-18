@@ -6,7 +6,7 @@
 env/
 
 # Cache
-/etc/cache
+cache/*
 
 # Node Modules
 node_modules/*
