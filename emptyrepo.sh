@@ -7,13 +7,14 @@ echo -e "Testing travis-encrypt"
 echo -e "$VARNAME"
 
 # if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-    echo -e "Starting deployment on Github Pages\n"
+    echo -e "Remove previous version of website\n"
+
     if [ "$TRAVIS" == "true" ]; then
         git config --global user.email "manos@iamemmanouil.com"
         git config --global user.name "ekonstantinidis"
     fi
 
-    #using token clone gh-pages branch
+    # Using token clone gh-pages branch
     git clone --quiet --branch=$BRANCH https://${GH_TOKEN}@github.com/$TARGET_REPO built_website > /dev/null
 
     # Go into directory and copy data we're interested in to that directory
@@ -27,4 +28,5 @@ echo -e "$VARNAME"
     git commit -m "Rel 1.5 - Empty the branch before pushing($TRAVIS_BUILD_NUMBER)"
     git push -fq origin $BRANCH > /dev/null
 
+    echo -e "Branch\n"
 # fi
