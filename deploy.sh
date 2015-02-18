@@ -6,7 +6,7 @@ PELICAN_OUTPUT_FOLDER=output
 echo -e "Testing travis-encrypt"
 echo -e "$VARNAME"
 
-if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+# if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 
     echo -e "Remove previous version of website\n"
 
@@ -48,4 +48,4 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     git push -fq origin $BRANCH > /dev/null
 
     echo -e "Deploy completed\n"
-fi
+# fi
