@@ -29,8 +29,8 @@ MENUITEMS = (
 )
 
 # Theme
-OUTPUT_PATH = "output/"
-THEME = "theme"
+OUTPUT_PATH = "../output/"
+THEME = "../theme"
 
 # Pages Settings
 PAGE_URL = "{slug}/"
