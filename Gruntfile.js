@@ -17,7 +17,7 @@ module.exports = function (grunt) {
         command: 'env/bin/pelican -s pelicanconf.py'
       },
       deploy: {
-        command: 'env/bin/pelican -s publishconf.py'
+        command: 'pelican -s publishconf.py'
       }
     },
 
