@@ -1,25 +1,27 @@
 # ekonstantinidis.github.io [![Build Status](https://travis-ci.org/ekonstantinidis/ekonstantinidis.github.io.svg?branch=src)](https://travis-ci.org/ekonstantinidis/ekonstantinidis.github.io)
-Repository containing the source for my website. Domain: iamemmanouil.com.
+Repository containing the source of my personal website. Domain: [iamemmanouil.com](http://www.iamemmanouil.com/)
 
 
 ## Project Setup
-First create a virtual environment and activate it. Then install requirements file.
+First create a virtual environment and activate it. Then install requirements file along with the npm dependencies.
 
 	virtualenv env
 	source env/bin/activate
 	pip install -r requirements.txt
+	npm install
 
 
 ## Development
-Using fabric's `serve` to serve port 8000 and `regenerate`.
+In order to develop, you only have to use:
 
-	fab regenerate
-	fab serve
+	grunt serve
+
+This will clean the build, generate css from less, generate the static files, copy them and finally launch the browser at [http://0.0.0.0:9000/](http://0.0.0.0:9000/).
 
 
 ## Deployment
 
-Travis CI will handle the upload. For every commit on the branch `src`, Travis CI will publish the site with any changes (if the build passes).
+Travis CI will handle the upload. For every commit on the branch `src`, Travis CI will publish the site with any changes (if the build passes). This will also remove the previous build from `master` branch. Pull requests will not deploy the website to `master` branch.
 
 
 ## More Information
