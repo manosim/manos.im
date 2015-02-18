@@ -17,15 +17,17 @@ echo -e "$VARNAME"
     git clone --quiet --branch=$BRANCH https://${GH_TOKEN}@github.com/$TARGET_REPO built_website > /dev/null
 
     # Remove everything from the "master" branch
+    git status
     git rm -rf .
     git commit -m "Rel 1.5 - Empty the branch before pushing($TRAVIS_BUILD_NUMBER)"
+    git status
 
-    #go into directory and copy data we're interested in to that directory
-    cd built_website
-    rsync -rv --exclude=.git  ../$PELICAN_OUTPUT_FOLDER/* .
-    #add, commit and push files
-    git add -f .
-    git commit -m "Rel 1.5 - Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
-    git push -fq origin $BRANCH > /dev/null
+    # #go into directory and copy data we're interested in to that directory
+    # cd built_website
+    # rsync -rv --exclude=.git  ../$PELICAN_OUTPUT_FOLDER/* .
+    # #add, commit and push files
+    # git add -f .
+    # git commit -m "Rel 1.5 - Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
+    # git push -fq origin $BRANCH > /dev/null
     echo -e "Deploy completed\n"
 # fi
