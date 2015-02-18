@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 
     watch: {
       files: ['content/**/*.md','theme/**/*.*'],
-      tasks: ['less:main','shell:generate'],
+      tasks: ['clean', 'less:main', 'shell:generate', 'copy:main'],
       options: {
         livereload: 35729,
       }
