@@ -8,5 +8,8 @@ env/
 # Cache
 cache/*
 
+# Node Modules
+node_modules/*
+
 # Output Folter
 output/*

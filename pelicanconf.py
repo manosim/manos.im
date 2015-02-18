@@ -31,7 +31,6 @@ MENUITEMS = (
 # Theme
 OUTPUT_PATH = "output/"
 THEME = "theme"
-THEME_STATIC_DIR = "static"
 
 # Pages Settings
 PAGE_URL = "{slug}/"
@@ -42,7 +41,8 @@ ARTICLE_URL = "blog/{slug}/"
 ARTICLE_SAVE_AS = "blog/{slug}/index.html"
 
 # Extra Path Metadata
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/CNAME']
+STATIC_PATHS = ['static', 'images', 'extra/robots.txt', 'extra/CNAME']
+STATIC_EXCLUDE = ['static']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/CNAME': {'path': 'CNAME'},
