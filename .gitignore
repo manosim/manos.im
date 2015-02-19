@@ -11,5 +11,8 @@ cache/*
 # Node Modules
 node_modules/*
 
-# Output Folter
+# Output Folder
 output/*
+
+# Stylesheets
+theme/static/css/style.css
