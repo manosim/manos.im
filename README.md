@@ -26,4 +26,4 @@ Travis CI will handle the upload. For every commit on the branch `src`, Travis C
 
 ## More Information
 
-This is a static website build with [Pelican](http://www.getpelican.com/) in Python. The frontend is using [Bootstrap](http://www.getbootstrap.com/). It is hosted on [Github Pages](http://pages.github.com/).
+This is a static website build with [Pelican](http://www.getpelican.com/) in Python. The frontend is built [Bootstrap](http://www.getbootstrap.com/). The website is hosted on [Github Pages](http://pages.github.com/).
