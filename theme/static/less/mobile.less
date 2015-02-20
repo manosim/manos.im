@@ -1,12 +1,19 @@
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-width: 320px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
+
+    /* @group Variables */
+
+    @ThemePrimary: #3686be;
+
+    /* @end Variables */
+
 
     /* @group Custom Grid */
 
     .main-content {
         float: none;
-        margin: 20px 0;
         padding: 0 20px;
+        position: static;
     }
 
     /* @end Custom Grid */
@@ -16,8 +23,12 @@
 
     .header {
         text-align: center;
-        margin: 0;
+        margin: 0 0 40px 0;
         padding: 0 25px;
+
+        background-position: bottom center;
+        background-size: auto;
+        border: 0;
 
         position: static;
         height: auto;
@@ -29,7 +40,6 @@
             bottom: 0;
             padding: 25px 0;
 
-
             .navigation {
                 display: block;
                 position: static;
@@ -37,6 +47,13 @@
                 li {
                     float: none;
                     display: inline-block;
+
+                    a {
+                        color: @ThemePrimary;
+                        margin: 0 .8em;
+                        letter-spacing: -1px;
+                        font-size: 1.2em;
+                    }
                 }
             }
 
@@ -52,16 +69,6 @@
     }
 
     /* @end Header */
-
-    .navigation li a {
-        margin: 0 .8em;
-        letter-spacing: -1px;
-        font-size: 1.1em;
-    }
-
-    .header .hamburger:before {
-       font-size: 30px;
-    }
 
     .post .title {
         padding-bottom: 20px;

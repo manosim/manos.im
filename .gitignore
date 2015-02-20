@@ -16,3 +16,4 @@ output/*
 
 # Stylesheets
 theme/static/css/style.css
+theme/static/css/mobile.css
