@@ -1,45 +1,65 @@
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-
-    .navigation li a {
-        margin: 0 .8em;
-        letter-spacing: -1px;
-        font-size: 1.1em;
-    }
-
-    .header .hamburger:before {
-       font-size: 30px;
-    }
-
-    .post .title {
-        padding-bottom: 20px;
-        line-height: 1.2;
-    }
-
-    .post .share {
-        display: none;
-    }
-
-    .post .info {
-        padding-top: 5px;
-    }
-
-    .post .info div {
-        text-align: left;
-    }
-
-    .post .info div i {
-        display: inline-block;
-    }
-
-    #side-bar {
-        width: 225px;
-        left: -225px;
-    }
-
-    #site-wrapper.show-nav #site-canvas {
-        -webkit-transform: translateX(225px);
-        transform: translateX(225px);
-    }
-
+@media only screen and (min-width: 320px) and (max-width: 991px) {
+  /* @group Custom Grid */
+  .main-content {
+    float: none;
+    margin: 20px 0;
+    padding: 0 20px;
+  }
+  /* @end Custom Grid */
+  /* @group Header */
+  .header {
+    text-align: center;
+    margin: 0;
+    padding: 0 25px;
+    position: static;
+    height: auto;
+    left: 0;
+    top: 0;
+  }
+  .header .header-content {
+    position: static;
+    bottom: 0;
+    padding: 25px 0;
+  }
+  .header .header-content .navigation {
+    display: block;
+    position: static;
+  }
+  .header .header-content .navigation li {
+    float: none;
+    display: inline-block;
+  }
+  .header .header-content .social-icons {
+    float: none;
+    text-align: center;
+  }
+  .header .header-content .social-icons a {
+    font-size: 22px;
+  }
+  /* @end Header */
+  .navigation li a {
+    margin: 0 .8em;
+    letter-spacing: -1px;
+    font-size: 1.1em;
+  }
+  .header .hamburger:before {
+    font-size: 30px;
+  }
+  .post .title {
+    padding-bottom: 20px;
+    line-height: 1.2;
+  }
+  .post .share {
+    display: none;
+  }
+  .post .info {
+    padding-top: 5px;
+  }
+  .post .info div {
+    text-align: left;
+  }
+  .post .info div i {
+    display: inline-block;
+  }
 }

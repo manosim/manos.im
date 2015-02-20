@@ -24,7 +24,8 @@ module.exports = function (grunt) {
       },
       main: {
         files: {
-          'theme/static/css/style.css': 'theme/static/less/style.less'
+          'theme/static/css/style.css': 'theme/static/less/style.less',
+          'theme/static/css/mobile.css': 'theme/static/less/mobile.less'
         }
       }
     },
