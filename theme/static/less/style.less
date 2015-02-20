@@ -5,6 +5,9 @@
 
 @ThemePrimary: #3686be;
 
+@Gray: #6f7076;
+@DarkGray: #4f4f50;
+
 /* @end Variables */
 
 /* @group Miscelaneous */
@@ -68,11 +71,10 @@ a {
     -webkit-box-shadow: inset 0 -10px 5px -10px #000000;
 
     background-image: url('../images/beach.jpg');
-    background-position: bottom left;
+    background-position: center bottom;
     background-size: auto 100%;
     background-repeat: no-repeat;
-    border-right: 1px solid #909091;
-
+    border-right: 1px solid @Gray;
 
     position: fixed;
     height: 100%;
@@ -106,12 +108,12 @@ a {
         transition:all .4s;
 
         a {
-            color: #444;
+            color: @ThemePrimary;
         }
     }
 
     .profilepic {
-        border: 1px solid #FFF;
+        border: 1px solid @Gray;
         display: inline-block;
         width: 120px;
         height: 120px;
@@ -129,7 +131,7 @@ a {
     }
 
     .site-description {
-        color: #FFF;
+        color: @DarkGray;
         font-family: 'Josefin Slab', serif;
         font-size: 20px;
         font-weight: normal;
@@ -145,10 +147,10 @@ a {
         a {
             padding: 0 10px;
             font-size: 50px;
-            color: #FFF;
+            color: @Gray;
 
             &:hover {
-                color: #D0DADC;
+                color: @DarkGray;
             }
         }
     }
@@ -179,12 +181,16 @@ a {
         a {
             position: relative;
             margin: 0 .6em;
-            color: #D0DADC;
-            letter-spacing: -3px;
+            color: @ThemePrimary;
+            letter-spacing: -2px;
             text-decoration: none;
             text-transform: lowercase;
             font-weight: 700;
             font-size: 1.4em;
+
+            &:hover {
+                color: darken(@ThemePrimary, 10%);
+            }
         }
     }
 }
