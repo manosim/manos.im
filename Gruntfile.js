@@ -52,7 +52,7 @@ module.exports = function (grunt) {
         dist: {
             homepage: 'http://www.iamemmanouil.com/',
             pattern: ['output/**/*.html'],
-            siteRoot: '/'
+            siteRoot: 'output/'
         }
     },
 
