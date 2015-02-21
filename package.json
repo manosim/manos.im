@@ -8,6 +8,7 @@
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-less": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-shell": "^1.1.1"
+    "grunt-shell": "^1.1.1",
+    "grunt-sitemap": "^1.2.1"
   }
 }

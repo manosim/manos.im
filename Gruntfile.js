@@ -6,6 +6,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-sitemap');
 
   grunt.initConfig({
 
@@ -32,7 +33,7 @@ module.exports = function (grunt) {
 
     watch: {
       files: ['content/**/*.md','theme/**/*.*'],
-      tasks: ['clean', 'less:main', 'shell:generate', 'copy:main'],
+      tasks: ['build'],
       options: {
         livereload: 35729,
       }
@@ -45,6 +46,14 @@ module.exports = function (grunt) {
         src: ['**', '!less/**'],
         dest: 'output/static/',
       },
+    },
+
+    sitemap: {
+        dist: {
+            homepage: 'http://www.iamemmanouil.com/',
+            pattern: ['output/**/*.html'],
+            siteRoot: 'output/'
+        }
     },
 
     connect: {
@@ -67,8 +76,8 @@ module.exports = function (grunt) {
 
   });
 
-  grunt.registerTask('build', ['clean', 'less:main', 'shell:generate', 'copy:main']);
-  grunt.registerTask('serve', ['clean', 'less:main', 'shell:generate', 'copy:main', 'connect:server', 'watch']);
-  grunt.registerTask('deploy', ['clean', 'less:main', 'shell:deploy', 'copy:main']);
+  grunt.registerTask('build', ['clean', 'less:main', 'shell:generate', 'copy:main', 'sitemap']);
+  grunt.registerTask('serve', ['build', 'connect:server', 'watch']);
+  grunt.registerTask('deploy', ['clean', 'less:main', 'shell:deploy', 'copy:main', 'sitemap']);
 
 };
