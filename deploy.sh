@@ -16,10 +16,10 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     fi
 
     # Using token clone gh-pages branch
-    git clone --quiet --branch=$BRANCH https://${GH_TOKEN}@github.com/$TARGET_REPO output > /dev/null
+    git clone --quiet --branch=$BRANCH https://${GH_TOKEN}@github.com/$TARGET_REPO built_website > /dev/null
 
     # Go into directory and copy data we're interested in to that directory
-    cd output
+    cd built_website
     rsync -rv --exclude=.git  ../$PELICAN_OUTPUT_FOLDER/* .
 
     # Remove everything from the "master" branch
@@ -32,10 +32,10 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     echo -e "Starting deployment on Github Pages\n"
 
     # Using token clone gh-pages branch
-    git clone --quiet --branch=$BRANCH https://${GH_TOKEN}@github.com/$TARGET_REPO output > /dev/null
+    git clone --quiet --branch=$BRANCH https://${GH_TOKEN}@github.com/$TARGET_REPO built_website > /dev/null
 
     # Go into directory and copy data we're interested in to that directory
-    cd output
+    cd built_website
     rsync -rv --exclude=.git  ../$PELICAN_OUTPUT_FOLDER/* .
 
     # Add, commit and push files
