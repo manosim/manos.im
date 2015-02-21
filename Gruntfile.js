@@ -51,8 +51,8 @@ module.exports = function (grunt) {
     sitemap: {
         dist: {
             homepage: 'http://www.iamemmanouil.com/',
-            pattern: ['**/*.html'],
-            siteRoot: 'output/'
+            pattern: ['output/**/*.html'],
+            siteRoot: '/'
         }
     },
 
