@@ -1,18 +1,18 @@
-// Sidebar Toggle
+// Scroll To Top
 
-    $(function() {
-        $('.toggle-nav').click(function() {
-            toggleNav();
-        });
+$(document).ready(function(){
+
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
     });
 
-    function toggleNav() {
-        if ($('#site-wrapper').hasClass('show-nav')) {
-            $('#site-wrapper').removeClass('show-nav');
-        } else {
-            $('#site-wrapper').addClass('show-nav');
-        }
-    }
+    $('.scrollToTop').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
+        return false;
+    });
 
-// Latest Tweets
-
+});
