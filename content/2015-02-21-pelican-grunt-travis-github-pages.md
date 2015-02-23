@@ -1,6 +1,6 @@
 Title: A static site with Pelican, Grunt, Travis & Github Pages
-Date: 2015-02-21 18:40
-Modified: 2015-02-21 18:59
+Date: 2015-02-23 08:40
+Modified: 2015-02-23 08:56
 Category: Tutorials
 Tags: static, site, generator, pelican, grunt, task, travis, deploy, github pages
 Slug: static-site-pelican-grunt-travis-github-pages
