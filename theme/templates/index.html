@@ -13,17 +13,11 @@
     <article class="post">
 
         <h2 class="title">
-
             <i class="fa fa-bookmark-o"></i> <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-
-            <div class="info">
-
-                <div class="col-xs-12 col-sm-12 col-md-6">{% if article.category %}<i class="fa fa-folder-open-o"></i> {{ article.category }}{% endif %}</div>
-                <div class="col-xs-12 col-sm-12 col-md-6 text-right"><i class="fa fa-calendar"></i> {{ article.date.strftime("%d %B %Y") }}</div>
-
-            </div>
-
         </h2>
+
+        <div class="category">{% if article.category %}<i class="fa fa-folder-open-o"></i> {{ article.category }}{% endif %}</div>
+        <div class="date"><i class="fa fa-calendar"></i> {{ article.date.strftime("%d %B %Y") }}</div>
 
         {% if article.cover %}
         <div class="post-cover">

@@ -253,34 +253,39 @@ a {
     margin: 30px 0;
 
     .title {
-        margin: 50px 0;
+        margin: 50px 0 0;
+        padding: 5px 0;
         text-align: left;
         line-height: 1.5;
         font-weight: 800;
+        position: relative;
+        border-bottom: 1px dotted #333;
 
         a {
             padding-right: 75px;
         }
     }
 
-    .info {
-        border-top: 1px dotted #333;
-        font-size: .6em;
+    .category,
+    .date {
+        font-size: 1em;
         font-weight: 100;
+        color: @ThemePrimary;
         text-transform: lowercase;
-        margin: 0 10px 10px 0;
+        margin: 10px 0;
+        display: inline-block;
+    }
 
-        div {
-            padding: 0;
-
-            i {
-                display: none;
-            }
-        }
+    .date {
+        float: right;
     }
 
     .share {
-        float: right;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 5px 0;
+        margin-right: 0;
 
         .twitter {
             font-family: 'Lato', sans-serif;
@@ -291,8 +296,6 @@ a {
             border-radius: 4px;
             border: 0;
             padding: 2px 5px;
-            margin-bottom: 10px;
-            margin-right: 10px;
 
             &:hover {
                 background-color: #00aced;
@@ -302,8 +305,9 @@ a {
 
     .post-cover {
         margin: 10px 0 20px 0;
+        padding: 5px 0;
 
-        img {
+        .img-responsive {
             margin: 0 auto;
         }
     }
