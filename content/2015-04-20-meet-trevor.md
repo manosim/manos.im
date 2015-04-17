@@ -26,3 +26,5 @@ Since Trevor started as an experiment (Friday night,  let's give it a try), I be
 
 ### The future of Trevor
 A new version has been already submitted and includes many many changes. New improved design (inspired by the new awesome Travis UI), ready for Travis CI for Education, many fixed bugs and of course it's more stable and faster. I plan to add more features such as access to both Travis CI for Open Source and Travis Pro at the same time, push notifications and more! Download it for [free](http://www.trevorapp.com/) and watch for the upcoming updates!
+
+This is a guest blog post that I wrote for the [Travis CI blog](http://blog.travis-ci.com/2015-04-06-meet-trevor-hybrid-app/).
