@@ -109,32 +109,35 @@
 
     /* @end Header */
 
-    .post .title {
-        padding-bottom: 20px;
-        line-height: 1.2;
+
+    /* @group Article */
+
+    .post {
+
+        .title {
+            padding-bottom: 10px;
+            margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        .share {
+            display: none;
+        }
+
+        .category,
+        .date {
+            margin: 0;
+            display: block;
+            float: none;
+        }
+
+        .post-content .btn {
+            max-width: 100%;
+            padding: 1.15em 1em;
+        }
     }
 
-    .post .share {
-        display: none;
-    }
-
-    .post .info {
-        margin-top: 5px;
-        padding-top: 5px;
-    }
-
-    .post .info div {
-        text-align: left;
-    }
-
-    .post .info div i {
-        display: inline-block;
-    }
-
-    .post .post-content .btn {
-        max-width: 100%;
-        padding: 1.15em 1em;
-    }
+    /* @end Article */
 
 
     /* @group Footer */
