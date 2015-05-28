@@ -1,8 +1,8 @@
 Title: Electron. oAuth authentication with GitHub
-Date: 2015-05-23 14:24
-Modified: 2015-05-23 14:24
+Date: 2015-06-01 14:24
+Modified: 2015-06-02 14:24
 Category: Tutorials
-Tags: electron, atom-shell, atom, github, oAuth, authentication
+Tags: electron, atom-shell, atom, github, oAuth, authentication, gitify
 Slug: electron-oauth-with-github
 Authors: Emmanouil Konstantinidis
 Cover: electron-oauth-github.png
@@ -15,6 +15,7 @@ This is not an Electron tutorial (as per title, oAuth authentications in Electro
   - [Documentation](https://github.com/atom/electron/tree/master/docs#readme)
   - [Quick Start](https://github.com/atom/electron/blob/master/docs/tutorial/quick-start.md)
   - [API - Browser Window](https://github.com/atom/electron/blob/master/docs/api/browser-window.md)
+  - [Gitify - GitHub Notifications on your menu bar](https://github.com/ekonstantinidis/gitify)
   - [Electron & React - Starter Template](https://github.com/DenisVuyka/electron-react)
 
 
@@ -90,4 +91,4 @@ So by that time you will have the code from the callback or an error. If everyth
 
 
 ### That's all folks!
-In case you were actually trying to implement oAuth authentication with GitHub I hope it worked! Also if you were looking to implement oAuth authentication in Electron with other websites like Facebook or Twitter, it should be pretty similar so give it a try!
+In case you were actually trying to implement oAuth authentication with GitHub I hope it worked! You can find a full implementation of oAuth GitHub authentication in [Gitify](https://github.com/ekonstantinidis/gitify), an app I made with Electron and shows GitHub notifications on your menu bar. Also if you were looking to implement oAuth authentication in Electron with other websites like Facebook or Twitter, it should be pretty similar so give it a try!
