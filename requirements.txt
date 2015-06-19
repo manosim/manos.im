@@ -1,4 +1,0 @@
-pelican==3.5
-fabric==1.9.1
-Markdown==2.4.1
-Pygments==1.6
