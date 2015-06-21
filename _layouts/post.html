@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="row post">
 
-  <h2 class="post-title">{{ page.title }}</h2>
+  <h2><a class="title" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h2>
   <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
 
   {% if page.cover %}
