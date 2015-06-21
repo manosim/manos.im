@@ -12,7 +12,7 @@ module.exports = function (grunt) {
       },
       main: {
         files: {
-          '_site/styles/base.css': '_less/_base.less',
+          'static/css/base.css': '_less/_base.less',
         }
       }
     },
