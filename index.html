@@ -4,17 +4,19 @@ layout: default
 
 {% for post in site.posts %}
 <div class="row post">
-    <h2><a class="title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-    {% if post.cover %}
-    <img class="img-responsive post-cover" src="/static/images/posts/{{ post.cover }}" />
-    {% endif %}
+  <h2><a class="title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+  <div class="date"><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</div>
 
-    <div class="post-content">
-        {{ post.excerpt }}
+  {% if post.cover %}
+  <img class="img-responsive post-cover" src="/static/images/posts/{{ post.cover }}" alt="{{ post.title }}" />
+  {% endif %}
 
-      <a class="btn btn-primary btn-lg read-more" href="{{ post.url | prepend: site.baseurl }}">Continue reading <i class="fa fa-chevron-right"></i></a>
-    </div>
+  <div class="post-content">
+      {{ post.excerpt }}
+
+    <a class="btn btn-primary btn-lg read-more" href="{{ post.url | prepend: site.baseurl }}">Continue reading <i class="fa fa-chevron-right"></i></a>
+  </div>
+
 </div>
 {% endfor %}

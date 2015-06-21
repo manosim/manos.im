@@ -10,6 +10,7 @@
 @ThemeBG: #f7f7fa;
 @ThemeHeadings: #6b6b6b;
 
+@White: #FFF;
 @Gray: #6f7076;
 @DarkGray: #4f4f50;
 
@@ -167,34 +168,21 @@ body {
 
 /* @group Blog */
 
-.no-articles {
-    border-radius: 0;
-    margin: 40px 0;
-}
-
 .post {
+    h2 {
+      margin-bottom: 5px;
 
-    .title {
-        display: block;
-        text-align: left;
-        line-height: 1.5;
-        font-weight: 800;
-        position: relative;
-        border-bottom: 1px dotted #333;
-
-        a {
-            padding-right: 75px;
-        }
+      .title {
+          display: block;
+          border-bottom: 1px solid darken(@ThemeBG, 10%);
+          padding-bottom: 5px;
+          margin-bottom: 5px;
+      }
     }
 
     .date {
-        font-size: 1em;
-        font-weight: 100;
-        color: @ThemePrimary;
-        text-transform: lowercase;
-        margin: 10px 0;
-        display: inline-block;
-        float: right;
+        font-size: .9em;
+        margin-bottom: 15px;
     }
 
     .share {
@@ -251,23 +239,14 @@ body {
             transition:all .6s;
 
             &:hover {
-                color: #FFF;
-                background-color: #3686be;
+                color: @White;
+                background-color: @ThemePrimary;
             }
         }
 
         .highlight {
             margin: 25px 0;
         }
-    }
-
-    div h3 {
-        font-weight: 100;
-    }
-
-    .comments h3 {
-        border-bottom: 1px dotted #333;
-        padding: 10px 0;
     }
 
     @media all and (max-width: @screen-xs-max) {
@@ -361,6 +340,6 @@ code {
 
 /* @end Footer */
 
-// @import "mobile.less";
+@import "_mobile.less";
 // @import "timeline.less";
 // @import "pygments.less";

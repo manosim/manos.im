@@ -4,10 +4,10 @@ layout: default
 <div class="row post">
 
   <h2><a class="title" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h2>
-  <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  <div class="date"><i class="fa fa-calendar"></i> {{ page.date | date: "%b %-d, %Y" }}</div>
 
   {% if page.cover %}
-  <img class="img-responsive post-cover" src="/static/images/posts/{{ page.cover }}" />
+  <img class="img-responsive post-cover" src="/static/images/posts/{{ page.cover }}" alt="{{ page.title }}" />
   {% endif %}
 
   <div class="post-content">
