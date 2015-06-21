@@ -11,11 +11,10 @@ layout: default
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          {% if post.cover %}<img src="/images/{{ post.cover }}" />{% endif %}
+        <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+        {% if post.cover %}<img class="img-responsive" src="/images/{{ post.cover }}" />{% endif %}
+        {{ post.excerpt }}
 
-        </h2>
       </li>
     {% endfor %}
   </ul>
