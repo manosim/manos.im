@@ -8,5 +8,5 @@ install:
 - gem install jekyll
 
 script:
-- npm build
+- npm run build
 - jekyll build
