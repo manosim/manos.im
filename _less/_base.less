@@ -33,7 +33,7 @@
 
 /* @group Bootstrap Overrides */
 
-@container-lg: 760px;
+@container-desktop: 760px;
 @container-large-desktop: 760px;
 
 @body-bg: @ThemeBG;
@@ -268,6 +268,10 @@ body {
     .comments h3 {
         border-bottom: 1px dotted #333;
         padding: 10px 0;
+    }
+
+    @media all and (max-width: @screen-xs-max) {
+       padding: 0 15px;
     }
 }
 
