@@ -13,3 +13,6 @@ excerpt_separator: <!--more-->
 # Build settings
 markdown: kramdown
 exclude: ['node_modules', 'Gruntfile.js', 'package.json']
+
+# Disqus Comments
+disqusid: iamemmanouil

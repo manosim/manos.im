@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 <div class="row post">
 
@@ -27,5 +28,7 @@ layout: default
   <div class="post-content">
     {{ content }}
   </div>
+
+  {% include comments.html %}
 
 </div>
