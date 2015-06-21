@@ -1,11 +1,13 @@
 @import "node_modules/bootstrap/less/bootstrap";
 @import "node_modules/font-awesome/less/font-awesome.less";
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
-@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:300,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
 
 /* @group Variables */
 
 @ThemePrimary: #3686be;
+@ThemeBG: #f7f7fa;
+@ThemeHeadings: #6b6b6b;
 
 @Gray: #6f7076;
 @DarkGray: #4f4f50;
@@ -32,11 +34,19 @@
 
 @container-lg: 940px;
 
+@body-bg: @ThemeBG;
+
 // Typography
+@font-family-sans-serif: 'Roboto', sans-serif;
+// @font-size-base: 22px;
+@line-height-base: 1.5em;
+
 @link-color: @ThemePrimary;
 @link-hover-color: darken(@ThemePrimary, 10%);
 @link-hover-decoration: none;
-@headings-color: ThemePrimary;
+
+@headings-font-family: 'Quicksand', sans-serif;
+@headings-color: @ThemeHeadings;
 
 /* @end Bootstrap Overrides */
 
@@ -44,7 +54,6 @@
 /* @group Miscelaneous */
 
 body {
-    font-family: 'Lato', sans-serif;
     font-size: 18px;
     font-weight: 300;
 }
@@ -85,30 +94,21 @@ body {
 /* @group Header */
 
 .header {
-  background-color: #dbdbdb;
+    border-top: 5px solid @ThemePrimary;
 
     .site-title {
+        display: block;
         font-size: 30px;
-        font-weight: 900;
         line-height: 32px;
-
-        margin: 0;
-        padding: 0;
-        padding: 18px 0 7px 0;
-        -webkit-transition:all .4s;
-        -moz-transition:all .4s;
-        transition:all .4s;
-
-        a {
-            color: @ThemePrimary;
-        }
+        padding: 30px 0;
+        text-transform: lowercase;
     }
 
     .profilepic {
         border: 1px solid @Gray;
         display: block;
-        width: 120px;
-        height: 120px;
+        width: 95px;
+        height: 95px;
         margin: 20px auto;
         padding: 3px;
         border-radius: 50%;
@@ -133,16 +133,19 @@ body {
     }
 
     .social-icons {
-        display: block;
-        float: left;
+        padding: 45px 0;
+        text-align: right;
 
         a {
             padding: 0 10px;
-            font-size: 50px;
-            color: @Gray;
 
-            &:hover {
-                color: @DarkGray;
+            .fa {
+              font-size: 40px;
+              color: @Gray;
+
+              &:hover {
+                  color: @DarkGray;
+              }
             }
         }
     }
@@ -427,11 +430,10 @@ code {
 
 .footer {
     font-size: .9em;
-    margin: 40px auto 20px;
+    margin: 40px auto 0;
     padding: 20px 0 5px;
     text-align: center;
-
-    border-top: 2px solid @ThemePrimary;
+    border-bottom: 5px solid @ThemePrimary;
 }
 
 /* @end Footer */
