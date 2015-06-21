@@ -3,11 +3,18 @@
 
     <div class="row">
       <div class="col-sm-5">
-          <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+          <h1 class="site-title">{{ site.title }}</h1>
+          {% for page in site.pages %}
+            {% if page.title %}
+            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            {% endif %}
+          {% endfor %}
       </div>
 
       <div class="col-sm-2">
-          <img class="profilepic" src="/static/images/logo.png" />
+          <a href="{{ site.baseurl }}/">
+              <img class="profilepic" src="/static/images/logo.png" />
+          </a>
       </div>
 
       <div class="col-sm-5 social-icons">
@@ -16,15 +23,6 @@
           <a href="http://uk.linkedin.com/in/ekonstantinidis"><i class="fa fa-linkedin"></i></a>
       </div>
     </div>
-
-    <!-- <nav class="site-nav">
-      <a href="#" class="menu-icon"></a>
-      {% for page in site.pages %}
-        {% if page.title %}
-        <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        {% endif %}
-      {% endfor %}
-    </nav> -->
 
   </div>
 </div>

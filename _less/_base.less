@@ -32,7 +32,8 @@
 
 /* @group Bootstrap Overrides */
 
-@container-lg: 940px;
+@container-lg: 760px;
+@container-large-desktop: 760px;
 
 @body-bg: @ThemeBG;
 
@@ -96,12 +97,21 @@ body {
 .header {
     border-top: 5px solid @ThemePrimary;
 
+    [class*="col-sm-"] {
+      padding: 0;
+    }
+
     .site-title {
         display: block;
         font-size: 30px;
         line-height: 32px;
-        padding: 30px 0;
+        padding: 8px 0 3px;
+        margin-bottom: 0;
         text-transform: lowercase;
+    }
+
+    .page-link {
+      text-transform: lowercase;
     }
 
     .profilepic {
@@ -153,57 +163,6 @@ body {
 
 /* @end Header */
 
-
-/* @group Navigation */
-
-.navigation {
-    position: relative;
-    margin: .9em auto 0 auto;
-    padding: 0;
-    list-style: none;
-
-    li {
-        display: inline-block;
-        margin-bottom: 20px;
-        text-align: center;
-        text-decoration: none;
-        float: left;
-
-        &:first-child a {
-            margin-left: 0;
-        }
-
-        a {
-            position: relative;
-            margin: 0 .6em;
-            color: @ThemePrimary;
-            letter-spacing: -2px;
-            text-decoration: none;
-            text-transform: lowercase;
-            font-weight: 700;
-            font-size: 1.4em;
-
-            &:hover {
-                color: darken(@ThemePrimary, 10%);
-            }
-        }
-    }
-}
-
-/* @end Navigation */
-
-
-/* @group Homepage */
-
-.homepage {
-    .post .title a {
-        padding-right: 0;
-    }
-}
-
-/* @end Homepage */
-
-
 /* @group Blog */
 
 .no-articles {
@@ -212,11 +171,9 @@ body {
 }
 
 .post {
-    margin: 30px 0;
 
     .title {
-        margin: 50px 0 0;
-        padding: 5px 0;
+        display: block;
         text-align: left;
         line-height: 1.5;
         font-weight: 800;
@@ -228,7 +185,6 @@ body {
         }
     }
 
-    .category,
     .date {
         font-size: 1em;
         font-weight: 100;
@@ -236,9 +192,6 @@ body {
         text-transform: lowercase;
         margin: 10px 0;
         display: inline-block;
-    }
-
-    .date {
         float: right;
     }
 
@@ -266,12 +219,7 @@ body {
     }
 
     .post-cover {
-        margin: 10px 0 20px 0;
-        padding: 5px 0;
-
-        .img-responsive {
-            margin: 0 auto;
-        }
+        margin: 10px auto 20px;
     }
 
     .post-content {
@@ -315,20 +263,6 @@ body {
         font-weight: 100;
     }
 
-    .tags {
-        h3 {
-            border-bottom: 1px dotted #333;
-            padding: 10px 0;
-        }
-
-        .tag {
-            font-size: 18px;
-            color: #333;
-            margin: 0 2px;
-        }
-    }
-
-    .tags
     .comments h3 {
         border-bottom: 1px dotted #333;
         padding: 10px 0;
@@ -357,23 +291,6 @@ body {
 }
 
 /* @end Pagination */
-
-
-/* @group Get In Touch */
-
-.get-in-touch {
-    h3 {
-        border-bottom: 1px dotted #333;
-        padding: 10px 0;
-    }
-
-    i {
-        margin-right: 5px;
-    }
-}
-
-/* @end Get In Touch */
-
 
 /* @group Code Block */
 

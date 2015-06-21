@@ -7,7 +7,7 @@ layout: default
   <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
 
   {% if page.cover %}
-  <img class="img-responsive" src="/static/images/posts/{{ page.cover }}" />
+  <img class="img-responsive post-cover" src="/static/images/posts/{{ page.cover }}" />
   {% endif %}
 
   <article class="post-content">
