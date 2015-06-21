@@ -6,6 +6,8 @@ cover: meet-trevor.png
 
 [Trevor](http://www.trevorapp.com/) is a mobile app that brings Travis CI to your phone and tablet. You can download it for **free** from the [App Store](http://itunes.apple.com/app/id962155187) and [Google Play](http://play.google.com/store/apps/details?id=com.iamemmanouil.trevor). It is a hybrid app based on [Ionic Framework](http://www.ionicframework.com/) that utilizes the amazing [Travis CI API](http://docs.travis-ci.com/api/).
 
+<!--more-->
+
 ### Ionic is awesome and gets event better
 Written in [AngularJS](http://www.angularjs.com/), Ionic Framework wraps [Apache Cordova](http://www.cordova.io/), allowing you to use all the goodies and plugins that Cordova offers. In simple words, you write Javascript, HTML and CSS and Ionic converts your code to a native looking app with great performance.
 

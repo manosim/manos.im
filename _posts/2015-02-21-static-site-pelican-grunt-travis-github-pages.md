@@ -6,6 +6,8 @@ cover: pelican-grunt-travis-github.png
 
 As a Web Developer I decided to create a website(the one you're currently reading) to share my projects and thoughts. After having a research on what I should use, I ended up using **Pelican**. Why? No database, markdown, code syntax highlighting, jinja2 and more. Pelican is not one of those fancy static website generators but it does the job and it does it pretty well. So below you can find my setup and how I am using [Pelican](http://www.getpelican.com/) to **generate** this website, [Grunt](http://gruntjs.com/) as a **task manager**, [Travis CI](http://www.travis-ci.org/) to **deploy** and [GitHub Pages](http://pages.github.com/) to **host** my website.
 
+<!--more-->
+
 ### Contents
  - [Project Structure](#structure)
  - [Pelican](#pelican)
