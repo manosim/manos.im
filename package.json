@@ -10,5 +10,9 @@
   "devDependencies": {
     "less": "^2.5.1",
     "watch": "^0.16.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "font-awesome": "^4.3.0"
   }
 }

@@ -1,3 +1,5 @@
+@import "node_modules/bootstrap/less/bootstrap";
+@import "node_modules/font-awesome/less/font-awesome.less";
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400);
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:300,400);
 
@@ -26,30 +28,24 @@
 /* @end Mixins */
 
 
+/* @group Bootstrap Overrides */
+
+@container-lg: 940px;
+
+// Typography
+@link-color: @ThemePrimary;
+@link-hover-color: darken(@ThemePrimary, 10%);
+@headings-color: ThemePrimary;
+
+/* @end Bootstrap Overrides */
+
+
 /* @group Miscelaneous */
 
 body {
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     font-weight: 300;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: @ThemePrimary;
-}
-
-a {
-    color: @ThemePrimary;
-    -webkit-transition:all .4s;
-    -moz-transition:all .4s;
-    transition:all .4s;
-
-    &:hover,
-    &:active,
-    &:focus {
-        color: darken(@ThemePrimary, 10%);
-        text-decoration: none;
-    }
 }
 
 ::selection {
@@ -85,48 +81,10 @@ a {
 
 /* @end Miscelaneous */
 
-
-/* @group Custom Grid */
-
-.main-content {
-    float: right;
-    margin-right: 16.66666667%;
-}
-
-/* @end Custom Grid */
-
-
 /* @group Header */
 
 .header {
-    background: @ThemePrimary;
-    margin: 0;
-    padding: 0 25px;
-
-    background-image: url('../images/beach.jpg');
-    background-position: center bottom;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    border-right: 1px solid @Gray;
-
-    position: fixed;
-    height: 100%;
-    left: 0;
-    top: 0;
-
-    .header-content {
-        position: absolute;
-        bottom: 0;
-        padding: 25px 0;
-    }
-
-    a {
-        color: #D0DADC;
-
-        &:hover {
-            color: #FFF;
-        }
-    }
+  background-color: #dbdbdb;
 
     .site-title {
         font-size: 30px;
@@ -147,7 +105,7 @@ a {
 
     .profilepic {
         border: 1px solid @Gray;
-        display: inline-block;
+        display: block;
         width: 120px;
         height: 120px;
         margin: 0;
