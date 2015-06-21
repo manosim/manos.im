@@ -10,6 +10,10 @@ url: "http://www.iamemmanouil.com" # the base hostname & protocol for your site
 twitter_username: iamemmanouil
 github_username:  ekonstantinidis
 
+# Post settings
+permalink: /blog/:title
+excerpt_separator: <!--more-->
+
 # Build settings
 markdown: kramdown
 exclude: ['node_modules', 'Gruntfile.js', 'package.json']

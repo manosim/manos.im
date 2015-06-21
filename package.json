@@ -2,7 +2,7 @@
   "name": "iamemmanouil-website",
   "version": "0.1.0",
   "scripts": {
-    "start": "jekyll serve --watch --port 8080 & grunt"
+    "start": "jekyll serve --watch & grunt"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
