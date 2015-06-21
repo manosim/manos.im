@@ -1,0 +1,18 @@
+# Site settings
+title: I am Emmanouil Konstantinidis
+description: > # Site Description
+  Emmanouil Konstantinidis. Web & Mobile Developer working
+  at DabApps. Hobbies include JavaScript, Python, Swift and things other than programming.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.iamemmanouil.com" # the base hostname & protocol for your site
+
+# Post settings
+permalink: /blog/:title
+excerpt_separator: <!--more-->
+
+# Build settings
+markdown: kramdown
+exclude: ['node_modules', 'Gruntfile.js', 'package.json']
+
+# Disqus Comments
+disqusid: iamemmanouil

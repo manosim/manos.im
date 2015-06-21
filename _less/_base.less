@@ -1,0 +1,352 @@
+@import "node_modules/bootstrap/less/bootstrap";
+@import "node_modules/font-awesome/less/font-awesome.less";
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=ABeeZee);
+
+/* @group Variables */
+
+@ThemePrimary: #3686be;
+@ThemeBG: #f7f7fa;
+@ThemeHeadings: #6b6b6b;
+
+@White: #FFF;
+@Gray: #6f7076;
+@DarkGray: #4f4f50;
+
+@TwitterColor: #1dcaff;
+
+/* @end Variables */
+
+
+/* @group Mixins */
+
+.BorderRadius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius:    @radius;
+    border-radius:         @radius;
+
+    -moz-background-clip:    padding;
+    -webkit-background-clip: padding-box;
+    background-clip:         padding-box;
+}
+
+/* @end Mixins */
+
+
+/* @group Bootstrap Overrides */
+
+@container-desktop: 760px;
+@container-large-desktop: 760px;
+
+@body-bg: @ThemeBG;
+
+// Typography
+@font-family-sans-serif: 'Roboto', sans-serif;
+// @font-size-base: 22px;
+@line-height-base: 1.5em;
+
+@link-color: @ThemePrimary;
+@link-hover-color: darken(@ThemePrimary, 10%);
+@link-hover-decoration: none;
+
+@headings-font-family: 'ABeeZee', sans-serif;
+@headings-color: @ThemeHeadings;
+
+/* @end Bootstrap Overrides */
+
+
+/* @group Miscelaneous */
+
+body {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+::selection {
+    text-shadow: none;
+    color: #f3f3f3;
+    background: darken(@ThemePrimary, 10%);
+}
+
+::-moz-selection {
+    text-shadow: none;
+    color: #f3f3f3;
+    background: darken(@ThemePrimary, 10%);
+}
+
+.scrollToTop {
+    padding: 10px;
+
+    background: #f5f5f5;
+    .BorderRadius(5px);
+    color: @Gray;
+    font-size: 12px;
+    text-decoration: none;
+
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display:none;
+
+    &:hover{
+        text-decoration:none;
+    }
+}
+
+/* @end Miscelaneous */
+
+/* @group Header */
+
+.header {
+    border-top: 5px solid @ThemePrimary;
+
+    [class*="col-sm-"] {
+      padding: 0;
+    }
+
+    .site-title {
+        display: block;
+        font-size: 30px;
+        line-height: 32px;
+        padding: 8px 0 3px;
+        margin-bottom: 0;
+        text-transform: lowercase;
+    }
+
+    .page-link {
+      text-transform: lowercase;
+    }
+
+    .profilepic {
+        border: 1px solid @Gray;
+        display: block;
+        width: 95px;
+        height: 95px;
+        margin: 20px auto;
+        padding: 3px;
+        border-radius: 50%;
+
+        -webkit-transition:all .4s;
+        -moz-transition:all .4s;
+        transition:all .4s;
+
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+
+    .site-description {
+        color: @DarkGray;
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 26px;
+        text-align: center;
+        margin: 10px 0 0;
+        padding: 0;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    .social-icons {
+        padding: 45px 0;
+        text-align: right;
+
+        a {
+            padding: 0 10px;
+
+            .fa {
+              font-size: 40px;
+              color: @Gray;
+
+              &:hover {
+                  color: @DarkGray;
+              }
+            }
+        }
+    }
+}
+
+/* @end Header */
+
+/* @group Blog */
+
+.post {
+    margin-bottom: 20px;
+
+    h2 {
+      margin-bottom: 5px;
+
+      .title {
+          display: block;
+          border-bottom: 1px solid darken(@ThemeBG, 10%);
+          padding-bottom: 5px;
+          margin-bottom: 5px;
+      }
+    }
+
+    .date {
+        font-size: .9em;
+        margin-bottom: 15px;
+    }
+
+    .share {
+        float: right;
+
+        .twitter {
+            font-size: 14px;
+            background-color: @TwitterColor;
+            color: @White;
+            .BorderRadius(4px);
+            border-radius: 4px;
+            border: 0;
+            padding: 2px 5px;
+
+            &:hover {
+                background-color: darken(@TwitterColor, 10%);
+            }
+        }
+    }
+
+    .post-cover {
+        margin: 10px auto 20px;
+    }
+
+    .post-content {
+
+        ul {
+            list-style-type: square;
+            color: @ThemePrimary;
+        }
+
+        .btn {
+            display: block;
+            max-width: 17em;
+            text-align: center;
+            margin: 2em 0 0 0;
+            padding: 1.5em 2em;
+            text-transform: uppercase;
+            font-weight: 700;
+
+            color: @ThemePrimary;
+            font-size: .7em;
+            background: none;
+            border: 2px solid @ThemePrimary;
+            border-radius: 4px;
+
+            -webkit-transition:all .6s;
+            -moz-transition:all .6s;
+            transition:all .6s;
+
+            &:hover {
+                color: @White;
+                background-color: @ThemePrimary;
+            }
+        }
+
+        .highlight {
+            margin: 25px 0;
+        }
+    }
+
+    .comments {
+      h2 {
+        display: block;
+        border-bottom: 1px solid darken(@ThemeBG, 10%);
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+    }
+
+    @media all and (max-width: @screen-xs-max) {
+       padding: 0 15px;
+    }
+}
+
+/* @end Blog */
+
+
+/* @group Pagination */
+
+.paginator {
+    background-color: #eef1f2;
+    border-radius: 4px;
+    font-size: .9em;
+    text-align: center;
+    padding: 5px 10px;
+
+    .previous {
+        float: left;
+    }
+
+    .next {
+        float: right;
+    }
+}
+
+/* @end Pagination */
+
+/* @group Code Block */
+
+code {
+    font: 13px/21px"Source Code Pro", monospace;
+    font-weight: inherit;
+    padding: .1em .3em;
+    border-radius: 3px
+}
+
+.codehilitetable {
+
+    pre {
+        padding: 0;
+    }
+
+    font: 12px/20px"Source Code Pro", monospace;
+    overflow: auto;
+    display: block;
+    border-radius: 3px;
+    background: #3f3f3f;
+}
+
+.linenos {
+    background: none;
+    border-right: 1px solid #cfd5ce;
+    padding: .5em .8em;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.codehilite {
+    margin: 0 1em;
+
+    &>pre {
+        padding-right: 1em
+    }
+}
+
+.codehilite code, .codehilite pre, .linenodiv pre {
+    color: #dcdccc;
+    background: none;
+    border-radius: 0;
+    border: 0;
+}
+
+/* @end Code Block */
+
+
+/* @group Footer */
+
+.footer {
+    font-size: .9em;
+    margin: 40px auto 0;
+    padding: 20px 0 5px;
+    text-align: center;
+    border-bottom: 5px solid @ThemePrimary;
+}
+
+/* @end Footer */
+
+@import "_mobile.less";
+@import "_timeline.less";

@@ -1,0 +1,30 @@
+<div class="container-fluid header">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-5">
+          <h1 class="site-title">{{ site.title }}</h1>
+          {% for page in site.pages %}
+            {% if page.title %}
+            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            {% endif %}
+          {% endfor %}
+      </div>
+
+      <div class="col-sm-2">
+          <a href="{{ site.baseurl }}/">
+              <img class="profilepic" src="/static/images/logo.png" />
+          </a>
+      </div>
+
+      <div class="col-sm-5 social-icons">
+          <a href="http://twitter.com/iamemmanouil"><i class="fa fa-twitter"></i></a>
+          <a href="http://github.com/ekonstantinidis"><i class="fa fa-github"></i></a>
+          <a href="http://uk.linkedin.com/in/ekonstantinidis"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <h3 class="site-description">Web & Mobile Developer, Engineer at dabapps.</h3>
+</div>
