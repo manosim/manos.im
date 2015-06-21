@@ -1,0 +1,12 @@
+language: node_js
+
+node_js:
+- '0.10.36'
+
+install:
+- npm install
+- gem install jekyll
+
+script:
+- npm build
+- jekyll build
