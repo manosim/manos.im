@@ -8591,16 +8591,16 @@ body {
   color: #f3f3f3;
   background: #2b6a96;
 }
-.scrollToTop {
-  padding: 10px;
-  background: #f5f5f5;
+.scroll-to-top {
+  padding: 5px 10px;
+  background-color: #d8d8e6;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  color: #6f7076;
+  color: #f7f7fa;
   font-size: 12px;
   text-decoration: none;
   position: fixed;
@@ -8608,7 +8608,7 @@ body {
   right: 40px;
   display: none;
 }
-.scrollToTop:hover {
+.scroll-to-top:hover {
   text-decoration: none;
 }
 /* @end Miscelaneous */
@@ -8810,13 +8810,19 @@ code {
 .footer {
   font-size: .9em;
   margin: 40px auto 0;
-  padding: 20px 0 5px;
+  padding: 20px 0;
   text-align: center;
   border-bottom: 5px solid #3686be;
 }
 /* @end Footer */
 /* Smartphones (portrait and landscape) ----------- */
 @media all and (max-width: 767px) {
+  /* @group Miscalaneous */
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+  }
+  /* @end Miscalaneous */
   /* @group Header */
   .header [class*="col-sm-"] {
     text-align: center;
