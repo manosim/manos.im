@@ -75,12 +75,12 @@ body {
     background: darken(@ThemePrimary, 10%);
 }
 
-.scrollToTop {
-    padding: 10px;
+.scroll-to-top {
+    padding: 5px 10px;
 
-    background: #f5f5f5;
+    background-color: darken(@ThemeBG, 10%);
     .BorderRadius(5px);
-    color: @Gray;
+    color: @ThemeBG;
     font-size: 12px;
     text-decoration: none;
 
@@ -90,7 +90,7 @@ body {
     display:none;
 
     &:hover{
-        text-decoration:none;
+        text-decoration: none;
     }
 }
 
@@ -341,7 +341,7 @@ code {
 .footer {
     font-size: .9em;
     margin: 40px auto 0;
-    padding: 20px 0 5px;
+    padding: 20px 0;
     text-align: center;
     border-bottom: 5px solid @ThemePrimary;
 }
