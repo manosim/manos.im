@@ -5,7 +5,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
-@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:400);
 @import url(http://fonts.googleapis.com/css?family=ABeeZee);
 html {
   font-family: sans-serif;
@@ -8749,63 +8749,6 @@ body {
   }
 }
 /* @end Blog */
-/* @group Pagination */
-.paginator {
-  background-color: #eef1f2;
-  border-radius: 4px;
-  font-size: .9em;
-  text-align: center;
-  padding: 5px 10px;
-}
-.paginator .previous {
-  float: left;
-}
-.paginator .next {
-  float: right;
-}
-/* @end Pagination */
-/* @group Code Block */
-code {
-  font: 13px/21px "Source Code Pro", monospace;
-  font-weight: inherit;
-  padding: .1em .3em;
-  border-radius: 3px;
-}
-.codehilitetable {
-  font: 12px/20px "Source Code Pro", monospace;
-  overflow: auto;
-  display: block;
-  border-radius: 3px;
-  background: #3f3f3f;
-}
-.codehilitetable pre {
-  padding: 0;
-}
-.linenos {
-  background: none;
-  border-right: 1px solid #cfd5ce;
-  padding: .5em .8em;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.codehilite {
-  margin: 0 1em;
-}
-.codehilite > pre {
-  padding-right: 1em;
-}
-.codehilite code,
-.codehilite pre,
-.linenodiv pre {
-  color: #dcdccc;
-  background: none;
-  border-radius: 0;
-  border: 0;
-}
-/* @end Code Block */
 /* @group Footer */
 .footer {
   font-size: .9em;
