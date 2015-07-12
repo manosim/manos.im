@@ -8761,6 +8761,12 @@ body {
 .projects .project .img-responsive {
   margin: 0 auto;
 }
+.projects .hr-code {
+  text-align: center;
+  color: #6f7076;
+  font-size: 12px;
+  margin: 10px 0;
+}
 /* @end Page: Projects */
 /* @group Footer */
 .footer {
