@@ -13,7 +13,7 @@ permalink: /projects/
         React Cordova
         <a href="http://www.github.com/ekonstantinidis/react-cordova" target="_blank"><i class="fa fa-github pull-right"></i></a>
       </h3>
-      <p class="lead">A React project template for hybrid apps with Apache Cordova. Uses React, Apache Cordova, React Router, React Router, Ratchet, Gulp, LESS & Font Awesome.</p>
+      <p class="lead">A React project template for hybrid apps with Apache Cordova. Based on React, Apache Cordova, React Router, React Router, Ratchet, Gulp, LESS & Font Awesome.</p>
     </div>
   </div>
 

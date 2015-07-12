@@ -8758,6 +8758,9 @@ body {
 .projects .project h3 {
   margin-top: 0;
 }
+.projects .project h3 .fa {
+  margin-left: 15px;
+}
 .projects .project .img-responsive {
   margin: 0 auto;
 }
