@@ -8611,6 +8611,11 @@ body {
 .scroll-to-top:hover {
   text-decoration: none;
 }
+.page-title {
+  border-bottom: 1px solid #d8d8e6;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
 /* @end Miscelaneous */
 /* @group Header */
 .header {
@@ -8749,6 +8754,37 @@ body {
   }
 }
 /* @end Blog */
+/* @group Page: Projects */
+.projects .project h3 {
+  margin-top: 0;
+}
+.projects .project h3 .fa {
+  margin-left: 15px;
+}
+.projects .project .tags-wrapper {
+  font-size: 16px;
+  color: #6f7076;
+}
+.projects .project .tags-wrapper .tags {
+  display: inline-block;
+  padding-left: 0;
+}
+.projects .project .tags-wrapper .tags li {
+  display: inline;
+  border-bottom: 1px solid #3686be;
+  padding: 0 5px;
+  margin-right: 5px;
+}
+.projects .project .img-responsive {
+  margin: 0 auto;
+}
+.projects .hr-code {
+  text-align: center;
+  color: #6f7076;
+  font-size: 12px;
+  margin: 10px 0;
+}
+/* @end Page: Projects */
 /* @group Footer */
 .footer {
   font-size: .9em;
@@ -8786,13 +8822,8 @@ body {
 /* @group Variables */
 /* @end Variables */
 /* @group Timeline */
-.timeline-title h3 {
-  border-bottom: 1px solid #d8d8e6;
-  padding: 10px 0;
-}
 .timeline {
   list-style: none;
-  margin-top: 50px;
   padding: 50px 0;
   position: relative;
 }

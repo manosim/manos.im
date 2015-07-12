@@ -94,7 +94,14 @@ body {
     }
 }
 
+.page-title {
+  border-bottom: 1px solid darken(@ThemeBG, 10%);
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
 /* @end Miscelaneous */
+
 
 /* @group Header */
 
@@ -263,6 +270,52 @@ body {
 }
 
 /* @end Blog */
+
+
+/* @group Page: Projects */
+
+.projects {
+
+  .project {
+    h3 {
+      margin-top: 0;
+
+      .fa {
+        margin-left: 15px;
+      }
+    }
+
+    .tags-wrapper {
+      font-size: 16px;
+      color: @Gray;
+
+      .tags {
+        display: inline-block;
+        padding-left: 0;
+
+        li {
+          display: inline;
+          border-bottom: 1px solid @ThemePrimary;
+          padding: 0 5px;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .img-responsive {
+      margin: 0 auto;
+    }
+  }
+
+  .hr-code {
+    text-align: center;
+    color: @Gray;
+    font-size: 12px;
+    margin: 10px 0;
+  }
+}
+
+/* @end Page: Projects */
 
 
 /* @group Footer */
