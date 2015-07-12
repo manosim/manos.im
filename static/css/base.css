@@ -8611,6 +8611,11 @@ body {
 .scroll-to-top:hover {
   text-decoration: none;
 }
+.page-title {
+  border-bottom: 1px solid #d8d8e6;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
 /* @end Miscelaneous */
 /* @group Header */
 .header {
@@ -8749,6 +8754,11 @@ body {
   }
 }
 /* @end Blog */
+/* @group Page: Projects */
+.projects .project h3 {
+  margin-top: 0;
+}
+/* @end Page: Projects */
 /* @group Footer */
 .footer {
   font-size: .9em;
@@ -8786,13 +8796,8 @@ body {
 /* @group Variables */
 /* @end Variables */
 /* @group Timeline */
-.timeline-title h3 {
-  border-bottom: 1px solid #d8d8e6;
-  padding: 10px 0;
-}
 .timeline {
   list-style: none;
-  margin-top: 50px;
   padding: 50px 0;
   position: relative;
 }
