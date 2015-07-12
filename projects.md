@@ -54,6 +54,19 @@ permalink: /projects/
   <div class="hr-code"><i class="fa fa-code"></i></div>
 
   <div class="row project">
+    <div class="col-sm-12">
+      <h3>
+        CSS Edit Groups
+        <a href="http://www.github.com/ekonstantinidis/css-edit-groups" target="_blank"><i class="fa fa-github pull-right"></i></a>
+        <a href="https://atom.io/packages/css-edit-groups" target="_blank"><i class="fa fa-link pull-right"></i></a>
+      </h3>
+      <p class="lead">An Atom editor package to jump to CSS, LESS and SASS @group markers like CSSEdit.</p>
+    </div>
+  </div>
+
+  <div class="hr-code"><i class="fa fa-code"></i></div>
+
+  <div class="row project">
     <div class="col-sm-10">
       <h3>
         UI Color
