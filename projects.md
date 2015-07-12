@@ -6,6 +6,19 @@ permalink: /projects/
 ---
 
 <div class="projects">
+
+  <div class="row project">
+    <div class="col-sm-12">
+      <h3>
+        React Cordova
+        <a href="http://www.github.com/ekonstantinidis/react-cordova" target="_blank"><i class="fa fa-github pull-right"></i></a>
+      </h3>
+      <p class="lead">A React project template for hybrid apps with Apache Cordova. Uses React, Apache Cordova, React Router, React Router, Ratchet, Gulp, LESS & Font Awesome.</p>
+    </div>
+  </div>
+
+  <div class="hr-code"><i class="fa fa-code"></i></div>
+
   <div class="row project">
     <div class="col-sm-10">
       <h3>
