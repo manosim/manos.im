@@ -126,21 +126,21 @@ permalink: /projects/
   <div class="row project">
     <div class="col-sm-10">
       <h3>
-        UI Color
-        <a href="https://github.com/ekonstantinidis/ui-color" target="_blank"><i class="fa fa-github pull-right"></i></a>
-        <a href="http://uicolor.io/" target="_blank"><i class="fa fa-link pull-right"></i></a>
+        Go Back
+        <a href="http://www.goback.io/" target="_blank"><i class="fa fa-link pull-right"></i></a>
+        <a href="https://itunes.apple.com/us/app/goback/id954138793?ls=1&mt=8" target="_blank"><i class="fa fa-apple pull-right"></i></a>
       </h3>
       <div class="tags-wrapper">
         <strong>Tech</strong>:
         <ul class="tags">
-          <li>AngularJS</li>
-          <li>Travis CI</li>
+          <li>iOS</li>
+          <li>Swift</li>
         </ul>
       </div>
-      <p class="lead">UIColor is a website used to convert HEX & RGB colors to UIColor for both Objective-C and Swift featuring a colorpicker and copy to clipboard functionality making things easier.</p>
+      <p class="lead">A native iOS app written in Swift. Can't remember the address of your hotel? Too bothered to enter an address every time you want to return back to a particular place? Hassling trying to find your car? The app will make your life easier!</p>
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" alt="UI Color" src="/static/images/projects/uicolor.png">
+      <img class="img-responsive" alt="Trevor" src="/static/images/projects/goback.png">
     </div>
   </div>
 
@@ -169,21 +169,44 @@ permalink: /projects/
   <div class="row project">
     <div class="col-sm-10">
       <h3>
-        Go Back
-        <a href="http://www.goback.io/" target="_blank"><i class="fa fa-link pull-right"></i></a>
-        <a href="https://itunes.apple.com/us/app/goback/id954138793?ls=1&mt=8" target="_blank"><i class="fa fa-apple pull-right"></i></a>
+        UI Color
+        <a href="https://github.com/ekonstantinidis/ui-color" target="_blank"><i class="fa fa-github pull-right"></i></a>
+        <a href="http://uicolor.io/" target="_blank"><i class="fa fa-link pull-right"></i></a>
       </h3>
       <div class="tags-wrapper">
         <strong>Tech</strong>:
         <ul class="tags">
-          <li>iOS</li>
-          <li>Swift</li>
+          <li>AngularJS</li>
+          <li>Travis CI</li>
         </ul>
       </div>
-      <p class="lead">A native iOS app written in Swift. Can't remember the address of your hotel? Too bothered to enter an address every time you want to return back to a particular place? Hassling trying to find your car? The app will make your life easier!</p>
+      <p class="lead">UIColor is a website used to convert HEX & RGB colors to UIColor for both Objective-C and Swift featuring a colorpicker and copy to clipboard functionality making things easier.</p>
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" alt="Trevor" src="/static/images/projects/goback.png">
+      <img class="img-responsive" alt="UI Color" src="/static/images/projects/uicolor.png">
+    </div>
+  </div>
+
+  <div class="hr-code"><i class="fa fa-code"></i></div>
+
+  <div class="row project">
+    <div class="col-sm-12">
+      <h3>
+        Back to Car
+        <a href="http://www.backtocar.com/" target="_blank"><i class="fa fa-link pull-right"></i></a>
+        <a href="https://play.google.com/store/apps/details?id=com.iamemmanouil.backtocar" target="_blank"><i class="fa fa-android pull-right"></i></a>
+        <a href="https://itunes.apple.com/us/app/backtocar/id936488095?ls=1&mt=8" target="_blank"><i class="fa fa-apple pull-right"></i></a>
+      </h3>
+      <div class="tags-wrapper">
+        <strong>Tech</strong>:
+        <ul class="tags">
+          <li>Ionic Framework</li>
+          <li>AngularJS</li>
+          <li>Google Maps API</li>
+          <li>Apache Cordova</li>
+        </ul>
+      </div>
+      <p class="lead">My first mobile app! A hybrid application available for free on the App Store & Google Play Store with thousands downloads. Get back to your car by pressing a single button.</p>
     </div>
   </div>
 
