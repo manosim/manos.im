@@ -8761,6 +8761,20 @@ body {
 .projects .project h3 .fa {
   margin-left: 15px;
 }
+.projects .project .tags-wrapper {
+  font-size: 16px;
+  color: #6f7076;
+}
+.projects .project .tags-wrapper .tags {
+  display: inline-block;
+  padding-left: 0;
+}
+.projects .project .tags-wrapper .tags li {
+  display: inline;
+  border-bottom: 1px solid #3686be;
+  padding: 0 5px;
+  margin-right: 5px;
+}
 .projects .project .img-responsive {
   margin: 0 auto;
 }
