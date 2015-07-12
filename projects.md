@@ -43,11 +43,27 @@ permalink: /projects/
         <a href="http://play.google.com/store/apps/details?id=com.iamemmanouil.trevor" target="_blank"><i class="fa fa-android pull-right"></i></a>
         <a href="http://itunes.apple.com/app/id962155187" target="_blank"><i class="fa fa-apple pull-right"></i></a>
       </h3>
-      <p class="lead">Trevor is a mobile app that brings Travis CI to your phone and tablet. You can download it for free from the App Store and Google Play. It is a hybrid app based on Ionic Framework that utilizes the amazing Travis CI API.</p>
+      <p class="lead">Trevor is a mobile app that brings Travis CI to your phone and tablet. You can download it for free from the App Store and Google Play. It is a hybrid app based on <a href="http://www.ionicframework.com/" target="_blank">Ionic Framework</a> that utilizes the amazing <a href="http://www.travis-ci.org/" target="_blank">Travis CI</a> API.</p>
     </div>
     <div class="col-sm-2">
       <img class="img-responsive" alt="Trevor" src="/static/images/projects/trevor.png">
     </div>
   </div>
+
+  <div class="hr-code"><i class="fa fa-code"></i></div>
+
+    <div class="row project">
+      <div class="col-sm-10">
+        <h3>
+          UI Color
+          <a href="https://github.com/ekonstantinidis/ui-color" target="_blank"><i class="fa fa-github pull-right"></i></a>
+          <a href="http://uicolor.io/" target="_blank"><i class="fa fa-link pull-right"></i></a>
+        </h3>
+        <p class="lead">UIColor is a website used to convert HEX & RGB colors to UIColor for both Objective-C and Swift featuring a colorpicker and copy to clipboard functionality making things easier.</p>
+      </div>
+      <div class="col-sm-2">
+        <img class="img-responsive" alt="UI Color" src="/static/images/projects/uicolor.png">
+      </div>
+    </div>
 
 </div>
