@@ -1,6 +1,8 @@
 
 /* @group Variables */
 
+@TimelineLight: #6cbfee;
+@TimelineDark: #3594cb;
 
 @White: #FFF;
 @Gray: #6f7076;
@@ -39,20 +41,20 @@
     	position: absolute;
     	text-align: right;
     	font-size: 1.5em;
-    	color: #3594cb;
+    	color: @TimelineDark;
     }
   }
 }
 
-.timeline > li:nth-child(odd) .date span:last-child {
-	color: #6cbfee;
+.timeline > li:nth-child(odd) .date {
+	color: @TimelineLight;
 }
 
 /* Right content */
-.timeline > li .cbp_tmlabel {
+.timeline > li .content {
 	margin: 0 0 15px 25%;
-	background: #3594cb;
-	color: #fff;
+	background: @TimelineDark;
+	color: @White;
 	padding: 2em;
 	font-size: 1.2em;
 	font-weight: 300;
@@ -61,18 +63,18 @@
 	border-radius: 5px;
 }
 
-.timeline > li:nth-child(odd) .cbp_tmlabel {
-	background: #6cbfee;
+.timeline > li:nth-child(odd) .content {
+	background: @TimelineLight;
 }
 
-.timeline > li .cbp_tmlabel h2 {
+.timeline > li .content h2 {
 	margin-top: 0px;
 	padding: 0 0 10px 0;
-	border-bottom: 1px solid rgba(255,255,255,0.4);
+	border-bottom: 1px solid fade(@White, 50%);
 }
 
 /* The triangle */
-.timeline > li .cbp_tmlabel:after {
+.timeline > li .content:after {
 	right: 100%;
 	border: solid transparent;
 	content: " ";
@@ -80,13 +82,13 @@
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-right-color: #3594cb;
+	border-right-color: @TimelineDark;
 	border-width: 10px;
 	top: 10px;
 }
 
-.timeline > li:nth-child(odd) .cbp_tmlabel:after {
-	border-right-color: #6cbfee;
+.timeline > li:nth-child(odd) .content:after {
+	border-right-color: @TimelineLight;
 }
 
 /* The icons */
@@ -132,24 +134,24 @@
 		text-align: left;
 	}
 
-	.timeline > li .cbp_tmlabel {
+	.timeline > li .content {
 		margin: 0 0 30px 0;
 		padding: 1em;
 		font-weight: 400;
 		font-size: 95%;
 	}
 
-	.timeline > li .cbp_tmlabel:after {
+	.timeline > li .content:after {
 		right: auto;
 		left: 20px;
 		border-right-color: transparent;
-		border-bottom-color: #3594cb;
+		border-bottom-color: @TimelineDark;
 		top: -20px;
 	}
 
-	.timeline > li:nth-child(odd) .cbp_tmlabel:after {
+	.timeline > li:nth-child(odd) .content:after {
 		border-right-color: transparent;
-		border-bottom-color: #6cbfee;
+		border-bottom-color: @TimelineLight;
 	}
 
 	.timeline > li .icon {
