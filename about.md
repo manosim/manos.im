@@ -5,20 +5,51 @@ title-icon: fa-history
 permalink: /about/
 ---
 
- <ul class="timeline">
+<ul class="timeline">
+	<li>
+		<div class="date">June 2014</div>
+		<div class="icon"><i class="fa fa-suitcase"></i></div>
+		<div class="cbp_tmlabel">
+			<h2>Started working full time at dabapps</h2>
+			<p>Couldn't be more excited about starting a full time, just a few work days after my final exam. New enviroment, great people and tons of knowledge and expertize. Since day one, every day I am learning more and more awesome stuff.</p>
+		</div>
+	</li>
+	<li>
+		<div class="date">12:04</div>
+		<div class="cbp_tmicon cbp_tmicon-screen"></div>
+		<div class="cbp_tmlabel">
+			<h2>Greens radish arugula</h2>
+			<p>Caulie dandelion maize...</p>
+		</div>
+	</li>
+	<li>
+		<div class="date">05:36</div>
+		<div class="cbp_tmicon cbp_tmicon-mail"></div>
+		<div class="cbp_tmlabel">
+			<h2>Sprout garlic kohlrabi</h2>
+			<p>Parsnip lotus root...</p>
+		</div>
+	</li>
+	<li>
+		<div class="date">13:15</div>
+		<div class="cbp_tmicon cbp_tmicon-phone"></div>
+		<div class="cbp_tmlabel">
+			<h2>Watercress ricebean</h2>
+			<p>Peanut gourd nori...</p>
+		</div>
+	</li>
+	<li>
+		<div class="date">21:30</div>
+		<div class="cbp_tmicon cbp_tmicon-earth"></div>
+		<div class="cbp_tmlabel">
+			<h2>Courgette daikon</h2>
+			<p>Parsley amaranth tigernut...</p>
+		</div>
+	</li>
+</ul>
 
-        <li>
-          <div class="timeline-badge"><i class="fa fa-suitcase"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">Started working full time at dabapps</h4>
-              <p><small class="text-muted"><i class="fa fa-clock-o"></i> June 2014</small></p>
-            </div>
-            <div class="timeline-body">
-              <p>Couldn't be more excited about starting a full time, just a few work days after my final exam. New enviroment, great people and tons of knowledge and expertize. Since day one, every day I am learning more and more awesome stuff.</p>
-            </div>
-          </div>
-        </li>
+
+ <ul class="timeline">
 
         <li class="timeline-inverted">
           <div class="timeline-badge"><i class="fa fa-suitcase"></i></div>
