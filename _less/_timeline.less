@@ -55,7 +55,7 @@
 	margin: 0 0 15px 25%;
 	background: @TimelineDark;
 	color: @White;
-	padding: 2em;
+	padding: 1.2em;
 	font-size: 1.2em;
 	font-weight: 300;
 	line-height: 1.4;
@@ -63,14 +63,26 @@
 	border-radius: 5px;
 }
 
-.timeline > li:nth-child(odd) .content {
-	background: @TimelineLight;
-}
-
-.timeline > li .content h2 {
-	margin-top: 0px;
+.timeline > li .content h3 {
+	margin-top: 10px;
 	padding: 0 0 10px 0;
 	border-bottom: 1px solid fade(@White, 50%);
+	color: @White;
+}
+
+.timeline > li:nth-child(odd) .content {
+	background: @TimelineLight;
+
+	h3 {
+		color: @Gray;
+	}
+}
+
+
+.timeline > li:nth-child(even) .content {
+	a {
+		color: lighten(@Gray, 35%);
+	}
 }
 
 /* The triangle */
@@ -117,8 +129,17 @@
 /* Example Media Queries */
 @media screen and (max-width: 65.375em) {
 
-	.timeline > li .date {
-		font-size: 1.4em;
+	.timeline > li {
+		.icon {
+			width: 35px;
+			height: 35px;
+			font-size: 1.1em;
+			top: 5px;
+		}
+
+		.date {
+			font-size: 1.4em;
+		}
 	}
 }
 
@@ -135,7 +156,7 @@
 	}
 
 	.timeline > li .content {
-		margin: 0 0 30px 0;
+		margin: 0 0 50px 0;
 		padding: 1em;
 		font-weight: 400;
 		font-size: 95%;
