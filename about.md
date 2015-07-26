@@ -7,6 +7,14 @@ permalink: /about/
 
 <ul class="timeline">
 	<li>
+		<div class="date">April 2015</div>
+		<div class="icon"><i class="fa fa-newspaper-o"></i></div>
+		<div class="content">
+			<h3>My first guest blog post for <a href="http://blog.travis-ci.com/2015-04-06-meet-trevor-hybrid-app/" target="_blank">Travis CI</a></h3>
+			<p>Text..</p>
+		</div>
+	</li>
+	<li>
 		<div class="date">June 2014</div>
 		<div class="icon"><i class="fa fa-suitcase"></i></div>
 		<div class="content">
