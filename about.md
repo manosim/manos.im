@@ -11,7 +11,7 @@ permalink: /about/
 		<div class="icon"><i class="fa fa-newspaper-o"></i></div>
 		<div class="content">
 			<h3>My first guest blog post for <a href="http://blog.travis-ci.com/2015-04-06-meet-trevor-hybrid-app/" target="_blank">Travis CI</a></h3>
-			<p>Text..</p>
+			<p>After completing my first major personal project (<a href="http://www.trevorapp.com/" target="_blank">Trevor</a> - A hybrid app that bring Travis CI to your phone/tablet), I was asked from the <a href="http://www.travisci.com/" target="_blank">Travis CI</a> folks to write an article about creating the app and using their <strong>awesome</strong> API. You can read at the Travis <a href="http://blog.travis-ci.com/2015-04-06-meet-trevor-hybrid-app/" target="_blank">blog</a>.</p>
 		</div>
 	</li>
 	<li>
