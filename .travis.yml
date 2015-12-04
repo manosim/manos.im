@@ -1,7 +1,7 @@
-language: node_js
+language: ruby
 
-node_js:
-- '0.10.36'
+rvm:
+- 2.0.0
 
 install:
 - npm install
