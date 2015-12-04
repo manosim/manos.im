@@ -37,25 +37,33 @@ So once you have you project setup, you will need a button "Login with GitHub". 
     authWindow.loadUrl(authUrl);
     authWindow.show();
 
-    // Handle the response from GitHub
-    authWindow.webContents.on('did-get-redirect-request', function(event, oldUrl, newUrl) {
-
-      var raw_code = /code=([^&]*)/.exec(newUrl) || null,
-        code = (raw_code && raw_code.length > 1) ? raw_code[1] : null,
-        error = /\?error=(.+)$/.exec(newUrl);
+    function handleCallback (url) {
+      var raw_code = /code=([^&]*)/.exec(url) || null;
+      var code = (raw_code && raw_code.length > 1) ? raw_code[1] : null;
+      var error = /\?error=(.+)$/.exec(url);
 
       if (code || error) {
         // Close the browser if code found or error
-        authWindow.close();
+        authWindow.destroy();
       }
 
-      // If there is a code in the callback, proceed to get token from github
+      // If there is a code, proceed to get token from github
       if (code) {
-        requestGithubToken(options, code);
+        self.requestGithubToken(options, code);
       } else if (error) {
-        alert("Oops! Something went wrong and we couldn't log you in using Github. Please try again.");
+        alert('Oops! Something went wrong and we couldn\'t' +
+          'log you in using Github. Please try again.');
       }
+    }
 
+    // Handle the response from GitHub - See Update from 4/12/2015
+
+    authWindow.webContents.on('will-navigate', function (event, url) {
+      handleCallback(url);
+    });
+
+    authWindow.webContents.on('did-get-redirect-request', function (event, oldUrl, newUrl) {
+      handleCallback(newUrl);
     });
 
     // Reset the authWindow on close
@@ -91,3 +99,7 @@ So by that time you will have the code from the callback or an error. If everyth
 
 ### That's all folks!
 In case you were actually trying to implement oAuth authentication with GitHub I hope it worked! You can find a full implementation of oAuth GitHub authentication in [Gitify](https://github.com/ekonstantinidis/gitify), an app I made with Electron and shows GitHub notifications on your menu bar. Also if you were looking to implement oAuth authentication in Electron with other websites like Facebook or Twitter, it should be pretty similar so give it a try!
+
+
+### Update!
+`4/12/2015`: It looks like the GitHub Api has different behaviour if you are already logged in and if your are logging in prior to  approving a GitHub Application. The code has been now updated to catch both cases (`will-navigate` and `did-get-redirect-request` events).

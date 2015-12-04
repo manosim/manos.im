@@ -8,12 +8,28 @@
     "build": "npm run build-less",
     "start": "npm run watch-less & jekyll serve --watch"
   },
-  "devDependencies": {
-    "less": "^2.5.1",
-    "watch": "^0.16.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekonstantinidis/ekonstantinidis.github.io.git"
   },
+  "keywords": [
+    "blog",
+    "jekyll",
+    "iamemmanouil",
+    "ekonstantinidis"
+  ],
+  "author": "Emmanouil Konstantinidis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ekonstantinidis/ekonstantinidis.github.io/issues"
+  },
+  "homepage": "https://www.iamemmanouil.com/",
   "dependencies": {
-    "bootstrap": "^3.3.5",
-    "font-awesome": "^4.3.0"
+    "bootstrap": "=3.3.6",
+    "font-awesome": "=4.5.0"
+  },
+  "devDependencies": {
+    "less": "=2.5.3",
+    "watch": "=0.16.0"
   }
 }
