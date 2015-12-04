@@ -91,3 +91,7 @@ So by that time you will have the code from the callback or an error. If everyth
 
 ### That's all folks!
 In case you were actually trying to implement oAuth authentication with GitHub I hope it worked! You can find a full implementation of oAuth GitHub authentication in [Gitify](https://github.com/ekonstantinidis/gitify), an app I made with Electron and shows GitHub notifications on your menu bar. Also if you were looking to implement oAuth authentication in Electron with other websites like Facebook or Twitter, it should be pretty similar so give it a try!
+
+
+### Update!
+`4/12/2015`: It looks like the GitHub Api has different behaviour if you are already logged and if your are logging on approving your GitHub Application. I have now updated the code to catch both cases (`will-navigate` and `did-get-redirect-request`).
