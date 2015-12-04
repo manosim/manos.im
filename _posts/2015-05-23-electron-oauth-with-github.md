@@ -102,4 +102,4 @@ In case you were actually trying to implement oAuth authentication with GitHub I
 
 
 ### Update!
-`4/12/2015`: It looks like the GitHub Api has different behaviour if you are already logged and if your are logging on approving your GitHub Application. I have now updated the code to catch both cases (`will-navigate` and `did-get-redirect-request`).
+`4/12/2015`: It looks like the GitHub Api has different behaviour if you are already logged in and if your are logging in prior to  approving a GitHub Application. The code has been now updated to catch both cases (`will-navigate` and `did-get-redirect-request` events).
