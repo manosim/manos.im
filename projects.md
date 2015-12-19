@@ -8,6 +8,31 @@ permalink: /projects/
 <div class="projects">
 
   <div class="row project">
+    <div class="col-sm-10">
+      <h3>
+        DRF Docs
+        <a href="http://www.github.com/ekonstantinidis/django-rest-framework-docs" target="_blank"><i class="fa fa-github pull-right"></i></a>
+        <a href="http://www.drfdocs.com/" target="_blank"><i class="fa fa-link pull-right"></i></a>
+      </h3>
+      <div class="tags-wrapper">
+        <strong>Tech</strong>:
+        <ul class="tags">
+          <li>Django</li>
+          <li>Django Rest Framework</li>
+          <li>Python</li>
+          <li>Pypi</li>
+        </ul>
+      </div>
+      <p class="lead">Django Rest Framework Docs (DRF Docs) allows you to document Web APIs made with <a href="http://www.django-rest-framework.org/" target="_blank">Django Rest Framework</a>. Available on PyPi. Supports Python 2 and 3, Django Rest Framework 3 and above.</p>
+    </div>
+    <div class="col-sm-2">
+      <img class="img-responsive" alt="Gitify" src="/static/images/projects/drfdocs.png">
+    </div>
+  </div>
+
+  <div class="hr-code"><i class="fa fa-code"></i></div>
+
+  <div class="row project">
     <div class="col-sm-12">
       <h3>
         React Cordova
@@ -33,7 +58,7 @@ permalink: /projects/
       <h3>
         Gitify
         <a href="http://www.github.com/ekonstantinidis/gitify" target="_blank"><i class="fa fa-github pull-right"></i></a>
-        <a href="https://github.com/ekonstantinidis/gitify/releases/latest" target="_blank"><i class="fa fa-cloud-download pull-right"></i></a>
+        <a href="http://www.gitify.io/" target="_blank"><i class="fa fa-link pull-right"></i></a>
       </h3>
       <div class="tags-wrapper">
         <strong>Tech</strong>:
