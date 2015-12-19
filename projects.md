@@ -171,7 +171,7 @@ permalink: /projects/
       <h3>
         UI Color
         <a href="https://github.com/ekonstantinidis/ui-color" target="_blank"><i class="fa fa-github pull-right"></i></a>
-        <a href="http://uicolor.io/" target="_blank"><i class="fa fa-link pull-right"></i></a>
+        <a href="http://uicolor.xyz/" target="_blank"><i class="fa fa-link pull-right"></i></a>
       </h3>
       <div class="tags-wrapper">
         <strong>Tech</strong>:
