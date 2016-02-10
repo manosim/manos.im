@@ -21,8 +21,6 @@ Whilst rewriting Trevor - one of side projects - from [Ionic Framework][ionic-ur
 
     public class CustomInterceptor implements Interceptor {
 
-        public CustomInterceptor() {}
-
         @Override
         public Response intercept(Interceptor.Chain chain) throws IOException {
             Request originalRequest = chain.request();
