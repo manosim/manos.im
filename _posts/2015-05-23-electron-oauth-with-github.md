@@ -104,4 +104,4 @@ In case you were actually trying to implement oAuth authentication with GitHub I
 ### Updates
 `4/12/2015`: It looks like the GitHub Api has different behaviour if you are already logged in and if your are logging in prior to  approving a GitHub Application. The code has been now updated to catch both cases (`will-navigate` and `did-get-redirect-request` events).
 
-`12/05/2016`: As Burkhard Reffeling mentioned in the comments, there is a typo with loading a url in a `BrowserWindow`. Instead of `authWindow.loadUrl(authUrl);` it should be `authWindow.loadURL(authUrl);`.
+`14/05/2016`: As Burkhard Reffeling mentioned in the comments, there is a typo with loading a url in a `BrowserWindow`. Instead of `authWindow.loadUrl(authUrl);` it should be `authWindow.loadURL(authUrl);`.
