@@ -7,7 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.iamemmanouil.com" # the base hostname & protocol for your site
 
 # Post settings
-permalink: /blog/:title
+permalink: /blog/:title/
 excerpt_separator: <!--more-->
 
 # Build settings
