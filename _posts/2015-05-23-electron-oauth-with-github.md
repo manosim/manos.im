@@ -34,7 +34,7 @@ So once you have you project setup, you will need a button "Login with GitHub". 
     var authWindow = new BrowserWindow({ width: 800, height: 600, show: false, 'node-integration': false });
     var githubUrl = 'https://github.com/login/oauth/authorize?';
     var authUrl = githubUrl + 'client_id=' + options.client_id + '&scope=' + options.scopes;
-    authWindow.loadUrl(authUrl);
+    authWindow.loadURL(authUrl);
     authWindow.show();
 
     function handleCallback (url) {
@@ -101,5 +101,7 @@ So by that time you will have the code from the callback or an error. If everyth
 In case you were actually trying to implement oAuth authentication with GitHub I hope it worked! You can find a full implementation of oAuth GitHub authentication in [Gitify](https://github.com/ekonstantinidis/gitify), an app I made with Electron and shows GitHub notifications on your menu bar. Also if you were looking to implement oAuth authentication in Electron with other websites like Facebook or Twitter, it should be pretty similar so give it a try!
 
 
-### Update!
+### Updates
 `4/12/2015`: It looks like the GitHub Api has different behaviour if you are already logged in and if your are logging in prior to  approving a GitHub Application. The code has been now updated to catch both cases (`will-navigate` and `did-get-redirect-request` events).
+
+`12/05/2016`: As Burkhard Reffeling mentioned in the comments, there is a typo with loading a url in a `BrowserWindow`. Instead of `authWindow.loadUrl(authUrl);` it should be `authWindow.loadURL(authUrl);`.
