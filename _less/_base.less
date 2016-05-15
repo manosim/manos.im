@@ -252,6 +252,18 @@ body {
 
         .highlight {
             margin: 25px 0;
+            border: 0;
+
+            pre {
+              .BorderRadius(0);
+              border: 0;
+              background-color: #ECECEC;
+            }
+
+            .gutter pre,
+            .code pre {
+              border: 0;
+            }
         }
     }
 
@@ -332,3 +344,4 @@ body {
 
 @import "_mobile.less";
 @import "_timeline.less";
+@import "_pygments.less";
