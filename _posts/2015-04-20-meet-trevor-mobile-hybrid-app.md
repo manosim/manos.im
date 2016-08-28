@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Meet Trevor. A hybrid mobile app for Travis CI
+keywords: trevor,mobile,app,travis,continuous,integration,hybrid,cordova,ionic framework
 cover: meet-trevor.png
 ---
 

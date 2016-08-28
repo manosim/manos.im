@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Electron. oAuth authentication with GitHub
+keywords: electron,javascript,node,oauth,authentication,token
 cover: electron-oauth-github.png
 ---
 
-It has been a while since I read about [Electron](http://electron.atom.io/) and I couldn't wait to get my hands on it. Electron is an open source project made by [GitHub](http://www.github.com/) that allows you to build cross platform desktop apps with Web Technologies - in my case with [React](https://facebook.github.io/react/). Imagine hybrid mobile apps ([React Native](https://facebook.github.io/react-native/), [Ionic](http://www.ionicframework/)) but for desktops. Sounds pretty awesome and it is!
+It has been a while since I read about [Electron](http://electron.atom.io/) and I couldn't wait to get my hands on it. Electron is an open source project made by [GitHub](http://www.github.com/) that allows you to build cross platform desktop apps with Web Technologies - in my case with [React](https://facebook.github.io/react/). Imagine hybrid mobile apps ([React Native](https://facebook.github.io/react-native/), [Ionic](http://www.ionicframework.com/)) but for desktops. Sounds pretty awesome and it is!
 
 <!--more-->
 

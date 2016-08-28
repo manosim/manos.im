@@ -1,6 +1,7 @@
 ---
 layout: post
 title: UIColor.xyz - Converting HEX & RGB colours to UIColor
+keywords: uicolor,programming,ios,objective-c,swift,convert,hex,rgb,xcode
 cover: ui-color.png
 ---
 

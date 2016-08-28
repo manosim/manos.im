@@ -2,6 +2,7 @@
 layout: page
 title: Projects
 title-icon: fa-code
+keywords: projects,open source,code,drfdocs,gitify,trevor,backtocar,uicolor,goback,mobile apps,django,framework
 permalink: /projects/
 ---
 

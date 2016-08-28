@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A static site with Pelican, Grunt, Travis & Github Pages
+keywords: static,site,generator,pelican,grunt,travis,github pages,python,website
 cover: pelican-grunt-travis-github.png
 ---
 
