@@ -5,8 +5,8 @@
   /* @group Miscalaneous */
 
   .scroll-to-top {
-      bottom: 20px;
-      right: 20px;
+    bottom: 20px;
+    right: 20px;
   }
 
   /* @end Miscalaneous */
@@ -15,17 +15,28 @@
 
   .header {
 
-      [class*="col-sm-"] {
+    .site-title {
+      font-size: 2.8rem;
+    }
+
+    .navigation {
+      padding: 2rem 0 1rem;
+
+      .col-sm-6 {
         text-align: center;
       }
 
-      .social-icons {
-        padding: 25px 0;
+
+      @include media-breakpoint-down(xs) {
+        .social-icons {
+          padding: 25px 0;
+        }
       }
 
       .site-description {
         margin-bottom: 20px;
       }
+    }
   }
 
   /* @end Header */

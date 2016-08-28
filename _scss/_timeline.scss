@@ -1,14 +1,4 @@
-
-/* @group Variables */
-
-$timeline-light: #6cbfee;
-$timeline-dark: #3594cb;
-
-$white: #FFF;
-$gray: #6f7076;
-
-/* @end Variables */
-
+@import "_variable.scss";
 
 /* @group Timeline */
 // Awesome timeline by http://tympanus.net/codrops/2013/05/02/vertical-timeline/
@@ -25,7 +15,7 @@ $gray: #6f7076;
   	top: 0;
   	bottom: 0;
   	width: 10px;
-  	background: #afdcf8;
+  	background: $theme-alt;
   	left: 20%;
   	margin-left: -10px;
   }
@@ -34,25 +24,25 @@ $gray: #6f7076;
   	position: relative;
 
     .date {
-    	display: block;
-    	width: 25%;
-    	padding-right: 100px;
-    	position: absolute;
-    	text-align: right;
-    	font-size: 1.5em;
-    	color: $timeline-dark;
+	display: block;
+	width: 25%;
+	padding-right: 100px;
+	position: absolute;
+	text-align: right;
+	font-size: 1.5em;
+	color: $theme-alt;
     }
   }
 }
 
 .timeline > li:nth-child(odd) .date {
-	color: $timeline-light;
+	color: $theme-primary;
 }
 
 /* Right content */
 .timeline > li .content {
 	margin: 0 0 15px 25%;
-	background: $timeline-dark;
+	background: $theme-alt;
 	color: $white;
 	padding: 1.2em;
 	font-size: 1.2em;
@@ -70,11 +60,7 @@ $gray: #6f7076;
 }
 
 .timeline > li:nth-child(odd) .content {
-	background: $timeline-light;
-
-	h3 {
-		color: $gray;
-	}
+	background: $theme-primary;
 }
 
 
@@ -93,13 +79,13 @@ $gray: #6f7076;
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-right-color: $timeline-dark;
+	border-right-color: $theme-alt;
 	border-width: 10px;
 	top: 10px;
 }
 
 .timeline > li:nth-child(odd) .content:after {
-	border-right-color: $timeline-light;
+	border-right-color: $theme-primary;
 }
 
 /* The icons */
@@ -116,9 +102,9 @@ $gray: #6f7076;
 	-webkit-font-smoothing: antialiased;
 	position: absolute;
 	color: $white;
-	background: #46a4da;
+	background: $theme-primary;
 	border-radius: 50%;
-	box-shadow: 0 0 0 8px #afdcf8;
+	box-shadow: 0 0 0 8px $theme-primary;
 	text-align: center;
 	left: 20%;
 	top: 7px;
@@ -165,13 +151,13 @@ $gray: #6f7076;
 		right: auto;
 		left: 20px;
 		border-right-color: transparent;
-		border-bottom-color: $timeline-dark;
+		border-bottom-color: $theme-alt;
 		top: -20px;
 	}
 
 	.timeline > li:nth-child(odd) .content:after {
 		border-right-color: transparent;
-		border-bottom-color: $timeline-light;
+		border-bottom-color: $theme-primary;
 	}
 
 	.timeline > li .icon {

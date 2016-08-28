@@ -2,26 +2,12 @@
 
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
 
+@import url(https://fonts.googleapis.com/css?family=Averia+Sans+Libre);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
-@import url(http://fonts.googleapis.com/css?family=Quicksand:400);
-@import url(http://fonts.googleapis.com/css?family=ABeeZee);
+
+@import "_variable.scss";
 
 /* @end Imports */
-
-
-/* @group Variables */
-
-$theme-primary: #3686be;
-$theme-bg: #f7f7fa;
-$theme-headings: #6b6b6b;
-
-$white: #FFF;
-$gray: #6f7076;
-$dark-gray: #4f4f50;
-
-$twitter-color: #1dcaff;
-
-/* @end Variables */
 
 
 /* @group Mixins */
@@ -36,6 +22,13 @@ $twitter-color: #1dcaff;
   background-clip:         padding-box;
 }
 
+@mixin header-link-hover() {
+  &:hover {
+    color: darken($white, 10%);
+  }
+}
+
+
 /* @end Mixins */
 
 
@@ -47,12 +40,12 @@ $font-family-sans-serif: 'Roboto', sans-serif;
 $font-size-base: 1.2rem;
 $line-height-base: 1.5;
 
-$link-color: $theme-primary;
+$link-color: $dark-gray;
 $link-hover-color: darken($theme-primary, 10%);
 $link-hover-decoration: none;
 
-$headings-font-family: 'ABeeZee', sans-serif;
-$headings-color: $theme-headings;
+$headings-font-family: $font-averia;
+$headings-color: $theme-alt;
 
 $code-bg: #ececec;
 
@@ -77,7 +70,7 @@ body {
 
 ::selection {
   text-shadow: none;
-  color: #f3f3f3;
+  color: $theme-alt;
   background: darken($theme-primary, 10%);
 }
 
@@ -119,73 +112,98 @@ body {
 /* @group Header */
 
 .header {
-    border-top: 5px solid $theme-primary;
+  padding: 2rem 0;
+  background: linear-gradient(141deg, $theme-primary, $theme-alt);
+  background-size: 400% 400%;
 
-    [class*="col-sm-"] {
-      padding: 0;
-    }
+  -webkit-animation: HeaderGradient 15s ease infinite;
+  -moz-animation: HeaderGradient 15s ease infinite;
+  -o-animation: HeaderGradient 15s ease infinite;
+  animation: HeaderGradient 15s ease infinite;
 
-    .site-title {
+  @-webkit-keyframes HeaderGradient {
+    0% { background-position: 0% 19% }
+    50% { background-position: 100% 82% }
+    100% { background-position: 0% 19% }
+  }
+
+  @-moz-keyframes HeaderGradient {
+    0% { background-position: 0% 19% }
+    50% { background-position: 100% 82% }
+    100% { background-position: 0% 19% }
+  }
+
+  @-o-keyframes HeaderGradient {
+    0% { background-position: 0% 19% }
+    50% { background-position: 100% 82% }
+    100% { background-position: 0% 19% }
+  }
+
+  @keyframes HeaderGradient { 
+    0% { background-position: 0% 19% }
+    50% { background-position: 100% 82% }
+    100% { background-position: 0% 19% }
+  }
+
+  .site-title {
+    @include header-link-hover();
+
+    display: block;
+    padding: 8px 0 3px;
+    margin: 1.5rem auto 0;
+    max-width: 400px;
+
+    color: $white;
+    font-family: $font-averia;
+    font-size: 3.5rem;
+    line-height: .95;
+    text-align: center;
+    text-transform: lowercase;
+
+    span {
       display: block;
-      font-size: 30px;
-      line-height: 32px;
-      padding: 8px 0 3px;
-      margin-bottom: 0;
-      text-transform: lowercase;
-      margin-top: 1.5rem;
+      font-size: 1.65rem;
     }
+  }
+
+  .site-description {
+    margin: 10px 0 0;
+    padding: 0;
+
+    color: $dark-gray;
+    text-align: center;
+  }
+
+  .navigation {
+    padding: 2rem 0 0;
 
     .btn-link {
+      @include header-link-hover();
+
       padding: 0.25rem 0;
+      color: $white;
       text-transform: lowercase;
     }
 
-    .profilepic {
-      border: 1px solid $gray;
-      display: block;
-      width: 95px;
-      height: 95px;
-      margin: 20px auto;
-      padding: 3px;
-      border-radius: 50%;
-
-      -webkit-transition:all .4s;
-      -moz-transition:all .4s;
-      transition:all .4s;
-
-      &:hover{
-        opacity: 0.8;
-      }
-    }
-
-    .site-description {
-      color: $dark-gray;
-      font-size: 20px;
-      font-weight: normal;
-      line-height: 26px;
-      text-align: center;
-      margin: 10px 0 0;
-      padding: 0;
-      font-family: 'Quicksand', sans-serif;
+    .fa-code {
+      margin: 2px;
     }
 
     .social-icons {
-      padding: 45px 0;
       text-align: right;
 
       a {
         padding: 0 10px;
 
         .fa {
-          font-size: 40px;
-          color: $gray;
+          @include header-link-hover();
 
-          &:hover {
-              color: $dark-gray;
-          }
+          font-size: 2rem;
+          color: $white;
         }
       }
     }
+  }
 }
 
 /* @end Header */
@@ -205,6 +223,11 @@ body {
       border-bottom: 1px solid darken($theme-bg, 10%);
       padding-bottom: 5px;
       margin-bottom: 5px;
+      color: $theme-primary;
+
+      &:hover {
+        color: $theme-alt;
+      }
     }
   }
 
