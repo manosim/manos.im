@@ -1,4 +1,4 @@
-# iamemmanouil.com [![Build Status](https://travis-ci.org/ekonstantinidis/ekonstantinidis.github.io.svg?branch=src)](https://travis-ci.org/ekonstantinidis/ekonstantinidis.github.io)
+# iamemmanouil.com [![Build Status](https://travis-ci.org/ekonstantinidis/manos.im.svg?branch=src)](https://travis-ci.org/ekonstantinidis/manos.im)
 Repository containing the source of my personal website. Domain: [iamemmanouil.com](http://www.iamemmanouil.com/)
 
 
