@@ -1,5 +1,6 @@
 /* Smartphones (portrait and landscape) ----------- */
-@media all and (max-width: @screen-xs-max) {
+
+@include media-breakpoint-down(sm) {
 
   /* @group Miscalaneous */
 
@@ -28,6 +29,15 @@
   }
 
   /* @end Header */
+
+
+  /* @group Post */
+
+  .post {
+    padding: 0 15px;
+  }
+  
+  /* @end Post */
 
 
   /* @group Footer */

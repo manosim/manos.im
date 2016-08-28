@@ -36,22 +36,6 @@ $twitter-color: #1dcaff;
   background-clip:         padding-box;
 }
 
-@mixin _assert-ascending($map, $map-name) {
-  $prev-key: null;
-  $prev-num: null;
-  @each $key, $num in $map {
-    @if $prev-num == null {
-      // Do nothing
-    } @else if not comparable($prev-num, $num) {
-      @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
-    } @else if $prev-num >= $num {
-      @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
-    }
-    $prev-key: $key;
-    $prev-num: $num;
-  }
-}
-
 /* @end Mixins */
 
 
@@ -92,34 +76,34 @@ body {
 }
 
 ::selection {
-    text-shadow: none;
-    color: #f3f3f3;
-    background: darken($theme-primary, 10%);
+  text-shadow: none;
+  color: #f3f3f3;
+  background: darken($theme-primary, 10%);
 }
 
 ::-moz-selection {
-    text-shadow: none;
-    color: #f3f3f3;
-    background: darken($theme-primary, 10%);
+  text-shadow: none;
+  color: #f3f3f3;
+  background: darken($theme-primary, 10%);
 }
 
 .scroll-to-top {
-    padding: 5px 10px;
+  padding: 5px 10px;
 
-    background-color: darken($theme-bg, 10%);
-    @include border-radius(5px);
-    color: $theme-bg;
-    font-size: 12px;
+  background-color: darken($theme-bg, 10%);
+  @include border-radius(5px);
+  color: $theme-bg;
+  font-size: 12px;
+  text-decoration: none;
+
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display:none;
+
+  &:hover{
     text-decoration: none;
-
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    display:none;
-
-    &:hover{
-        text-decoration: none;
-    }
+  }
 }
 
 .page-title {
@@ -157,54 +141,55 @@ body {
     }
 
     .profilepic {
-        border: 1px solid $gray;
-        display: block;
-        width: 95px;
-        height: 95px;
-        margin: 20px auto;
-        padding: 3px;
-        border-radius: 50%;
+      border: 1px solid $gray;
+      display: block;
+      width: 95px;
+      height: 95px;
+      margin: 20px auto;
+      padding: 3px;
+      border-radius: 50%;
 
-        -webkit-transition:all .4s;
-        -moz-transition:all .4s;
-        transition:all .4s;
+      -webkit-transition:all .4s;
+      -moz-transition:all .4s;
+      transition:all .4s;
 
-        &:hover{
-            opacity: 0.8;
-        }
+      &:hover{
+        opacity: 0.8;
+      }
     }
 
     .site-description {
-        color: $dark-gray;
-        font-size: 20px;
-        font-weight: normal;
-        line-height: 26px;
-        text-align: center;
-        margin: 10px 0 0;
-        padding: 0;
-        font-family: 'Quicksand', sans-serif;
+      color: $dark-gray;
+      font-size: 20px;
+      font-weight: normal;
+      line-height: 26px;
+      text-align: center;
+      margin: 10px 0 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
     }
 
     .social-icons {
-        padding: 45px 0;
-        text-align: right;
+      padding: 45px 0;
+      text-align: right;
 
-        a {
-            padding: 0 10px;
+      a {
+        padding: 0 10px;
 
-            .fa {
-              font-size: 40px;
-              color: $gray;
+        .fa {
+          font-size: 40px;
+          color: $gray;
 
-              &:hover {
-                  color: $dark-gray;
-              }
-            }
+          &:hover {
+              color: $dark-gray;
+          }
         }
+      }
     }
 }
 
 /* @end Header */
+
 
 /* @group Blog */
 
@@ -250,72 +235,68 @@ body {
     margin: 10px auto 20px;
   }
 
-    .post-content {
+  .post-content {
 
-      ul {
-        list-style-type: square;
-        color: $theme-primary;
+    ul {
+      list-style-type: square;
+      color: $theme-primary;
+    }
+
+    .btn {
+      display: block;
+      max-width: 17em;
+      text-align: center;
+      margin: 2em 0 0 0;
+      padding: 1.5em 2em;
+      text-transform: uppercase;
+      font-weight: 700;
+
+      color: $theme-primary;
+      font-size: .7em;
+      background: none;
+      border: 2px solid $theme-primary;
+      border-radius: 4px;
+
+      -webkit-transition:all .6s;
+      -moz-transition:all .6s;
+      transition:all .6s;
+
+      &:hover {
+        color: $white;
+        background-color: $theme-primary;
       }
+    }
 
-      .btn {
-        display: block;
-        max-width: 17em;
-        text-align: center;
-        margin: 2em 0 0 0;
-        padding: 1.5em 2em;
-        text-transform: uppercase;
-        font-weight: 700;
+    .highlight {
+      margin: 25px 0;
+      border: 0;
 
-        color: $theme-primary;
-        font-size: .7em;
-        background: none;
-        border: 2px solid $theme-primary;
-        border-radius: 4px;
+      pre {
+        @include border-radius(0);
 
-        -webkit-transition:all .6s;
-        -moz-transition:all .6s;
-        transition:all .6s;
+        margin-bottom: .25rem;
+        padding: .5rem;
+        font-size: 85%;
 
-        &:hover {
-          color: $white;
-          background-color: $theme-primary;
-        }
-      }
-
-      .highlight {
-        margin: 25px 0;
         border: 0;
+        background-color: #ECECEC;
+      }
 
-        pre {
-          @include border-radius(0);
-
-          margin-bottom: .25rem;
-          padding: .5rem;
-          font-size: 85%;
-
-          border: 0;
-          background-color: #ECECEC;
-        }
-
-        .gutter pre,
-        .code pre {
-          border: 0;
-        }
+      .gutter pre,
+      .code pre {
+        border: 0;
       }
     }
+  }
 
-    .comments {
-      h2 {
-        display: block;
-        border-bottom: 1px solid darken($theme-bg, 10%);
-        margin-top: 3rem;
-        margin-bottom: 2rem;
-      }
+  .comments {
+    h2 {
+      display: block;
+      border-bottom: 1px solid darken($theme-bg, 10%);
+      margin-top: 3rem;
+      margin-bottom: 2rem;
     }
-
-    // @media all and (max-width: @screen-xs-max) {
-    //    padding: 0 15px;
-    // }
+  }
 }
 
 /* @end Blog */
@@ -370,15 +351,14 @@ body {
 /* @group Footer */
 
 .footer {
-    font-size: .9em;
-    margin: 40px auto 0;
-    padding: 20px 0;
-    text-align: center;
-    border-bottom: 5px solid $theme-primary;
+  font-size: .9rem;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 5px solid $theme-primary;
 }
 
 /* @end Footer */
 
-// @import "_mobile.less";
+@import "_mobile.scss";
 @import "_timeline.scss";
 @import "_pygments.scss";
