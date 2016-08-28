@@ -1,12 +1,11 @@
 
 /* @group Variables */
 
-@TimelineLight: #6cbfee;
-@TimelineDark: #3594cb;
+$timeline-light: #6cbfee;
+$timeline-dark: #3594cb;
 
-@White: #FFF;
-@Gray: #6f7076;
-@DarkGray: #4f4f50;
+$white: #FFF;
+$gray: #6f7076;
 
 /* @end Variables */
 
@@ -41,20 +40,20 @@
     	position: absolute;
     	text-align: right;
     	font-size: 1.5em;
-    	color: @TimelineDark;
+    	color: $timeline-dark;
     }
   }
 }
 
 .timeline > li:nth-child(odd) .date {
-	color: @TimelineLight;
+	color: $timeline-light;
 }
 
 /* Right content */
 .timeline > li .content {
 	margin: 0 0 15px 25%;
-	background: @TimelineDark;
-	color: @White;
+	background: $timeline-dark;
+	color: $white;
 	padding: 1.2em;
 	font-size: 1.2em;
 	font-weight: 300;
@@ -66,22 +65,22 @@
 .timeline > li .content h3 {
 	margin-top: 10px;
 	padding: 0 0 10px 0;
-	border-bottom: 1px solid fade(@White, 50%);
-	color: @White;
+	border-bottom: 1px solid fade($white, 50%);
+	color: $white;
 }
 
 .timeline > li:nth-child(odd) .content {
-	background: @TimelineLight;
+	background: $timeline-light;
 
 	h3 {
-		color: @Gray;
+		color: $gray;
 	}
 }
 
 
 .timeline > li:nth-child(even) .content {
 	a {
-		color: lighten(@Gray, 35%);
+		color: lighten($gray, 35%);
 	}
 }
 
@@ -94,13 +93,13 @@
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-right-color: @TimelineDark;
+	border-right-color: $timeline-dark;
 	border-width: 10px;
 	top: 10px;
 }
 
 .timeline > li:nth-child(odd) .content:after {
-	border-right-color: @TimelineLight;
+	border-right-color: $timeline-light;
 }
 
 /* The icons */
@@ -116,7 +115,7 @@
 	line-height: 40px;
 	-webkit-font-smoothing: antialiased;
 	position: absolute;
-	color: @White;
+	color: $white;
 	background: #46a4da;
 	border-radius: 50%;
 	box-shadow: 0 0 0 8px #afdcf8;
@@ -166,13 +165,13 @@
 		right: auto;
 		left: 20px;
 		border-right-color: transparent;
-		border-bottom-color: @TimelineDark;
+		border-bottom-color: $timeline-dark;
 		top: -20px;
 	}
 
 	.timeline > li:nth-child(odd) .content:after {
 		border-right-color: transparent;
-		border-bottom-color: @TimelineLight;
+		border-bottom-color: $timeline-light;
 	}
 
 	.timeline > li .icon {
