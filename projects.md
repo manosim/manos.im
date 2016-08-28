@@ -26,7 +26,7 @@ permalink: /projects/
       <p class="lead">Django Rest Framework Docs (DRF Docs) allows you to document Web APIs made with <a href="http://www.django-rest-framework.org/" target="_blank">Django Rest Framework</a>. Available on PyPi. Supports Python 2 and 3, Django Rest Framework 3 and above.</p>
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" alt="Gitify" src="/static/images/projects/drfdocs.png">
+      <img class="img-fluid" alt="Gitify" src="/static/images/projects/drfdocs.png">
     </div>
   </div>
 
@@ -72,7 +72,7 @@ permalink: /projects/
       <p class="lead">GitHub Notifications on your menu bar. A desktop app based on <a href="http://electron.atom.io/" target="_blank">Electron</a> that brings your GitHub notitifications on your menu bar. Currently supports only Mac OSX.</p>
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" alt="Gitify" src="/static/images/projects/gitify.png">
+      <img class="img-fluid" alt="Gitify" src="/static/images/projects/gitify.png">
     </div>
   </div>
 
@@ -122,7 +122,7 @@ permalink: /projects/
       <p class="lead">Trevor is a mobile app that brings Travis CI to your phone and tablet. You can download it for free from the App Store and Google Play. It is a hybrid app based on <a href="http://www.ionicframework.com/" target="_blank">Ionic Framework</a> that utilizes the amazing <a href="http://www.travis-ci.org/" target="_blank">Travis CI</a> API.</p>
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" alt="Trevor" src="/static/images/projects/trevor.png">
+      <img class="img-fluid" alt="Trevor" src="/static/images/projects/trevor.png">
     </div>
   </div>
 
@@ -165,7 +165,7 @@ permalink: /projects/
       <p class="lead">A native iOS app written in Swift. Can't remember the address of your hotel? Too bothered to enter an address every time you want to return back to a particular place? Hassling trying to find your car? The app will make your life easier!</p>
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" alt="Trevor" src="/static/images/projects/goback.png">
+      <img class="img-fluid" alt="Trevor" src="/static/images/projects/goback.png">
     </div>
   </div>
 
@@ -208,7 +208,7 @@ permalink: /projects/
       <p class="lead">UIColor is a website used to convert HEX & RGB colors to UIColor for both Objective-C and Swift featuring a colorpicker and copy to clipboard functionality making things easier.</p>
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" alt="UI Color" src="/static/images/projects/uicolor.png">
+      <img class="img-fluid" alt="UI Color" src="/static/images/projects/uicolor.png">
     </div>
   </div>
 
