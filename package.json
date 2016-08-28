@@ -1,5 +1,5 @@
 {
-  "name": "iamemmanouil-website",
+  "name": "manosim-website",
   "description": "Repository containing the source for my website.",
   "version": "0.1.0",
   "scripts": {
@@ -16,6 +16,7 @@
     "blog",
     "jekyll",
     "iamemmanouil",
+    "manosim",
     "ekonstantinidis"
   ],
   "author": "Emmanouil Konstantinidis",
@@ -23,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/ekonstantinidis/ekonstantinidis.github.io/issues"
   },
-  "homepage": "https://www.iamemmanouil.com/",
+  "homepage": "https://www.manos.im/",
   "dependencies": {
     "bootstrap": "=3.3.6",
     "font-awesome": "=4.5.0"
