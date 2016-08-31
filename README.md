@@ -1,5 +1,5 @@
-# iamemmanouil.com [![Build Status](https://travis-ci.org/ekonstantinidis/manos.im.svg?branch=src)](https://travis-ci.org/ekonstantinidis/manos.im)
-Repository containing the source of my personal website. Domain: [iamemmanouil.com](http://www.iamemmanouil.com/)
+# manos.im [![Build Status](https://travis-ci.org/manosim/manosim.github.io.svg?branch=src)](https://travis-ci.org/manosim/manosim.github.io)
+Repository containing the source of my personal website. Domain: [manos.im](http://www.manos.im/)
 
 
 ## Project Setup
