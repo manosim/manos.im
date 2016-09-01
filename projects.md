@@ -12,7 +12,7 @@ permalink: /projects/
     <div class="col-sm-10">
       <h3>
         DRF Docs
-        <a href="http://www.github.com/ekonstantinidis/django-rest-framework-docs" target="_blank"><i class="fa fa-github pull-right"></i></a>
+        <a href="http://www.github.com/manosim/django-rest-framework-docs" target="_blank"><i class="fa fa-github pull-right"></i></a>
         <a href="http://www.drfdocs.com/" target="_blank"><i class="fa fa-link pull-right"></i></a>
       </h3>
       <div class="tags-wrapper">
@@ -37,7 +37,7 @@ permalink: /projects/
     <div class="col-sm-12">
       <h3>
         React Cordova
-        <a href="http://www.github.com/ekonstantinidis/react-cordova" target="_blank"><i class="fa fa-github pull-right"></i></a>
+        <a href="http://www.github.com/manosim/react-cordova" target="_blank"><i class="fa fa-github pull-right"></i></a>
       </h3>
       <div class="tags-wrapper">
         <strong>Tech</strong>:
@@ -58,7 +58,7 @@ permalink: /projects/
     <div class="col-sm-10">
       <h3>
         Gitify
-        <a href="http://www.github.com/ekonstantinidis/gitify" target="_blank"><i class="fa fa-github pull-right"></i></a>
+        <a href="http://www.github.com/manosim/gitify" target="_blank"><i class="fa fa-github pull-right"></i></a>
         <a href="http://www.gitify.io/" target="_blank"><i class="fa fa-link pull-right"></i></a>
       </h3>
       <div class="tags-wrapper">
@@ -83,7 +83,7 @@ permalink: /projects/
     <div class="col-sm-12">
       <h3>
         NPM Click
-        <a href="http://www.github.com/ekonstantinidis/npm-click" target="_blank"><i class="fa fa-github pull-right"></i></a>
+        <a href="http://www.github.com/manosim/npm-click" target="_blank"><i class="fa fa-github pull-right"></i></a>
         <a href="http://npm.click/" target="_blank"><i class="fa fa-link pull-right"></i></a>
       </h3>
       <div class="tags-wrapper">
@@ -105,7 +105,7 @@ permalink: /projects/
     <div class="col-sm-10">
       <h3>
         Trevor
-        <a href="http://www.github.com/ekonstantinidis/trevor" target="_blank"><i class="fa fa-github pull-right"></i></a>
+        <a href="http://www.github.com/manosim/trevor" target="_blank"><i class="fa fa-github pull-right"></i></a>
         <a href="http://trevorapp.com/" target="_blank"><i class="fa fa-link pull-right"></i></a>
         <a href="http://play.google.com/store/apps/details?id=com.iamemmanouil.trevor" target="_blank"><i class="fa fa-android pull-right"></i></a>
         <a href="http://itunes.apple.com/app/id962155187" target="_blank"><i class="fa fa-apple pull-right"></i></a>
@@ -133,7 +133,7 @@ permalink: /projects/
     <div class="col-sm-12">
       <h3>
         CSS Edit Groups
-        <a href="http://www.github.com/ekonstantinidis/css-edit-groups" target="_blank"><i class="fa fa-github pull-right"></i></a>
+        <a href="http://www.github.com/manosim/css-edit-groups" target="_blank"><i class="fa fa-github pull-right"></i></a>
         <a href="https://atom.io/packages/css-edit-groups" target="_blank"><i class="fa fa-link pull-right"></i></a>
       </h3>
       <div class="tags-wrapper">
@@ -176,7 +176,7 @@ permalink: /projects/
     <div class="col-sm-12">
       <h3>
         Reloading
-        <a href="http://www.github.com/ekonstantinidis/reloading" target="_blank"><i class="fa fa-github pull-right"></i></a>
+        <a href="http://www.github.com/manosim/reloading" target="_blank"><i class="fa fa-github pull-right"></i></a>
         <a href="https://www.npmjs.com/package/reloading" target="_blank"><i class="fa fa-link pull-right"></i></a>
       </h3>
       <div class="tags-wrapper">
@@ -196,7 +196,7 @@ permalink: /projects/
     <div class="col-sm-10">
       <h3>
         UI Color
-        <a href="https://github.com/ekonstantinidis/ui-color" target="_blank"><i class="fa fa-github pull-right"></i></a>
+        <a href="https://github.com/manosim/ui-color" target="_blank"><i class="fa fa-github pull-right"></i></a>
         <a href="http://uicolor.xyz/" target="_blank"><i class="fa fa-link pull-right"></i></a>
       </h3>
       <div class="tags-wrapper">
