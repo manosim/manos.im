@@ -6,13 +6,13 @@ Repository containing the source of my personal website. Domain: [manos.im](http
 
     gem install jekyll
     gem install jekyll-sitemap
-	gem install sass
-	npm install
+    gem install sass
+    npm install
 
 
 ## Development
 
-	npm start
+    npm start
 
 Then go to [http://0.0.0.0:4000/](http://0.0.0.0:4000/).
 
