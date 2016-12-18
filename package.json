@@ -14,8 +14,9 @@
   "keywords": [
     "blog",
     "jekyll",
-    "iamemmanouil",
     "manosim",
+    "manos.im",
+    "iamemmanouil",
     "ekonstantinidis"
   ],
   "author": "Emmanouil Konstantinidis",
@@ -25,8 +26,7 @@
   },
   "homepage": "https://www.manos.im/",
   "dependencies": {
-    "bootstrap": "=4.0.0-alpha.3",
-    "font-awesome": "=4.6.3"
-  },
-  "devDependencies": {}
+    "bootstrap": "=4.0.0-alpha.5",
+    "font-awesome": "=4.7.0"
+  }
 }

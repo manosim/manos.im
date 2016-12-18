@@ -4,7 +4,9 @@ Repository containing the source of my personal website. Domain: [manos.im](http
 
 ## Project Setup
 
-	gem install jekyll
+    gem install jekyll
+    gem install jekyll-sitemap
+	gem install sass
 	npm install
 
 

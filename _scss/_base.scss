@@ -2,7 +2,7 @@
 
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
 
-@import url(https://fonts.googleapis.com/css?family=Averia+Sans+Libre);
+@import url(https://fonts.googleapis.com/css?family=Cabin);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
 
 @import "_variable.scss";
@@ -44,7 +44,7 @@ $link-color: $dark-gray;
 $link-hover-color: darken($theme-primary, 10%);
 $link-hover-decoration: none;
 
-$headings-font-family: $font-averia;
+$headings-font-family: $font-cabin;
 $headings-color: $theme-alt;
 
 $code-bg: #ececec;
@@ -154,7 +154,7 @@ body {
     max-width: 400px;
 
     color: $white;
-    font-family: $font-averia;
+    font-family: $font-cabin;
     font-size: 3.5rem;
     line-height: .95;
     text-align: center;
