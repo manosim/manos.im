@@ -18,5 +18,5 @@ exclude: ['node_modules', 'package.json']
 # Disqus Comments
 disqusid: iamemmanouil
 
-gems:
+plugins:
   - jekyll-sitemap
