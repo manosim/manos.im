@@ -8,16 +8,16 @@
 
   <p class="lead mb-2">
     <span>I am</span> Emmanouil Konstantinidis.<br />
-    Software Engineer @ <a href="https://www.dabapps.com/" targe="_blank">dabapps</a>.
+    Software Engineer @ <a class="text-danger" href="https://www.dabapps.com/" target="_blank">dabapps</a>.<br />
+    Living in Brighton, UK.
   </p>
 </div>
 
-<nav class="navbar navbar-expand navbar-dark bg-primary mb-5">
+<nav class="navbar navbar-expand navbar-dark bg-primary py-3 mb-5">
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav mx-auto">
       {% for page in site.pages %}
         {% if page.title %}
-
           <li class="nav-item active">
             <a
               class="nav-item nav-link active"
@@ -25,7 +25,6 @@
               {{ page.title }}
             </a>
           </li>
-
         {% endif %}
       {% endfor %}
     </ul>
