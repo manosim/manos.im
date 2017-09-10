@@ -12,14 +12,20 @@ comments: true
     </div>
 
     <div class="col-6 text-right">
-      <a class="twitter" href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}&via=iamemmanouil" target="_blank">
+      <a
+        class="twitter"
+        href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}&via=manosim"
+        target="_blank">
         <i class="fa fa-twitter"></i> tweet
       </a>
     </div>
   </div>
 
   {% if page.cover %}
-  <img class="img-fluid mt-1 mb-3" src="/static/images/posts/{{ page.cover }}" alt="{{ page.title }}" />
+    <img
+      class="img-fluid mt-1 mb-3"
+      src="/static/images/posts/{{ page.cover }}"
+      alt="{{ page.title }}" />
   {% endif %}
 
   <div class="post-content">

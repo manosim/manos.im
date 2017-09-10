@@ -1,31 +1,33 @@
-<div class="container-fluid header">
-  <div class="container">
+<div class="container-fluid header bg-secondary text-center py-5">
+  <a class="site-title" href="{{ site.baseurl }}/">
+    <img
+      class="img-fluid mx-auto mt-2 mb-4 logo"
+      src="/static/images/logo.svg"
+      alt="{{ page.title }}" />
+  </a>
 
-
-    <div class="row">
-      <div class="col-sm-12">
-        <a class="site-title" href="{{ site.baseurl }}/"><span>iam</span> emmanouil konstantinidis</a>
-        <h3 class="site-description">Software Engineer</h3>
-      </div>
-    </div>
-
-
-    <div class="row navigation">
-      <div class="col-sm-6">
-        {% for page in site.pages %}
-          {% if page.title %}
-            <a class="btn btn-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-            {% if forloop.last == false %}<i class="fa fa-code"></i>{% endif %}
-          {% endif %}
-        {% endfor %}
-      </div>
-
-      <div class="col-sm-6 social-icons">
-        <a href="http://twitter.com/manosim_"><i class="fa fa-twitter"></i></a>
-        <a href="http://github.com/manosim"><i class="fa fa-github"></i></a>
-        <a href="http://uk.linkedin.com/in/manosim"><i class="fa fa-linkedin"></i></a>
-      </div>
-    </div>
-
-  </div>
+  <p class="lead mb-2">
+    <span>I am</span> Emmanouil Konstantinidis.<br />
+    Software Engineer @ <a href="https://www.dabapps.com/" targe="_blank">dabapps</a>.
+  </p>
 </div>
+
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav mx-auto">
+      {% for page in site.pages %}
+        {% if page.title %}
+
+          <li class="nav-item active">
+            <a
+              class="nav-item nav-link active"
+              href="{{ page.url | prepend: site.baseurl }}">
+              {{ page.title }}
+            </a>
+          </li>
+
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

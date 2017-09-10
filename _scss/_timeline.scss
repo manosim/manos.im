@@ -1,5 +1,3 @@
-@import "_variables.scss";
-
 /* @group Timeline */
 // Awesome timeline by http://tympanus.net/codrops/2013/05/02/vertical-timeline/
 
@@ -15,7 +13,7 @@
   	top: 0;
   	bottom: 0;
   	width: 10px;
-  	background: $theme-alt;
+  	background: $brand-blue-light;
   	left: 20%;
   	margin-left: -10px;
   }
@@ -30,19 +28,19 @@
 	position: absolute;
 	text-align: right;
 	font-size: 1.5em;
-	color: $theme-alt;
+	color: $brand-blue-light;
     }
   }
 }
 
 .timeline > li:nth-child(odd) .date {
-	color: $theme-primary;
+	color: theme-color('primary');
 }
 
 /* Right content */
 .timeline > li .content {
 	margin: 0 0 15px 25%;
-	background: $theme-alt;
+	background: $brand-blue-light;
 	color: $white;
 	padding: 1.2em;
 	font-size: 1.2em;
@@ -60,13 +58,13 @@
 }
 
 .timeline > li:nth-child(odd) .content {
-	background: $theme-primary;
+	background: theme-color('primary');
 }
 
 
 .timeline > li:nth-child(even) .content {
 	a {
-		color: lighten($gray, 35%);
+		color: lighten(map-get($grays, 400), 35%);
 	}
 }
 
@@ -79,13 +77,13 @@
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-right-color: $theme-alt;
+	border-right-color: $brand-blue-light;
 	border-width: 10px;
 	top: 10px;
 }
 
 .timeline > li:nth-child(odd) .content:after {
-	border-right-color: $theme-primary;
+	border-right-color: theme-color('primary');
 }
 
 /* The icons */
@@ -102,9 +100,9 @@
 	-webkit-font-smoothing: antialiased;
 	position: absolute;
 	color: $white;
-	background: $theme-primary;
+	background: theme-color('primary');
 	border-radius: 50%;
-	box-shadow: 0 0 0 8px $theme-primary;
+	box-shadow: 0 0 0 8px theme-color('primary');
 	text-align: center;
 	left: 20%;
 	top: 7px;
@@ -151,13 +149,13 @@
 		right: auto;
 		left: 20px;
 		border-right-color: transparent;
-		border-bottom-color: $theme-alt;
+		border-bottom-color: $brand-blue-light;
 		top: -20px;
 	}
 
 	.timeline > li:nth-child(odd) .content:after {
 		border-right-color: transparent;
-		border-bottom-color: $theme-primary;
+		border-bottom-color: theme-color('primary');
 	}
 
 	.timeline > li .icon {
