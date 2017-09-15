@@ -1,5 +1,5 @@
 # Site settings
-title: I am Emmanouil Konstantinidis
+title: Emmanouil Konstantinidis
 description: > # Site Description
   Emmanouil Konstantinidis. Web & Mobile Developer working
   at DabApps. Hobbies include JavaScript, Python, Swift and things other than programming.
@@ -18,5 +18,5 @@ exclude: ['node_modules', 'package.json']
 # Disqus Comments
 disqusid: iamemmanouil
 
-gems:
+plugins:
   - jekyll-sitemap

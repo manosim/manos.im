@@ -1,13 +1,23 @@
 /* @group Imports */
 
+@import '../node_modules/bootstrap/scss/_functions';
+@import '../node_modules/bootstrap/scss/_variables';
+
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
 
-@import url(https://fonts.googleapis.com/css?family=Averia+Sans+Libre);
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
-
-@import "_variable.scss";
 
 /* @end Imports */
+
+
+/* @group Variables */
+
+$brand-blue-dark: #183952;
+$brand-blue-light: #20526F;
+
+$twitter-color: #1DCAFF;
+
+/* @end Variables */
 
 
 /* @group Mixins */
@@ -34,20 +44,28 @@
 
 /* @group Bootstrap Overrides */
 
-$body-bg: $theme-bg;
+$theme-colors: (
+  primary: $brand-blue-dark,
+  secondary: $brand-blue-light,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-100,
+  dark: $gray-800,
+);
 
-$font-family-sans-serif: 'Roboto', sans-serif;
-$font-size-base: 1.2rem;
-$line-height-base: 1.5;
+$body-bg: #F7F7FA;
 
-$link-color: $dark-gray;
-$link-hover-color: darken($theme-primary, 10%);
+$font-family-base: 'Open Sans', sans-serif;
+
+$link-color: lighten(theme-color('secondary'), 15%);
+$link-hover-color: theme-color('primary');
 $link-hover-decoration: none;
 
-$headings-font-family: $font-averia;
-$headings-color: $theme-alt;
+$headings-color: theme-color('primary');
 
-$code-bg: #ececec;
+$code-bg: map-get($grays, 200);
 
 $container-max-widths: (
   sm: 576px,
@@ -56,7 +74,7 @@ $container-max-widths: (
   xl: 761px
 );
 
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 /* @end Bootstrap Overrides */
 
@@ -70,22 +88,22 @@ body {
 
 ::selection {
   text-shadow: none;
-  color: $theme-alt;
-  background: darken($theme-primary, 10%);
+  color: $white;
+  background: theme-color('primary');
 }
 
 ::-moz-selection {
   text-shadow: none;
-  color: #f3f3f3;
-  background: darken($theme-primary, 10%);
+  color: $white;
+  background: theme-color('primary');
 }
 
 .scroll-to-top {
   padding: 5px 10px;
 
-  background-color: darken($theme-bg, 10%);
+  background-color: theme-color('secondary');
   @include border-radius(5px);
-  color: $theme-bg;
+  color: $white;
   font-size: 12px;
   text-decoration: none;
 
@@ -103,7 +121,7 @@ body {
   margin-top: 3rem;
   margin-bottom: 2rem;
 
-  border-bottom: 1px solid darken($theme-bg, 10%);
+  border-bottom: 1px solid darken($body-bg, 10%);
 }
 
 /* @end Miscelaneous */
@@ -112,101 +130,66 @@ body {
 /* @group Header */
 
 .header {
-  padding: 2rem 0;
-  background: linear-gradient(141deg, $theme-primary, $theme-alt);
-  background-size: 400% 400%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  -webkit-animation: HeaderGradient 15s ease infinite;
-  -moz-animation: HeaderGradient 15s ease infinite;
-  -o-animation: HeaderGradient 15s ease infinite;
-  animation: HeaderGradient 15s ease infinite;
-
-  @-webkit-keyframes HeaderGradient {
-    0% { background-position: 0% 19% }
-    50% { background-position: 100% 82% }
-    100% { background-position: 0% 19% }
-  }
-
-  @-moz-keyframes HeaderGradient {
-    0% { background-position: 0% 19% }
-    50% { background-position: 100% 82% }
-    100% { background-position: 0% 19% }
-  }
-
-  @-o-keyframes HeaderGradient {
-    0% { background-position: 0% 19% }
-    50% { background-position: 100% 82% }
-    100% { background-position: 0% 19% }
-  }
-
-  @keyframes HeaderGradient { 
-    0% { background-position: 0% 19% }
-    50% { background-position: 100% 82% }
-    100% { background-position: 0% 19% }
+  .logo {
+    max-width: 150px;
   }
 
   .site-title {
     @include header-link-hover();
 
-    display: block;
-    padding: 8px 0 3px;
-    margin: 1.5rem auto 0;
-    max-width: 400px;
-
     color: $white;
-    font-family: $font-averia;
-    font-size: 3.5rem;
-    line-height: .95;
-    text-align: center;
+    font-size: 2.5rem;
     text-transform: lowercase;
 
     span {
       display: block;
-      font-size: 1.65rem;
+      font-size: 1.35rem;
     }
   }
 
-  .site-description {
-    margin: 10px 0 0;
-    padding: 0;
+  .lead {
+    font-weight: 300;
+    font-size: .95rem;
+    color: $white;
 
-    color: $dark-gray;
-    text-align: center;
+    a {
+      text-decoration: none;
+    }
   }
+}
 
-  .navigation {
-    padding: 2rem 0 0;
+/* @end Header */
 
-    .btn-link {
-      @include header-link-hover();
 
-      padding: 0.25rem 0;
-      color: $white;
-      text-transform: lowercase;
-    }
+/* @group Navbar */
 
-    .fa-code {
-      margin: 2px;
-    }
+.navbar {
+  .nav {
+    .nav-item {
+      display: inline-block;
 
-    .social-icons {
-      text-align: right;
+      &:after {
+        display: inline-block;
+        margin: 0 .25rem;
+        font-family: 'FontAwesome';
+        content: "\f121";
+        color: $white;
+      }
 
-      a {
-        padding: 0 10px;
-
-        .fa {
-          @include header-link-hover();
-
-          font-size: 2rem;
-          color: $white;
+      &:last-child {
+        &:after {
+          content: none;
         }
       }
     }
   }
 }
 
-/* @end Header */
+/* @end Navbar */
 
 
 /* @group Blog */
@@ -220,13 +203,13 @@ body {
 
     .title {
       display: block;
-      border-bottom: 1px solid darken($theme-bg, 10%);
+      border-bottom: 1px solid darken($body-bg, 10%);
       padding-bottom: 5px;
       margin-bottom: 5px;
-      color: $theme-primary;
+      color: theme-color('primary');
 
       &:hover {
-        color: $theme-alt;
+        color: $brand-blue-light;
       }
     }
   }
@@ -236,33 +219,25 @@ body {
     margin-bottom: 15px;
   }
 
-  .share {
-    float: right;
+  .twitter {
+    font-size: 14px;
+    background-color: $twitter-color;
+    color: $white;
+    @include border-radius(4px);
+    border-radius: 4px;
+    border: 0;
+    padding: 2px 5px;
 
-    .twitter {
-      font-size: 14px;
-      background-color: $twitter-color;
-      color: $white;
-      @include border-radius(4px);
-      border-radius: 4px;
-      border: 0;
-      padding: 2px 5px;
-
-      &:hover {
-        background-color: darken($twitter-color, 10%);
-      }
+    &:hover {
+      background-color: darken($twitter-color, 10%);
     }
-  }
-
-  .post-cover {
-    margin: 10px auto 20px;
   }
 
   .post-content {
 
     ul {
       list-style-type: square;
-      color: $theme-primary;
+      color: theme-color('primary');
     }
 
     .btn {
@@ -274,10 +249,10 @@ body {
       text-transform: uppercase;
       font-weight: 700;
 
-      color: $theme-primary;
+      color: theme-color('primary');
       font-size: .7em;
       background: none;
-      border: 2px solid $theme-primary;
+      border: 2px solid theme-color('primary');
       border-radius: 4px;
 
       -webkit-transition:all .6s;
@@ -286,7 +261,7 @@ body {
 
       &:hover {
         color: $white;
-        background-color: $theme-primary;
+        background-color: theme-color('primary');
       }
     }
 
@@ -315,7 +290,7 @@ body {
   .comments {
     h2 {
       display: block;
-      border-bottom: 1px solid darken($theme-bg, 10%);
+      border-bottom: 1px solid darken($body-bg, 10%);
       margin-top: 3rem;
       margin-bottom: 2rem;
     }
@@ -340,7 +315,7 @@ body {
 
     .tags-wrapper {
       font-size: 16px;
-      color: $gray;
+      color: map-get($grays, 800);
 
       .tags {
         display: inline-block;
@@ -348,7 +323,7 @@ body {
 
         li {
           display: inline;
-          border-bottom: 1px solid $theme-primary;
+          border-bottom: 1px solid theme-color('primary');
           padding: 0 5px;
           margin-right: 5px;
         }
@@ -362,7 +337,7 @@ body {
 
   .hr-code {
     text-align: center;
-    color: $gray;
+    color: map-get($grays, 400);
     font-size: 12px;
     margin: 10px 0;
   }
@@ -374,14 +349,25 @@ body {
 /* @group Footer */
 
 .footer {
-  font-size: .9rem;
-  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  border-bottom: 5px solid $theme-primary;
+
+  border-bottom: 5px solid theme-color('primary');
+  font-size: 0.9rem;
+
+  .nav {
+    .nav-item {
+      font-size: 1.75rem;
+      margin-right: .55rem;
+      margin-left: .55rem;
+    }
+  }
 }
 
 /* @end Footer */
 
 @import "_mobile.scss";
-@import "_timeline.scss";
 @import "_pygments.scss";
