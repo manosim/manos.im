@@ -9,3 +9,6 @@ node_modules/
 _site/
 .sass-cache/
 .jekyll-metadata
+
+### Build files
+static/css/base.css
