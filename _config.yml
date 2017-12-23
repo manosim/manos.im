@@ -5,7 +5,7 @@ description: > # Site Description
   at DabApps. Hobbies include JavaScript, Python, Swift and things other than programming.
 keywords: emmanouil,konstantinidis,manos.im,iamemmanouil,ekonstantinidis,software engineer,dabapps,brighton,uk
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://manos.im" # the base hostname & protocol for your site
+url: "https://manos.im" # the base hostname & protocol for your site
 
 # Post settings
 permalink: /blog/:title/
