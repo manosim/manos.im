@@ -1,16 +1,15 @@
 /* @group Imports */
 
-@import '../node_modules/bootstrap/scss/_functions';
-@import '../node_modules/bootstrap/scss/_variables';
+@import '../../node_modules/bootstrap/scss/_functions';
+@import '../../node_modules/bootstrap/scss/_variables';
+@import '../../node_modules/font-awesome/scss/font-awesome.scss';
 
-@import '../node_modules/font-awesome/scss/font-awesome.scss';
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Quicksand:400,500,700');
 
 /* @end Imports */
 
 /* @group Variables */
 
-$brand-blue-dark: #183952;
 $brand-blue-light: #20526f;
 
 $twitter-color: #1dcaff;
@@ -39,20 +38,15 @@ $twitter-color: #1dcaff;
 
 /* @group Bootstrap Overrides */
 
-$theme-colors: (
-  primary: $brand-blue-dark,
-  secondary: $brand-blue-light,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
-  light: $gray-100,
-  dark: $gray-800
-);
 
 $body-bg: #f7f7fa;
 
-$font-family-base: 'Open Sans', sans-serif;
+$danger: #e65f78;
+$headings-font-family: 'Montserrat', sans-serif;
+
+$font-family-base: 'Quicksand', sans-serif;
+
+$navbar-dark-active-color: theme-color('danger');
 
 $link-color: lighten(theme-color('secondary'), 15%);
 $link-hover-color: theme-color('primary');
@@ -64,7 +58,7 @@ $code-bg: map-get($grays, 200);
 
 $container-max-widths: (sm: 576px, md: 720px, lg: 760px, xl: 761px);
 
-@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/bootstrap/scss/bootstrap';
 
 /* @end Bootstrap Overrides */
 
@@ -77,8 +71,6 @@ html {
 
 body {
   font-size: 18px;
-  font-weight: 300;
-  margin-bottom: 230px;
 }
 
 ::selection {
@@ -103,8 +95,8 @@ body {
   text-decoration: none;
 
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 1.5rem;
+  right: 1.5rem;
   display: none;
 
   &:hover {
@@ -124,61 +116,88 @@ body {
 /* @group Header */
 
 .header {
+  height: 100vh;
+
+  background-image: url(/static/images/header-bg.jpg);
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 70% 100%, 0 80%);
+
+  padding: 3rem 0;
+  position: relative;
+  background-color: #fff;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 
-  .logo {
-    max-width: 150px;
+  @include media-breakpoint-down(sm) {
+    height: auto;
+    clip-path: none;
+
+    padding: 8rem 0;
   }
 
-  .site-title {
-    @include header-link-hover();
+  .social-media {
+    margin-left: -15px;
 
-    color: $white;
-    font-size: 2.5rem;
-    text-transform: lowercase;
-
-    span {
-      display: block;
-      font-size: 1.35rem;
-    }
-  }
-
-  .lead {
-    font-weight: 300;
-    font-size: 0.95rem;
-    color: $white;
-
-    a {
-      text-decoration: none;
+    .nav-item .nav-link {
+      font-size: 26px;
     }
   }
 }
 
 /* @end Header */
 
+
 /* @group Navbar */
 
 .navbar {
-  .nav {
-    .nav-item {
-      display: inline-block;
+  background-color: transparent;
+  padding: 20px 0px;
+  width: 100%;
+  border-radius: 0px;
+  z-index: 999;
+  margin-bottom: 0px;
+  transition: all 0.5s ease-in-out;
 
-      &:after {
-        display: inline-block;
-        margin: 0 0.25rem;
-        font-family: 'FontAwesome';
-        content: '\f121';
-        color: $white;
-      }
+  &.sticky {
+    background-image: url(/static/images/header-bg.jpg);
+    background-size: cover;
+    background-position: top center;
+  }
 
-      &:last-child {
-        &:after {
-          content: none;
-        }
-      }
+  .navbar-brand {
+    .logo {
+      height: 27px;
     }
+  }
+
+  .navbar-toggler {
+    border: 0;
+
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.55);
+      border-radius: 0;
+      outline: none;
+    }
+  }
+
+  .nav-item .nav-link {
+    transition: all 0.5s;
+    font-weight: 500;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .navbar-collapse {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.55);
+    }
+
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -199,10 +218,6 @@ body {
       padding-bottom: 5px;
       margin-bottom: 5px;
       color: theme-color('primary');
-
-      &:hover {
-        color: $brand-blue-light;
-      }
     }
   }
 
@@ -304,7 +319,7 @@ body {
 
     .tags-wrapper {
       font-size: 16px;
-      color: map-get($grays, 800);
+      color: $gray-800;
 
       .tags {
         display: inline-block;
@@ -337,29 +352,13 @@ body {
 /* @group Footer */
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 180px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  border-bottom: 5px solid theme-color('primary');
+  padding: 2rem;
+  margin-top: 3rem;
+  background-color: $gray-800;
   font-size: 0.9rem;
-
-  .nav {
-    .nav-item {
-      font-size: 1.75rem;
-      margin-right: 0.55rem;
-      margin-left: 0.55rem;
-    }
-  }
 }
 
 /* @end Footer */
 
-@import '_mobile.scss';
-@import '_pygments.scss';
+@import 'mobile.scss';
+@import 'pygments.scss';

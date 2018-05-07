@@ -4,7 +4,17 @@ Repository containing the source of my personal website. Domain: [manos.im](http
 
 ## Project Setup
 
+  # Install RVM
+  curl -sSL https://get.rvm.io | bash -s stable
+
+  # Enable RVM
+  source /Users/manos/.rvm/scripts/rvm
+  rvm list
+  rvm use ruby-2.4.1
+
+  # Install Jekyll etc.
 	gem install jekyll
+  bundle install
 	npm install
 
 
