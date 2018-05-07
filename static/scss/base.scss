@@ -118,6 +118,7 @@ body {
 .header {
   height: 100vh;
 
+  background-color: $gray-800;
   background-image: url(/static/images/header-bg.jpg);
   position: relative;
   background-size: cover;
@@ -126,7 +127,6 @@ body {
 
   padding: 3rem 0;
   position: relative;
-  background-color: #fff;
 
   display: flex;
   flex-direction: column;
