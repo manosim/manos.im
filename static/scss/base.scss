@@ -4,14 +4,12 @@
 @import '../../node_modules/bootstrap/scss/_variables';
 @import '../../node_modules/font-awesome/scss/font-awesome.scss';
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Quicksand:400,500,700');
 
 /* @end Imports */
 
 /* @group Variables */
 
-$brand-blue-dark: #183952;
 $brand-blue-light: #20526f;
 
 $twitter-color: #1dcaff;
@@ -40,20 +38,15 @@ $twitter-color: #1dcaff;
 
 /* @group Bootstrap Overrides */
 
-$theme-colors: (
-  primary: $brand-blue-dark,
-  secondary: $brand-blue-light,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
-  light: $gray-100,
-  dark: $gray-800
-);
 
 $body-bg: #f7f7fa;
 
-$font-family-base: 'Open Sans', sans-serif;
+$danger: #e65f78;
+$headings-font-family: 'Montserrat', sans-serif;
+
+$font-family-base: 'Quicksand', sans-serif;
+
+$navbar-dark-active-color: theme-color('danger');
 
 $link-color: lighten(theme-color('secondary'), 15%);
 $link-hover-color: theme-color('primary');
@@ -78,8 +71,6 @@ html {
 
 body {
   font-size: 18px;
-  font-weight: 300;
-  margin-bottom: 230px;
 }
 
 ::selection {
@@ -104,8 +95,8 @@ body {
   text-decoration: none;
 
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 1.5rem;
+  right: 1.5rem;
   display: none;
 
   &:hover {
@@ -133,8 +124,7 @@ body {
   background-position: center center;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 70% 100%, 0 80%);
 
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 3rem 0;
   position: relative;
   background-color: #fff;
 
@@ -146,6 +136,16 @@ body {
   @include media-breakpoint-down(sm) {
     height: auto;
     clip-path: none;
+
+    padding: 8rem 0;
+  }
+
+  .social-media {
+    margin-left: -15px;
+
+    .nav-item .nav-link {
+      font-size: 26px;
+    }
   }
 }
 
@@ -163,10 +163,41 @@ body {
   margin-bottom: 0px;
   transition: all 0.5s ease-in-out;
 
+  &.sticky {
+    background-image: url(/static/images/header-bg.jpg);
+    background-size: cover;
+    background-position: top center;
+  }
+
   .navbar-brand {
     .logo {
       height: 27px;
     }
+  }
+
+  .navbar-toggler {
+    border: 0;
+
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.55);
+      border-radius: 0;
+      outline: none;
+    }
+  }
+
+  .nav-item .nav-link {
+    transition: all 0.5s;
+    font-weight: 500;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .navbar-collapse {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.55);
+    }
+
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -187,10 +218,6 @@ body {
       padding-bottom: 5px;
       margin-bottom: 5px;
       color: theme-color('primary');
-
-      &:hover {
-        color: $brand-blue-light;
-      }
     }
   }
 
@@ -292,7 +319,7 @@ body {
 
     .tags-wrapper {
       font-size: 16px;
-      color: map-get($grays, 800);
+      color: $gray-800;
 
       .tags {
         display: inline-block;
@@ -325,26 +352,10 @@ body {
 /* @group Footer */
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 80px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  border-bottom: 5px solid theme-color('primary');
+  padding: 2rem;
+  margin-top: 3rem;
+  background-color: $gray-800;
   font-size: 0.9rem;
-
-  .nav {
-    .nav-item {
-      font-size: 1.75rem;
-      margin-right: 0.55rem;
-      margin-left: 0.55rem;
-    }
-  }
 }
 
 /* @end Footer */

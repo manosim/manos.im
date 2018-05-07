@@ -7,19 +7,40 @@
 
     {% include header.html %}
 
-    <div class="container">
+    <div class="container mt-5">
         {{ content }}
     </div>
 
     {% include footer.html %}
 
     <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-1.12.4.min.js"
-      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
     {% include scroll-to-top.html %}
+
+    <!-- Extra Javascript -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $(window).on('scroll', function() {
+              var scroll = $(window).scrollTop();
+
+              if (scroll >= 75) {
+                $(".navbar").addClass("sticky");
+                $('.scroll-to-top').show();
+              } else {
+                $(".navbar").removeClass("sticky");
+                $('.scroll-to-top').hide();
+              }
+          });
+
+          $('.scroll-to-top').click(function() {
+              $('html, body').animate({scrollTop : 0}, 800);
+              return false;
+          });
+      });
+    </script>
 
     <!-- Google Analytics -->
     <script type="text/javascript">
