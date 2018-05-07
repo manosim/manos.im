@@ -5,8 +5,8 @@ rvm:
 
 install:
 - npm install
-- gem install jekyll
-- gem install jekyll-sitemap
+- gem install bundler jekyll
+- bundle install
 
 script:
 - npm run build
