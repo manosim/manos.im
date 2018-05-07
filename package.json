@@ -3,8 +3,8 @@
   "description": "Repository containing the source for my website.",
   "version": "0.1.0",
   "scripts": {
-    "watch": "node-sass -w _scss/_base.scss static/css/base.css",
-    "build": "node-sass --output-style compressed _scss/_base.scss static/css/base.css",
+    "watch": "node-sass -w static/scss/base.scss -o static/css/base.css",
+    "build": "node-sass --output-style compressed static/scss/base.scss static/css/base.css",
     "start": "npm run watch & jekyll serve --watch",
     "postinstall": "npm run build"
   },
@@ -26,9 +26,9 @@
   },
   "homepage": "https://www.manos.im/",
   "dependencies": {
-    "bootstrap": "=4.0.0-beta",
+    "bootstrap": "=4.1.1",
     "font-awesome": "=4.7.0",
-    "node-sass": "4.7.2"
+    "node-sass": "=4.9.0"
   },
   "devDependencies": {}
 }
