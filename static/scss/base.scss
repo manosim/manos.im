@@ -124,6 +124,7 @@ body {
   background-size: cover;
   background-position: center center;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 70% 100%, 0 80%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 70% 100%, 0 80%);
 
   padding: 3rem 0;
   position: relative;
@@ -136,6 +137,7 @@ body {
   @include media-breakpoint-down(sm) {
     height: auto;
     clip-path: none;
+    -webkit-clip-path: none;
 
     padding: 8rem 0;
   }
