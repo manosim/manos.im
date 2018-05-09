@@ -134,6 +134,10 @@ body {
   align-items: center;
   justify-content: center;
 
+  &.header-small {
+    height: 60vh;
+  }
+
   @include media-breakpoint-down(sm) {
     height: auto;
     clip-path: none;
