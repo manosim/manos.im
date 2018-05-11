@@ -38,9 +38,6 @@ $twitter-color: #1dcaff;
 
 /* @group Bootstrap Overrides */
 
-
-$body-bg: #f7f7fa;
-
 $danger: #e65f78;
 $headings-font-family: 'Montserrat', sans-serif;
 
@@ -56,7 +53,12 @@ $headings-color: theme-color('primary');
 
 $code-bg: map-get($grays, 200);
 
-$container-max-widths: (sm: 576px, md: 720px, lg: 760px, xl: 761px);
+$container-max-widths: (
+  sm: 576px,
+  md: 720px,
+  lg: 760px,
+  xl: 761px
+);
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
@@ -95,12 +97,16 @@ body {
   text-decoration: none;
 
   position: fixed;
-  bottom: 1.5rem;
+  bottom: 3.5rem;
   right: 1.5rem;
   display: none;
 
   &:hover {
     text-decoration: none;
+  }
+
+  @include media-breakpoint-down(sm) {
+    bottom: 1rem;
   }
 }
 
@@ -136,6 +142,7 @@ body {
 
   &.header-small {
     height: 60vh;
+    padding: 1rem 0;
   }
 
   @include media-breakpoint-down(sm) {
@@ -143,7 +150,15 @@ body {
     clip-path: none;
     -webkit-clip-path: none;
 
-    padding: 8rem 0;
+    padding: 6rem 0;
+
+    &.header-small {
+      height: auto;
+      clip-path: none;
+      -webkit-clip-path: none;
+
+      padding: 4rem 0;
+    }
   }
 
   .social-media {
@@ -156,7 +171,6 @@ body {
 }
 
 /* @end Header */
-
 
 /* @group Navbar */
 
@@ -214,6 +228,10 @@ body {
 .post {
   margin-top: 3rem;
   margin-bottom: 2rem;
+
+  @include media-breakpoint-down(sm) {
+    padding: 0 15px;
+  }
 
   h2 {
     margin-bottom: 5px;
@@ -358,13 +376,11 @@ body {
 /* @group Footer */
 
 .footer {
-  padding: 2rem;
+  padding: 3rem 0;
   margin-top: 3rem;
-  background-color: $gray-800;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 /* @end Footer */
 
-@import 'mobile.scss';
 @import 'pygments.scss';

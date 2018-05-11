@@ -17,7 +17,7 @@
 
                 {% for link in site.pages %}
                   {% if link.title %}
-                    <li class="nav-item {% if link.url == page.url %}active{% endif %}">
+                    <li class="nav-item {% if page.url contains link.url %}active{% endif %}">
                       <a class="nav-link" href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
                     </li>
                   {% endif %}
