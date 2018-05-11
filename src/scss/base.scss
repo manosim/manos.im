@@ -140,6 +140,7 @@ body {
 
   &.header-small {
     height: 60vh;
+    padding: 1rem 0;
   }
 
   @include media-breakpoint-down(sm) {
@@ -147,7 +148,15 @@ body {
     clip-path: none;
     -webkit-clip-path: none;
 
-    padding: 8rem 0;
+    padding: 6rem 0;
+
+    &.header-small {
+      height: auto;
+      clip-path: none;
+      -webkit-clip-path: none;
+
+      padding: 4rem 0;
+    }
   }
 
   .social-media {

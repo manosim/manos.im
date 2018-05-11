@@ -13,7 +13,7 @@ excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
-exclude: ['node_modules', 'src', 'package.json', 'yarn.lock', 'Gemfile', 'Gemfile.lock', 'README.md']
+exclude: ['node_modules', 'src', 'package.json', 'yarn.lock', 'Gemfile', 'Gemfile.lock', 'README.md', 'webpack.config.js']
 
 # Disqus Comments
 disqusid: iamemmanouil
