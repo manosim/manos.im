@@ -38,8 +38,6 @@ $twitter-color: #1dcaff;
 
 /* @group Bootstrap Overrides */
 
-$body-bg: #f7f7fa;
-
 $danger: #e65f78;
 $headings-font-family: 'Montserrat', sans-serif;
 
@@ -99,12 +97,16 @@ body {
   text-decoration: none;
 
   position: fixed;
-  bottom: 1.5rem;
+  bottom: 3.5rem;
   right: 1.5rem;
   display: none;
 
   &:hover {
     text-decoration: none;
+  }
+
+  @include media-breakpoint-down(sm) {
+    bottom: 1rem;
   }
 }
 
@@ -226,6 +228,10 @@ body {
 .post {
   margin-top: 3rem;
   margin-bottom: 2rem;
+
+  @include media-breakpoint-down(sm) {
+    padding: 0 15px;
+  }
 
   h2 {
     margin-bottom: 5px;
@@ -370,13 +376,11 @@ body {
 /* @group Footer */
 
 .footer {
-  padding: 2rem;
+  padding: 3rem 0;
   margin-top: 3rem;
-  background-color: $gray-800;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 /* @end Footer */
 
-@import 'mobile.scss';
 @import 'pygments.scss';
