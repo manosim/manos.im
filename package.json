@@ -6,9 +6,9 @@
     "watch-scss": "node-sass -w src/scss/base.scss -o static/css/",
     "watch-js": "webpack --mode development --progress --colors --watch",
     "watch": "npm run watch-scss & npm run watch-js",
-    "build-scss": "node-sass --output-style compressed static/scss/base.scss static/css/base.css",
+    "build-scss": "node-sass --output-style compressed src/scss/base.scss -o static/css/",
     "build-js": "webpack --mode production --devtool source-map",
-    "build": "node-sass --output-style compressed src/scss/base.scss static/css/base.css",
+    "build": "npm run build-scss & npm run build-js",
     "start": "npm run watch & jekyll serve --livereload",
     "postinstall": "npm run build"
   },
