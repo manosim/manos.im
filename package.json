@@ -3,8 +3,10 @@
   "description": "Repository containing the source for my website.",
   "version": "0.1.0",
   "scripts": {
-    "watch": "node-sass -w static/scss/base.scss -o static/css/",
-    "build": "node-sass --output-style compressed static/scss/base.scss static/css/base.css",
+    "watch-scss": "node-sass -w src/scss/base.scss -o static/css/",
+    "watch": "npm run watch-scss & npm run watch-js",
+    "build-scss": "node-sass --output-style compressed static/scss/base.scss static/css/base.css",
+    "build": "node-sass --output-style compressed src/scss/base.scss static/css/base.css",
     "start": "npm run watch & jekyll serve --livereload",
     "postinstall": "npm run build"
   },
