@@ -11,4 +11,5 @@ _site/
 .jekyll-metadata
 
 ### Build files
-static/css/base.css
+static/css/
+static/js/
