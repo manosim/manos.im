@@ -1,60 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.svg" alt="Logo" class="img-fluid logo">
+    </a>
 
-        <a class="navbar-brand pt-0" href="/">
-            <img src="/static/images/logo.svg" alt="Logo" class="img-fluid logo">
-        </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item {% if page.url == '/' %}active{% endif %}">
+            <a class="nav-link" href="/">Home</a>
+          </li>
 
-        <div class="navbar-collapse collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item {% if page.url == '/' %}active{% endif %}">
-                  <a class="nav-link" href="/">Home</a>
-                </li>
-
-                {% for link in site.pages %}
-                  {% if link.title %}
-                    <li class="nav-item {% if page.url contains link.url %}active{% endif %}">
-                      <a class="nav-link" href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
-                    </li>
-                  {% endif %}
-                {% endfor %}
-            </ul>
-        </div>
+          {% for link in site.pages %}
+            {% if link.title %}
+              <li class="nav-item {% if page.url contains link.url %}active{% endif %}">
+                <a class="nav-link" href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+      </ul>
     </div>
+  </div>
 </nav>
-
-<section class="header{% if page.url != '/' %} header-small{% endif %}">
-    <div class="container">
-        <h4 class="text-white first-title mb-4">Welcome</h4>
-
-        <h1 class="header-name text-white mb-0">I'm <span class="font-weight-bold">Emmanouil Konstantinidis.</span></h1>
-
-        <p class="text-white mx-auto header-desc mt-4">
-          Software Engineer @ <a class="text-danger" href="https://www.dabapps.com/" target="_blank">dabapps</a>.
-        </p>
-
-        <ul class="nav mt-2 mb-3 social-media">
-          <li class="nav-item">
-            <a class="nav-link" href="https://twitter.com/manosim_">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/manosim">
-              <i class="fa fa-github"></i>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="https://uk.linkedin.com/in/manosim">
-              <i class="fa fa-linkedin"></i>
-            </a>
-          </li>
-        </ul>
-    </div>
-</section>

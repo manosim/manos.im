@@ -1,10 +1,10 @@
 /* @group Imports */
 
-@import '../../node_modules/bootstrap/scss/_functions';
-@import '../../node_modules/bootstrap/scss/_variables';
-@import '../../node_modules/font-awesome/scss/font-awesome.scss';
+@import "../../node_modules/bootstrap/scss/_functions";
+@import "../../node_modules/bootstrap/scss/_variables";
+@import "../../node_modules/font-awesome/scss/font-awesome.scss";
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Quicksand:400,500,700');
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700|Noto+Sans:400,700&display=swap");
 
 /* @end Imports */
 
@@ -13,6 +13,8 @@
 $brand-blue-light: #20526f;
 
 $twitter-color: #1dcaff;
+
+$dark: #010e1e;
 
 /* @end Variables */
 
@@ -39,17 +41,13 @@ $twitter-color: #1dcaff;
 /* @group Bootstrap Overrides */
 
 $danger: #e65f78;
-$headings-font-family: 'Montserrat', sans-serif;
+$headings-font-family: "Noto Sans", sans-serif;
 
-$font-family-base: 'Quicksand', sans-serif;
+$font-family-base: "Quicksand", sans-serif;
 
-$navbar-dark-active-color: theme-color('danger');
-
-$link-color: lighten(theme-color('secondary'), 15%);
-$link-hover-color: theme-color('primary');
+$link-color: lighten(theme-color("secondary"), 15%);
+$link-hover-color: theme-color("primary");
 $link-hover-decoration: none;
-
-$headings-color: theme-color('primary');
 
 $code-bg: map-get($grays, 200);
 
@@ -60,7 +58,7 @@ $container-max-widths: (
   xl: 761px
 );
 
-@import '../../node_modules/bootstrap/scss/bootstrap';
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 /* @end Bootstrap Overrides */
 
@@ -68,29 +66,30 @@ $container-max-widths: (
 
 html {
   position: relative;
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
   font-size: 18px;
+  height: 100%;
 }
 
 ::selection {
   text-shadow: none;
   color: $white;
-  background: theme-color('primary');
+  background: theme-color("primary");
 }
 
 ::-moz-selection {
   text-shadow: none;
   color: $white;
-  background: theme-color('primary');
+  background: theme-color("primary");
 }
 
 .scroll-to-top {
   padding: 5px 10px;
 
-  background-color: theme-color('secondary');
+  background-color: theme-color("secondary");
   @include border-radius(5px);
   color: $white;
   font-size: 12px;
@@ -122,17 +121,9 @@ body {
 /* @group Header */
 
 .header {
-  height: 100vh;
+  background-color: $dark;
 
-  background-color: $gray-800;
-  background-image: url(/static/images/header-bg.jpg);
-  position: relative;
-  background-size: cover;
-  background-position: center center;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 70% 100%, 0 80%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 70% 100%, 0 80%);
-
-  padding: 3rem 0;
+  padding: 5rem 3rem;
   position: relative;
 
   display: flex;
@@ -140,25 +131,8 @@ body {
   align-items: center;
   justify-content: center;
 
-  &.header-small {
-    height: 60vh;
-    padding: 1rem 0;
-  }
-
-  @include media-breakpoint-down(sm) {
-    height: auto;
-    clip-path: none;
-    -webkit-clip-path: none;
-
-    padding: 6rem 0;
-
-    &.header-small {
-      height: auto;
-      clip-path: none;
-      -webkit-clip-path: none;
-
-      padding: 4rem 0;
-    }
+  @include media-breakpoint-up(sm) {
+    padding: 3rem;
   }
 
   .social-media {
@@ -175,18 +149,13 @@ body {
 /* @group Navbar */
 
 .navbar {
-  background-color: transparent;
   padding: 20px 0px;
   width: 100%;
   border-radius: 0px;
-  z-index: 999;
-  margin-bottom: 0px;
   transition: all 0.5s ease-in-out;
 
-  &.sticky {
-    background-image: url(/static/images/header-bg.jpg);
-    background-size: cover;
-    background-position: top center;
+  &.navbar-dark {
+    background-color: $dark;
   }
 
   .navbar-brand {
@@ -213,11 +182,7 @@ body {
   @include media-breakpoint-down(sm) {
     .navbar-collapse {
       text-align: center;
-      background-color: rgba(0, 0, 0, 0.55);
     }
-
-    padding-left: 15px;
-    padding-right: 15px;
   }
 }
 
@@ -241,7 +206,7 @@ body {
       border-bottom: 1px solid darken($body-bg, 10%);
       padding-bottom: 5px;
       margin-bottom: 5px;
-      color: theme-color('primary');
+      color: theme-color("primary");
     }
   }
 
@@ -267,7 +232,7 @@ body {
   .post-content {
     ul {
       list-style-type: square;
-      color: theme-color('primary');
+      color: theme-color("primary");
     }
 
     .btn {
@@ -279,10 +244,10 @@ body {
       text-transform: uppercase;
       font-weight: 700;
 
-      color: theme-color('primary');
+      color: theme-color("primary");
       font-size: 0.7em;
       background: none;
-      border: 2px solid theme-color('primary');
+      border: 2px solid theme-color("primary");
       border-radius: 4px;
 
       -webkit-transition: all 0.6s;
@@ -291,7 +256,7 @@ body {
 
       &:hover {
         color: $white;
-        background-color: theme-color('primary');
+        background-color: theme-color("primary");
       }
     }
 
@@ -351,7 +316,7 @@ body {
 
         li {
           display: inline;
-          border-bottom: 1px solid theme-color('primary');
+          border-bottom: 1px solid theme-color("primary");
           padding: 0 5px;
           margin-right: 5px;
         }
@@ -373,14 +338,8 @@ body {
 
 /* @end Page: Projects */
 
-/* @group Footer */
-
 .footer {
-  padding: 3rem 0;
-  margin-top: 3rem;
-  font-size: 1.1rem;
+  background-color: $dark;
 }
 
-/* @end Footer */
-
-@import 'pygments.scss';
+@import "pygments.scss";

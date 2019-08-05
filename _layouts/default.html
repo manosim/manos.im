@@ -3,13 +3,13 @@
 
   {% include head.html %}
 
-  <body>
+  <body {% if page.url == '/' %}class="d-flex flex-column"{% endif %}>
 
     {% include header.html %}
 
-    <div class="container mt-5">
+    {% if page.url != '/' %}<div class="container">{% endif %}
         {{ content }}
-    </div>
+    {% if page.url != '/' %}</div>{% endif %}
 
     {% include footer.html %}
 
