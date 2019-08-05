@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manosim/manosim.github.io.git"
+    "url": "git+https://github.com/manosim/manos.im.git"
   },
   "keywords": [
     "blog",
@@ -26,17 +26,17 @@
   "author": "Emmanouil Konstantinidis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/manosim/manosim.github.io/issues"
+    "url": "https://github.com/manosim/manos.im./issues"
   },
   "homepage": "https://www.manos.im/",
   "dependencies": {
-    "bootstrap": "=4.1.1",
+    "bootstrap": "=4.3.1",
     "font-awesome": "=4.7.0",
-    "jquery": "=3.3.1",
-    "node-sass": "=4.9.0",
-    "popper.js": "=1.14.3",
-    "webpack": "=4.8.1",
-    "webpack-cli": "=2.1.3"
+    "jquery": "=3.4.1",
+    "node-sass": "=4.12.0",
+    "popper.js": "=1.15.0",
+    "webpack": "=4.39.1",
+    "webpack-cli": "=3.3.6"
   },
   "devDependencies": {}
 }
