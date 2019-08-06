@@ -89,7 +89,7 @@ body {
 .scroll-to-top {
   padding: 5px 10px;
 
-  background-color: theme-color("secondary");
+  background-color: $dark;
   @include border-radius(5px);
   color: $white;
   font-size: 12px;
@@ -149,10 +149,7 @@ body {
 /* @group Navbar */
 
 .navbar {
-  padding: 20px 0px;
-  width: 100%;
-  border-radius: 0px;
-  transition: all 0.5s ease-in-out;
+  padding: 1rem;
 
   &.navbar-dark {
     background-color: $dark;
@@ -177,6 +174,7 @@ body {
   .nav-item .nav-link {
     transition: all 0.5s;
     font-weight: 500;
+    text-transform: lowercase;
   }
 
   @include media-breakpoint-down(sm) {
@@ -340,6 +338,10 @@ body {
 
 .footer {
   background-color: $dark;
+
+  .nav.nav-pills .nav-item .nav-link {
+    font-size: 1.5rem;
+  }
 }
 
 @import "pygments.scss";
