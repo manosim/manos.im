@@ -36,7 +36,7 @@ export const SEO = ({ description, keywords, lang, meta, title }) => {
         },
         {
           name: `keywords`,
-          content: keywords,
+          content: metaKeywords,
         },
         {
           property: `og:title`,
