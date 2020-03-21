@@ -1,8 +1,9 @@
 ---
-layout: post
 title: Electron. oAuth authentication with GitHub
+slug: electron-oauth-with-github
 keywords: electron,javascript,node,oauth,authentication,token
 cover: electron-oauth-github.png
+date: 2015-05-23
 ---
 
 It has been a while since I read about [Electron](http://electron.atom.io/) and I couldn't wait to get my hands on it. Electron is an open source project made by [GitHub](http://www.github.com/) that allows you to build cross platform desktop apps with Web Technologies - in my case with [React](https://facebook.github.io/react/). Imagine hybrid mobile apps ([React Native](https://facebook.github.io/react-native/), [Ionic](http://www.ionicframework.com/)) but for desktops. Sounds pretty awesome and it is!
@@ -10,40 +11,46 @@ It has been a while since I read about [Electron](http://electron.atom.io/) and 
 <!--more-->
 
 ### Getting started with Electron
+
 This is not an Electron tutorial (as per title, oAuth authentications in Electron) so I will just give you a couple of links to get you started. Unfortunately Electron is pretty new and you will not find too many tutorials on the internet but the good news is that you can stick to the documentation which is really helpful.
 
-  - [Documentation](https://github.com/atom/electron/tree/master/docs#readme)
-  - [Quick Start](https://github.com/atom/electron/blob/master/docs/tutorial/quick-start.md)
-  - [API - Browser Window](https://github.com/atom/electron/blob/master/docs/api/browser-window.md)
-  - [Gitify - GitHub Notifications on your menu bar](https://github.com/ekonstantinidis/gitify)
-  - [Electron & React - Starter Template](https://github.com/DenisVuyka/electron-react)
-
+- [Documentation](https://github.com/atom/electron/tree/master/docs#readme)
+- [Quick Start](https://github.com/atom/electron/blob/master/docs/tutorial/quick-start.md)
+- [API - Browser Window](https://github.com/atom/electron/blob/master/docs/api/browser-window.md)
+- [Gitify - GitHub Notifications on your menu bar](https://github.com/ekonstantinidis/gitify)
+- [Electron & React - Starter Template](https://github.com/DenisVuyka/electron-react)
 
 ### Diving into oAuth
+
 There were several cases where I had to implement oAuth Authentication (one of those is [Trevor Mobile App](http://www.trevorapp.com/)) and I can say that it was never that simple since it always depends on the platform - hybrid apps, web apps and now Electron!
 
 So once you have you project setup, you will need a button "Login with GitHub". That button will open an Electron `BrowserWindow` (see [API - Browser Window](https://github.com/atom/electron/blob/master/docs/api/browser-window.md)) and that is where the user will "Authorize your app" (create a [Github Application](https://github.com/settings/developers)). Below you can find how I implemented the oAuth authentication. I've added several comments to it so that it will make more sense if you are new to oAuth authentication.
 
-{% highlight javascript linenos %}
-
+```javascript
 // Your GitHub Applications Credentials
 var options = {
-    client_id: 'your_client_id',
-    client_secret: 'your_client_secret',
-    scopes: ["user:email", "notifications"] // Scopes limit access for OAuth tokens.
+  client_id: 'your_client_id',
+  client_secret: 'your_client_secret',
+  scopes: ['user:email', 'notifications'], // Scopes limit access for OAuth tokens.
 };
 
 // Build the OAuth consent page URL
-var authWindow = new BrowserWindow({ width: 800, height: 600, show: false, 'node-integration': false });
+var authWindow = new BrowserWindow({
+  width: 800,
+  height: 600,
+  show: false,
+  'node-integration': false,
+});
 var githubUrl = 'https://github.com/login/oauth/authorize?';
-var authUrl = githubUrl + 'client_id=' + options.client_id + '&scope=' + options.scopes;
+var authUrl =
+  githubUrl + 'client_id=' + options.client_id + '&scope=' + options.scopes;
 authWindow.loadURL(authUrl);
 authWindow.show();
 
-function handleCallback (url) {
-  var raw_code = /code=([^&]*)/.exec(url) || null;
-  var code = (raw_code && raw_code.length > 1) ? raw_code[1] : null;
-  var error = /\?error=(.+)$/.exec(url);
+function handleCallback(url) {
+  var raw_code = /code=([^&]\*)/.exec(url) || null;
+  var code = raw_code && raw_code.length > 1 ? raw_code[1] : null;
+  var error = /\?error=(.+)\$/.exec(url);
 
   if (code || error) {
     // Close the browser if code found or error
@@ -54,34 +61,43 @@ function handleCallback (url) {
   if (code) {
     self.requestGithubToken(options, code);
   } else if (error) {
-    alert('Oops! Something went wrong and we couldn\'t' +
-      'log you in using Github. Please try again.');
+    alert(
+      "Oops! Something went wrong and we couldn't" +
+        'log you in using Github. Please try again.'
+    );
   }
 }
 
 // Handle the response from GitHub - See Update from 4/12/2015
 
-authWindow.webContents.on('will-navigate', function (event, url) {
+authWindow.webContents.on('will-navigate', function(event, url) {
   handleCallback(url);
 });
 
-authWindow.webContents.on('did-get-redirect-request', function (event, oldUrl, newUrl) {
+authWindow.webContents.on('did-get-redirect-request', function(
+  event,
+  oldUrl,
+  newUrl
+) {
   handleCallback(newUrl);
 });
 
 // Reset the authWindow on close
-authWindow.on('close', function() {
+authWindow.on(
+  'close',
+  function() {
     authWindow = null;
-}, false);
-{% endhighlight %}
-
+  },
+  false
+);
+```
 
 ### What's next? Request the token from GitHub
+
 So by that time you will have the code from the callback or an error. If everything is implemented correctly, there will be no errors and all you have to do is request the token from github by posting the code you received from the callback - `requestGithubToken(options, code)`. I am using [Superagent](https://www.npmjs.com/package/superagent) from [NPM](https://www.npmjs.com/) but feel free to make the request the way you want to. Below is an abstraction of where to make the `POST` request, how and what to post.
 
-{% highlight javascript linenos %}
+```javascript
 requestGithubToken: function (options, code) {
-
   apiRequests
     .post('https://github.com/login/oauth/access_token', {
       client_id: options.client_id,
@@ -90,24 +106,23 @@ requestGithubToken: function (options, code) {
     })
     .end(function (err, response) {
       if (response && response.ok) {
-        // Success - Received Token.
-        // Store it in localStorage maybe?
-        window.localStorage.setItem('githubtoken', response.body.access_token);
+      // Success - Received Token.
+      // Store it in localStorage maybe?
+      window.localStorage.setItem('githubtoken', response.body.access_token);
       } else {
-        // Error - Show messages.
-        console.log(err);
+      // Error - Show messages.
+      console.log(err);
       }
     });
-
 }
-{% endhighlight %}
-
+```
 
 ### That's all folks!
+
 In case you were actually trying to implement oAuth authentication with GitHub I hope it worked! You can find a full implementation of oAuth GitHub authentication in [Gitify](https://github.com/ekonstantinidis/gitify), an app I made with Electron and shows GitHub notifications on your menu bar. Also if you were looking to implement oAuth authentication in Electron with other websites like Facebook or Twitter, it should be pretty similar so give it a try!
 
-
 ### Updates
-`4/12/2015`: It looks like the GitHub Api has different behaviour if you are already logged in and if your are logging in prior to  approving a GitHub Application. The code has been now updated to catch both cases (`will-navigate` and `did-get-redirect-request` events).
+
+`4/12/2015`: It looks like the GitHub Api has different behaviour if you are already logged in and if your are logging in prior to approving a GitHub Application. The code has been now updated to catch both cases (`will-navigate` and `did-get-redirect-request` events).
 
 `14/05/2016`: As Burkhard Reffeling mentioned in the comments, there is a typo with loading a url in a `BrowserWindow`. Instead of `authWindow.loadUrl(authUrl);` it should be `authWindow.loadURL(authUrl);`.

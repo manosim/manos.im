@@ -1,6 +1,9 @@
 import $ from 'jquery';
 import 'bootstrap';
 
+import './src/scss/app.scss';
+import 'prismjs/themes/prism-tomorrow.css';
+
 window.$ = $;
 
 $(document).ready(function() {
