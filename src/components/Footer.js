@@ -69,9 +69,7 @@ export const Footer = ({ location }) => {
 
       <Box my={[1, 0]}>
         Copyright ©{' '}
-        <Link variant="link" href="https://www.manos.im/">
-          Emmanouil Konstantinidis
-        </Link>{' '}
+        <Link href="https://www.manos.im/">Emmanouil Konstantinidis</Link>{' '}
         {new Date().getFullYear()}.
       </Box>
     </Container>

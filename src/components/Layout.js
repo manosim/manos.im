@@ -11,12 +11,20 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
     background-color: #fff;
     -webkit-font-smoothing: antialiased;
   }
+
+  html, body, #___gatsby {
+    height: 100%;
+  }
+
+  #___gatsby > * {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   * {
     box-sizing: border-box;
   }
@@ -29,6 +37,33 @@ const theme = {
   fonts: {
     heading: "'Sen', sans-serif",
     monospace: "Menlo, Monaco, Consolas, 'Courier New', monospace",
+  },
+  fontSizes: [120, 14, 16, 20, 24, 32, 48, 64],
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.25,
+  },
+  variants: {
+    link: {
+      color: '#939ba2',
+      textDecoration: 'none',
+      backgroundColor: 'transparent',
+      ':hover': {
+        color: '#007BF5',
+        textDecoration: 'none',
+      },
+    },
+  },
+  text: {
+    lead: {
+      fontSize: '1.25rem',
+      fontWeight: '300',
+    },
   },
 };
 

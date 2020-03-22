@@ -37,29 +37,11 @@ $link-hover-decoration: none;
 
 $code-bg: map-get($grays, 200);
 
-$container-max-widths: (
-  sm: 576px,
-  md: 720px,
-  lg: 760px,
-  xl: 761px,
-);
-
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
 /* @end Bootstrap Overrides */
 
 /* @group Miscelaneous */
-
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 .scroll-to-top {
   padding: 5px 10px;

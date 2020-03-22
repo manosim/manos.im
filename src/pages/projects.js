@@ -185,8 +185,7 @@ const ProjectsPage = ({ location }) => (
           <Box>
             <Text
               dangerouslySetInnerHTML={{ __html: item.description }}
-              fontSize="1.25rem"
-              fontWeight="300"
+              variant="lead"
               mt={2}
             />
           </Box>
