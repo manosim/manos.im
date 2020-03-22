@@ -18,8 +18,6 @@ const BlogPostTemplate = ({ data, location }) => {
     title: post.frontmatter.title,
   };
 
-  console.log(post);
-
   return (
     <Layout location={location}>
       <SEO
