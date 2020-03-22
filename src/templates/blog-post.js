@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
-import { Flex, Text } from 'rebass/styled-components';
+import { Flex, Heading, Text } from 'rebass/styled-components';
 import { Disqus } from 'gatsby-plugin-disqus';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { Layout } from '../components/Layout';
+import { PostCover } from '../pages/blog';
 import { SEO } from '../components/Seo';
 
 const TwitterLink = styled.a`
@@ -38,13 +39,18 @@ const BlogPostTemplate = ({ data, location }) => {
         keywords={post.frontmatter.keywords}
       />
 
-      <Flex flexDirection="column" sx={{ maxWidth: 730, mx: 'auto' }}>
+      <Flex
+        flexDirection="column"
+        sx={{ maxWidth: 730, mx: 'auto' }}
+        px={3}
+        mt={4}
+      >
         <div className="post">
-          <h2>
-            <Link className="title" to={postPath}>
+          <Heading as="h2">
+            <Link to={postPath} color="black">
               {post.frontmatter.title}
             </Link>
-          </h2>
+          </Heading>
 
           <Flex
             justifyContent="space-between"
@@ -69,8 +75,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </Flex>
 
           {post.frontmatter.cover && (
-            <img
-              className="img-fluid mt-1 mb-3"
+            <PostCover
               src={`/images/posts/${post.frontmatter.cover}`}
               alt={post.frontmatter.title}
             />
@@ -82,7 +87,9 @@ const BlogPostTemplate = ({ data, location }) => {
           />
 
           <div className="comments">
-            <h2>Comments</h2>
+            <Heading as="h2" color="black">
+              Comments
+            </Heading>
             <Disqus config={disqusConfig} />
           </div>
         </div>

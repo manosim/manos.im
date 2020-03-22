@@ -1,6 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
-import { Box, Flex, Text } from 'rebass/styled-components';
+import {
+  Box,
+  Flex,
+  Heading,
+  Link as RebassLink,
+  Text,
+} from 'rebass/styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCalendarAlt,
@@ -10,24 +17,53 @@ import {
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
 
+const MoreLink = styled(RebassLink)`
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  margin-top: 1.25rem;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  border: 0.1rem ${props => props.theme.colors.primary} solid;
+  border-radius: 0.25rem;
+  color: ${props => props.theme.colors.primary};
+
+  :hover {
+    background-color: ${props => props.theme.colors.primary};
+    color: white;
+  }
+`;
+
+export const PostCover = styled.img`
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
+
 const BlogPage = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
     <Layout location={location}>
       <SEO title="Blog" />
-      <Flex flexDirection="column" sx={{ maxWidth: 730, mx: 'auto' }}>
+
+      <Flex flexDirection="column" sx={{ maxWidth: 730, mx: 'auto' }} px={3}>
         {posts.map(item => {
           const post = item.node;
           const postPath = `/blog/${post.frontmatter.slug}`;
 
           return (
-            <div className="post" key={post.id}>
-              <h2>
-                <Link className="title" to={postPath}>
+            <Box mt={4} key={post.id}>
+              <Heading as="h2" color="black">
+                <Link to={postPath} color="black">
                   {post.frontmatter.title}
                 </Link>
-              </h2>
+              </Heading>
 
               <Flex
                 justifyContent="space-between"
@@ -42,25 +78,21 @@ const BlogPage = ({ data, location }) => {
               </Flex>
 
               {post.frontmatter.cover && (
-                <img
-                  className="img-fluid mt-1 mb-3"
+                <PostCover
                   src={`/images/posts/${post.frontmatter.cover}`}
                   alt={post.frontmatter.title}
                 />
               )}
 
-              <div className="post-content">
+              <Flex flexDirection="column" alignItems="flex-start">
                 <span dangerouslySetInnerHTML={{ __html: post.excerpt }} />
 
-                <Link
-                  className="btn btn-primary btn-lg read-more"
-                  to={postPath}
-                >
+                <MoreLink as={Link} to={postPath}>
                   Continue reading
                   <FontAwesomeIcon className="ml-3" icon={faChevronRight} />
-                </Link>
-              </div>
-            </div>
+                </MoreLink>
+              </Flex>
+            </Box>
           );
         })}
       </Flex>
