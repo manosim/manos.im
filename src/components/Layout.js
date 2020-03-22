@@ -33,6 +33,8 @@ const GlobalStyle = createGlobalStyle`
 const theme = {
   colors: {
     primary: '#010e1e',
+    twitter: '#00aced',
+    gray: '#939ba2',
   },
   fonts: {
     heading: "'Sen', sans-serif",
@@ -50,7 +52,7 @@ const theme = {
   },
   variants: {
     link: {
-      color: '#939ba2',
+      color: 'gray',
       textDecoration: 'none',
       backgroundColor: 'transparent',
       ':hover': {
@@ -58,11 +60,24 @@ const theme = {
         textDecoration: 'none',
       },
     },
+    navlink: {
+      fontFamily: "'Quicksans', sans-serif",
+      fontSize: [16, 18, 18],
+      textDecoration: 'none',
+      textTransform: 'lowercase',
+      fontWeight: 500,
+      color: 'green',
+      paddingLeft: ['0.5rem', '1rem', '1rem'],
+      paddingRight: ['0.5rem', '1rem', '1rem'],
+    },
   },
   text: {
     lead: {
       fontSize: '1.25rem',
       fontWeight: '300',
+    },
+    date: {
+      fontSize: '0.9rem',
     },
   },
 };

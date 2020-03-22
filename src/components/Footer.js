@@ -10,7 +10,6 @@ import {
 
 const Container = styled(Flex)`
   background-color: ${props => props.theme.colors.primary};
-  padding: 3rem 2rem;
   margin-top: ${props => (props.isHomepage ? '0' : '3rem')};
   text-align: center;
   color: white;
@@ -23,8 +22,8 @@ export const Footer = ({ location }) => {
   return (
     <Container
       flexWrap="wrap"
-      py={1}
-      px={3}
+      py={['2rem', '3rem', '3rem']}
+      px={['1rem', '1rem', '2rem']}
       flexDirection="column"
       alignItems="center"
       isHomepage={isHomepage}

@@ -1,6 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
-import { Flex } from 'rebass/styled-components';
+import { Flex, Text } from 'rebass/styled-components';
 import { Disqus } from 'gatsby-plugin-disqus';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +9,18 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
+
+const TwitterLink = styled.a`
+  background: ${props => props.theme.colors.twitter};
+  color: white;
+  padding: 0.15rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+
+  &:hover {
+    background: white;
+  }
+`;
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
@@ -33,25 +46,27 @@ const BlogPostTemplate = ({ data, location }) => {
             </Link>
           </h2>
 
-          <div className="row">
-            <div className="col-6">
-              <div className="date">
-                <FontAwesomeIcon className="mr-3" icon={faCalendarAlt} />
-                {post.frontmatter.date}
-              </div>
-            </div>
+          <Flex
+            justifyContent="space-between"
+            align-items="center"
+            mt={2}
+            mb={3}
+          >
+            <Flex alignItems="center">
+              <FontAwesomeIcon className="mr-2" icon={faCalendarAlt} />
+              <Text variant="date">{post.frontmatter.date}</Text>
+            </Flex>
 
-            <div className="col-6 text-right">
-              <a
-                className="twitter"
+            <Flex alignItems="center">
+              <TwitterLink
                 href={`https://twitter.com/intent/tweet?url=${location.href}&text=${post.frontmatter.title}&via=manosim_`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon className="mr-1" icon={faTwitter} /> tweet
-              </a>
-            </div>
-          </div>
+              </TwitterLink>
+            </Flex>
+          </Flex>
 
           {post.frontmatter.cover && (
             <img

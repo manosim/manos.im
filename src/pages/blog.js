@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Flex } from 'rebass/styled-components';
+import { Box, Flex, Text } from 'rebass/styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faCalendarWeek,
+  faCalendarAlt,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -29,16 +29,17 @@ const BlogPage = ({ data, location }) => {
                 </Link>
               </h2>
 
-              <div className="row">
-                <div className="col-6">
-                  <div className="date">
-                    <FontAwesomeIcon className="mr-3" icon={faCalendarWeek} />
-                    {post.frontmatter.date}
-                  </div>
-                </div>
-
-                <div className="col-6"></div>
-              </div>
+              <Flex
+                justifyContent="space-between"
+                align-items="center"
+                mt={2}
+                mb={3}
+              >
+                <Flex alignItems="center">
+                  <FontAwesomeIcon className="mr-2" icon={faCalendarAlt} />
+                  <Text variant="date">{post.frontmatter.date}</Text>
+                </Flex>
+              </Flex>
 
               {post.frontmatter.cover && (
                 <img
