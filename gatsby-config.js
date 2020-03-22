@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: process.env.SITE_URL,
     title: `Emmanouil Konstantinidis`,
     description: `Emmanouil Konstantinidis. Principal Engineer working at The Times & The Sunday Times, News UK. Hobbies include JavaScript, Python, Swift and things other than programming.`,
     author: `@manosim_`,

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Box, Flex, Heading, Text } from 'rebass/styled-components';
-import { findIconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBrowser } from '@fortawesome/pro-regular-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
