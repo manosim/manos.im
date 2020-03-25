@@ -16,6 +16,10 @@ const Container = styled(Flex)`
   font-size: 0.8rem;
 `;
 
+const Icon = styled(FontAwesomeIcon)`
+  font-size: 1.25rem;
+`;
+
 export const Footer = ({ location }) => {
   const isHomepage = location && location.pathname === '/';
 
@@ -38,7 +42,7 @@ export const Footer = ({ location }) => {
           mx={2}
           p={0.5}
         >
-          <FontAwesomeIcon icon={faTwitter} size="2x" fixedWidth />
+          <Icon icon={faTwitter} fixedWidth />
         </Link>
 
         <Link
@@ -50,7 +54,7 @@ export const Footer = ({ location }) => {
           mx={2}
           p={0.5}
         >
-          <FontAwesomeIcon icon={faGithub} size="2x" fixedWidth />
+          <Icon icon={faGithub} fixedWidth />
         </Link>
 
         <Link
@@ -62,7 +66,7 @@ export const Footer = ({ location }) => {
           mx={2}
           p={0.5}
         >
-          <FontAwesomeIcon icon={faLinkedinIn} size="2x" fixedWidth />
+          <Icon icon={faLinkedinIn} fixedWidth />
         </Link>
       </Box>
 
