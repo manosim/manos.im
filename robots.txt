@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: http://manos.im/sitemap.xml
