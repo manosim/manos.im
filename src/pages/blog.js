@@ -45,6 +45,14 @@ export const PostCover = styled.img`
   margin-bottom: 1rem;
 `;
 
+export const DateIcon = styled(FontAwesomeIcon)`
+  margin-right: 0.75rem;
+`;
+
+const ButtonIcon = styled(FontAwesomeIcon)`
+  margin-left: 0.75rem;
+`;
+
 const BlogPage = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
 
@@ -60,9 +68,9 @@ const BlogPage = ({ data, location }) => {
           return (
             <Box mt={4} key={post.id}>
               <Heading as="h2" color="black">
-                <Link to={postPath} color="black">
+                <RebassLink as={Link} to={postPath}>
                   {post.frontmatter.title}
-                </Link>
+                </RebassLink>
               </Heading>
 
               <Flex
@@ -72,7 +80,7 @@ const BlogPage = ({ data, location }) => {
                 mb={3}
               >
                 <Flex alignItems="center">
-                  <FontAwesomeIcon className="mr-2" icon={faCalendarAlt} />
+                  <DateIcon icon={faCalendarAlt} />
                   <Text variant="date">{post.frontmatter.date}</Text>
                 </Flex>
               </Flex>
@@ -85,11 +93,11 @@ const BlogPage = ({ data, location }) => {
               )}
 
               <Flex flexDirection="column" alignItems="flex-start">
-                <span dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+                <Text dangerouslySetInnerHTML={{ __html: post.excerpt }} />
 
                 <MoreLink as={Link} to={postPath}>
                   Continue reading
-                  <FontAwesomeIcon className="ml-3" icon={faChevronRight} />
+                  <ButtonIcon icon={faChevronRight} />
                 </MoreLink>
               </Flex>
             </Box>

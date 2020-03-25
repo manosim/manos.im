@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Flex, Heading, Text } from 'rebass/styled-components';
+import { Box, Flex, Heading, Link, Text } from 'rebass/styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBrowser } from '@fortawesome/pro-regular-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -168,14 +168,14 @@ const ProjectsPage = ({ location }) => (
               </ProjectTags>
 
               {item.links.map((link, linkIdx) => (
-                <a
+                <Link
                   href={link.link}
                   key={`project-link-${linkIdx}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Icon icon={getLinkIcon(link.icon)} />
-                </a>
+                </Link>
               ))}
             </Box>
 

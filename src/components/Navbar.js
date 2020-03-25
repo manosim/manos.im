@@ -42,7 +42,7 @@ export const Navbar = ({ location }) => {
         py={3}
         px={3}
       >
-        <a className="navbar-brand" href="/">
+        <a href="/">
           <Logo src="/images/logo.svg" alt="Website Logo" />
         </a>
 

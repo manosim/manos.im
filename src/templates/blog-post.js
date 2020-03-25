@@ -1,14 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
-import { Flex, Heading, Text } from 'rebass/styled-components';
+import {
+  Box,
+  Flex,
+  Heading,
+  Link as RebassLink,
+  Text,
+} from 'rebass/styled-components';
 import { Disqus } from 'gatsby-plugin-disqus';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { Layout } from '../components/Layout';
-import { PostCover } from '../pages/blog';
+import { DateIcon, PostCover } from '../pages/blog';
 import { SEO } from '../components/Seo';
 
 const TwitterLink = styled.a`
@@ -40,16 +46,16 @@ const BlogPostTemplate = ({ data, location }) => {
       />
 
       <Flex
-        flexDirection="column"
+        flexDirection="row"
         sx={{ maxWidth: 730, mx: 'auto' }}
         px={3}
         mt={4}
       >
-        <div className="post">
+        <Box>
           <Heading as="h2">
-            <Link to={postPath} color="black">
+            <RebassLink as={Link} to={postPath}>
               {post.frontmatter.title}
-            </Link>
+            </RebassLink>
           </Heading>
 
           <Flex
@@ -59,7 +65,7 @@ const BlogPostTemplate = ({ data, location }) => {
             mb={3}
           >
             <Flex alignItems="center">
-              <FontAwesomeIcon className="mr-2" icon={faCalendarAlt} />
+              <DateIcon icon={faCalendarAlt} />
               <Text variant="date">{post.frontmatter.date}</Text>
             </Flex>
 
@@ -69,7 +75,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FontAwesomeIcon className="mr-1" icon={faTwitter} /> tweet
+                <FontAwesomeIcon icon={faTwitter} /> tweet
               </TwitterLink>
             </Flex>
           </Flex>
@@ -81,18 +87,13 @@ const BlogPostTemplate = ({ data, location }) => {
             />
           )}
 
-          <div
-            className="post-content"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+          <Text dangerouslySetInnerHTML={{ __html: post.html }} />
 
-          <div className="comments">
-            <Heading as="h2" color="black">
-              Comments
-            </Heading>
-            <Disqus config={disqusConfig} />
-          </div>
-        </div>
+          <Heading as="h2" color="black">
+            Comments
+          </Heading>
+          <Disqus config={disqusConfig} />
+        </Box>
       </Flex>
     </Layout>
   );
