@@ -20,14 +20,18 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  html, body, #___gatsby {
+ html, body, #___gatsby {
     height: 100%;
   }
 
-  #___gatsby > * {
+  body {
+    margin: 0px;
+  }
+
+  #gatsby-focus-wrapper {
+    min-height: 100%;
     display: flex;
     flex-direction: column;
-    height: 100%;
   }
 
   * {

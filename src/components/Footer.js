@@ -25,7 +25,6 @@ export const Footer = ({ location }) => {
 
   return (
     <Container
-      flexWrap="wrap"
       py={['2rem', '3rem', '3rem']}
       px={['1rem', '1rem', '2rem']}
       flexDirection="column"
