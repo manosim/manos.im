@@ -47,8 +47,8 @@ export const Footer = ({ location }) => {
         <Link
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/manosim/ui-color/"
-          aria-label="GitHub Repository"
+          href="https://github.com/manosim/"
+          aria-label="GitHub Profile"
           variant="link"
           mx={2}
           p={0.5}
