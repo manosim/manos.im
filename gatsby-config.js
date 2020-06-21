@@ -29,6 +29,7 @@ module.exports = {
         name: `posts`,
       },
     },
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
@@ -73,7 +74,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Sen', 'Quicksans'],
+          families: ['Sen'],
         },
       },
     },

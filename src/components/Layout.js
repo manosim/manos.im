@@ -86,15 +86,6 @@ const theme = {
         color: COLOR_GRAY_DARK,
       },
     },
-    navlink: {
-      fontFamily: "'Quicksans', sans-serif",
-      fontSize: [16, 18, 18],
-      textDecoration: 'none',
-      textTransform: 'lowercase',
-      fontWeight: 500,
-      paddingLeft: ['0.5rem', '1rem', '1rem'],
-      paddingRight: ['0.5rem', '1rem', '1rem'],
-    },
   },
   text: {
     lead: {
