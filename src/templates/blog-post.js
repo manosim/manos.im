@@ -1,20 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
-import {
-  Box,
-  Flex,
-  Heading,
-  Link as RebassLink,
-  Text,
-} from 'rebass/styled-components';
 import { Disqus } from 'gatsby-plugin-disqus';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { Layout } from '../components/Layout';
-import { DateIcon, PostCover } from '../pages/blog';
+import { PostCover } from '../pages/blog';
 import { SEO } from '../components/Seo';
 
 const TwitterLink = styled.a`
@@ -45,31 +38,19 @@ const BlogPostTemplate = ({ data, location }) => {
         keywords={post.frontmatter.keywords}
       />
 
-      <Flex
-        flexDirection="row"
-        sx={{ maxWidth: 730, mx: 'auto' }}
-        px={3}
-        mt={4}
-      >
-        <Box>
-          <Heading as="h2">
-            <RebassLink as={Link} to={postPath}>
-              {post.frontmatter.title}
-            </RebassLink>
-          </Heading>
+      <div className="container mx-auto flex-col px-3">
+        <div className="mt-6">
+          <h2 className="font-display font-semibold text-2xl">
+            <Link to={postPath}>{post.frontmatter.title}</Link>
+          </h2>
 
-          <Flex
-            justifyContent="space-between"
-            align-items="center"
-            mt={2}
-            mb={3}
-          >
-            <Flex alignItems="center">
-              <DateIcon icon={faCalendarAlt} />
-              <Text variant="date">{post.frontmatter.date}</Text>
-            </Flex>
+          <div className="flex justify-between items-center mt-2 mb-3">
+            <div className="flex items-center text-sm">
+              <FontAwesomeIcon icon={faCalendarAlt} className="mr-2" />
+              {post.frontmatter.date}
+            </div>
 
-            <Flex alignItems="center">
+            <div className="flex items-center text-sm">
               <TwitterLink
                 href={`https://twitter.com/intent/tweet?url=${location.href}&text=${post.frontmatter.title}&via=manosim_`}
                 target="_blank"
@@ -77,8 +58,8 @@ const BlogPostTemplate = ({ data, location }) => {
               >
                 <FontAwesomeIcon icon={faTwitter} /> tweet
               </TwitterLink>
-            </Flex>
-          </Flex>
+            </div>
+          </div>
 
           {post.frontmatter.cover && (
             <PostCover
@@ -87,14 +68,12 @@ const BlogPostTemplate = ({ data, location }) => {
             />
           )}
 
-          <Text dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
-          <Heading as="h2" color="black">
-            Comments
-          </Heading>
+          <h3 className="font-display font-semibold text-xl">Comments</h3>
           <Disqus config={disqusConfig} />
-        </Box>
-      </Flex>
+        </div>
+      </div>
     </Layout>
   );
 };

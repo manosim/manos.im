@@ -1,13 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
-import {
-  Box,
-  Flex,
-  Heading,
-  Link as RebassLink,
-  Text,
-} from 'rebass/styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCalendarAlt,
@@ -17,7 +10,7 @@ import {
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
 
-const MoreLink = styled(RebassLink)`
+const MoreLink = styled(Link)`
   display: flex;
   align-items: center;
   padding: 1.25rem 2rem;
@@ -45,14 +38,6 @@ export const PostCover = styled.img`
   margin-bottom: 1rem;
 `;
 
-export const DateIcon = styled(FontAwesomeIcon)`
-  margin-right: 0.75rem;
-`;
-
-const ButtonIcon = styled(FontAwesomeIcon)`
-  margin-left: 0.75rem;
-`;
-
 const BlogPage = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
 
@@ -60,30 +45,23 @@ const BlogPage = ({ data, location }) => {
     <Layout location={location}>
       <SEO title="Blog" />
 
-      <Flex flexDirection="column" sx={{ maxWidth: 730, mx: 'auto' }} px={3}>
+      <div className="container mx-auto flex-col px-3">
         {posts.map(item => {
           const post = item.node;
           const postPath = `/blog/${post.frontmatter.slug}`;
 
           return (
-            <Box mt={4} key={post.id}>
-              <Heading as="h2" color="black">
-                <RebassLink as={Link} to={postPath}>
-                  {post.frontmatter.title}
-                </RebassLink>
-              </Heading>
+            <div className="mt-6" key={post.id}>
+              <h2 className="font-display font-semibold text-2xl">
+                <Link to={postPath}>{post.frontmatter.title}</Link>
+              </h2>
 
-              <Flex
-                justifyContent="space-between"
-                align-items="center"
-                mt={2}
-                mb={3}
-              >
-                <Flex alignItems="center">
-                  <DateIcon icon={faCalendarAlt} />
-                  <Text variant="date">{post.frontmatter.date}</Text>
-                </Flex>
-              </Flex>
+              <div className="flex justify-between items-center mt-2 mb-3">
+                <div className="flex items-center text-sm">
+                  <FontAwesomeIcon icon={faCalendarAlt} className="mr-2" />
+                  {post.frontmatter.date}
+                </div>
+              </div>
 
               {post.frontmatter.cover && (
                 <PostCover
@@ -92,18 +70,18 @@ const BlogPage = ({ data, location }) => {
                 />
               )}
 
-              <Flex flexDirection="column" alignItems="flex-start">
-                <Text dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+              <div className="flex flex-col items-start">
+                <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
 
-                <MoreLink as={Link} to={postPath}>
+                <MoreLink to={postPath}>
                   Continue reading
-                  <ButtonIcon icon={faChevronRight} />
+                  <FontAwesomeIcon icon={faChevronRight} className="mr-2" />
                 </MoreLink>
-              </Flex>
-            </Box>
+              </div>
+            </div>
           );
         })}
-      </Flex>
+      </div>
     </Layout>
   );
 };
