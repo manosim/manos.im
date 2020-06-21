@@ -30,7 +30,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {

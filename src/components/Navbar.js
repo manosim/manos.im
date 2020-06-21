@@ -1,18 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
-
-const Logo = styled.img`
-  height: 27px;
-  max-width: 100%;
-`;
-
-const MenuList = styled.ul`
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-`;
 
 export const Navbar = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -29,18 +17,16 @@ export const Navbar = ({ location }) => {
   `);
 
   return (
-    <nav className="bg-primary-dark">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between flex-wrap my-6">
+    <nav className="bg-primary">
+      <div className="container flex flex-col lg:flex-row items-center justify-between flex-wrap my-6">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <a href="/">
-            <Logo src="/images/logo.svg" alt="Website Logo" />
+            <img className="logo" src="/images/logo.svg" alt="Website Logo" />
           </a>
         </div>
 
-        <div className="block lg:hidden" />
-
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto">
-          <MenuList>
+        <div className="w-full block flex flex-1 justify-center items-center lg:justify-end lg:w-auto mt-5 lg:mt-0">
+          <ul className="flex flex-row list-none">
             {data.site.siteMetadata.menuLinks.map(item => (
               <li key={item.name.toLowerCase()}>
                 <Link
@@ -55,7 +41,7 @@ export const Navbar = ({ location }) => {
                 </Link>
               </li>
             ))}
-          </MenuList>
+          </ul>
         </div>
       </div>
     </nav>

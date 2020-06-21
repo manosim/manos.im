@@ -1,6 +1,16 @@
 module.exports = {
   purge: [],
   theme: {
+    container: {
+      center: true,
+      padding: '1.5rem',
+      'max-width': {
+        default: '10rem',
+      },
+    },
+    fontFamily: {
+      display: ['Sen', 'sans-serif'],
+    },
     extend: {
       colors: {
         primary: {
@@ -11,9 +21,7 @@ module.exports = {
           default: '#119DA4',
           dark: '#006A71',
         },
-      },
-      fontFamily: {
-        display: ['Sen', 'sans-serif'],
+        twitter: '#00ACEE',
       },
     },
   },

@@ -3,3 +3,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body, #___gatsby {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+#gatsby-focus-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  @apply text-gray-500;
+  text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+  @apply text-primary-dark;
+}
+
+.gatsby-highlight {
+  display: inline-grid;
+}
+
+:not(pre) > code[class*='language-text'] {
+  @apply text-red-500;
+  background-color: initial !important;
+}
+
+.logo {
+  height: 27px;
+  max-width: 100%;
+}
+
+.project-logo {
+  max-width: 4rem;
+  align-self: flex-start;
+  margin-left: 2rem;
+}
+
+@media (min-width: 1280px) {
+  .container {
+      max-width: 48rem;
+  }
+}

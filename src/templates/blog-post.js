@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 import { Disqus } from 'gatsby-plugin-disqus';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,20 +6,7 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { Layout } from '../components/Layout';
-import { PostCover } from '../pages/blog';
 import { SEO } from '../components/Seo';
-
-const TwitterLink = styled.a`
-  background: ${props => props.theme.colors.twitter};
-  color: white;
-  padding: 0.15rem 0.25rem;
-  border-radius: 0.25rem;
-  font-size: 0.8rem;
-
-  &:hover {
-    background: white;
-  }
-`;
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
@@ -38,31 +24,33 @@ const BlogPostTemplate = ({ data, location }) => {
         keywords={post.frontmatter.keywords}
       />
 
-      <div className="container mx-auto flex-col px-3">
+      <div className="container flex-col">
         <div className="mt-6">
           <h2 className="font-display font-semibold text-2xl">
             <Link to={postPath}>{post.frontmatter.title}</Link>
           </h2>
 
-          <div className="flex justify-between items-center mt-2 mb-3">
-            <div className="flex items-center text-sm">
+          <div className="flex justify-between items-center mt-2 mb-3 text-sm">
+            <div className="flex items-center">
               <FontAwesomeIcon icon={faCalendarAlt} className="mr-2" />
               {post.frontmatter.date}
             </div>
 
-            <div className="flex items-center text-sm">
-              <TwitterLink
+            <div className="flex items-center">
+              <a
+                className="bg-twitter text-xs text-white hover:text-primary py-1 px-2 rounded-md"
                 href={`https://twitter.com/intent/tweet?url=${location.href}&text=${post.frontmatter.title}&via=manosim_`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faTwitter} /> tweet
-              </TwitterLink>
+              </a>
             </div>
           </div>
 
           {post.frontmatter.cover && (
-            <PostCover
+            <img
+              className="mx-auto my-5"
               src={`/images/posts/${post.frontmatter.cover}`}
               alt={post.frontmatter.title}
             />

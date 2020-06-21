@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBrowser } from '@fortawesome/pro-regular-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -119,14 +118,6 @@ const projects = [
   },
 ];
 
-const ProjecLogo = styled.img`
-  width: 100%;
-  max-width: 4rem;
-  height: auto;
-  align-self: flex-start;
-  margin-left: 2rem;
-`;
-
 const ProjectsPage = ({ location }) => (
   <Layout location={location}>
     <SEO
@@ -134,7 +125,7 @@ const ProjectsPage = ({ location }) => (
       keywords="projects,gitify,github,notifications,open source,code,django,rest,framework,drfdocs,trevor,backtocar,uicolor,convert,hex,rgb,goback,mobile apps,mobile apps"
     />
 
-    <div className="container mx-auto flex-col px-3">
+    <div className="container flex-col">
       <div className="mt-6">
         <h2 className="font-display font-semibold text-2xl">Projects</h2>
 
@@ -173,7 +164,13 @@ const ProjectsPage = ({ location }) => (
               </div>
 
               <div>
-                {item.image && <ProjecLogo alt={item.name} src={item.image} />}
+                {item.image && (
+                  <img
+                    className="project-logo"
+                    alt={item.name}
+                    src={item.image}
+                  />
+                )}
               </div>
             </div>
 

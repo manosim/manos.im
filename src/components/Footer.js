@@ -15,14 +15,14 @@ export const Footer = ({ location }) => {
         isHomepage ? 'mt-0' : 'mt-12'
       }`}
     >
-      <div className={`container flex flex-col item-center text-center`}>
+      <div className="container flex flex-col item-center text-center">
         <div className="mt-1 mb-4">
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://twitter.com/manosim_"
             aria-label="Twitter"
-            className="mx-2 p-1"
+            className="hover:text-gray-700 mx-2 p-1"
           >
             <FontAwesomeIcon icon={faTwitter} fixedWidth className="text-2xl" />
           </a>
@@ -32,7 +32,7 @@ export const Footer = ({ location }) => {
             rel="noopener noreferrer"
             href="https://github.com/manosim"
             aria-label="GitHub"
-            className="mx-2 p-1"
+            className="hover:text-gray-700 mx-2 p-1"
           >
             <FontAwesomeIcon icon={faGithub} fixedWidth className="text-2xl" />
           </a>
@@ -42,7 +42,7 @@ export const Footer = ({ location }) => {
             rel="noopener noreferrer"
             href="https://uk.linkedin.com/in/manosim"
             aria-label="Linked In"
-            className="mx-2 p-1"
+            className="hover:text-gray-700 mx-2 p-1"
           >
             <FontAwesomeIcon
               icon={faLinkedinIn}
@@ -54,7 +54,9 @@ export const Footer = ({ location }) => {
 
         <div className="my-3">
           Copyright ©{' '}
-          <a href="https://www.manos.im/">Emmanouil Konstantinidis</a>{' '}
+          <a className="hover:text-gray-700" href="https://www.manos.im/">
+            Emmanouil Konstantinidis
+          </a>{' '}
           {new Date().getFullYear()}.
         </div>
       </div>
