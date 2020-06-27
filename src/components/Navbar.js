@@ -21,7 +21,7 @@ export const Navbar = ({ location }) => {
       <div className="container flex flex-col lg:flex-row items-center justify-between flex-wrap my-6">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <a href="/">
-            <img className="logo" src="/images/logo.svg" alt="Website Logo" />
+            <img className="logo" src="/images/logo.svg" alt="EM Logo" />
           </a>
         </div>
 

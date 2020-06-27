@@ -127,7 +127,7 @@ const ProjectsPage = ({ location }) => (
 
     <div className="container flex-col">
       <div className="mt-6">
-        <h2 className="font-display font-semibold text-2xl">Projects</h2>
+        <h2 className="font-semibold text-2xl">Projects</h2>
 
         {projects.map((item, idx) => (
           <div
@@ -137,9 +137,7 @@ const ProjectsPage = ({ location }) => (
             <div className="flex justify-between">
               <div className="flex flex-col">
                 <div className="flex-1">
-                  <h2 className="font-display font-semibold text-xl">
-                    {item.name}
-                  </h2>
+                  <h2 className="font-semibold text-xl">{item.name}</h2>
 
                   <div className="text-sm break-all">
                     {item.uses.join(', ')}

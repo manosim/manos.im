@@ -9,13 +9,13 @@ module.exports = {
       },
     },
     fontFamily: {
-      display: ['Sen', 'sans-serif'],
+      display: ['Permanent Marker', 'sans-serif'],
     },
     extend: {
       colors: {
         primary: {
-          default: '#010E1E',
-          dark: '#010810',
+          default: '#08415C',
+          dark: '#062C3D',
         },
         secondary: {
           default: '#119DA4',

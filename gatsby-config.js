@@ -73,7 +73,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Sen'],
+          families: ['Permanent Marker'],
         },
       },
     },

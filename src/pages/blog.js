@@ -21,7 +21,7 @@ const BlogPage = ({ data, location }) => {
 
           return (
             <div className="mt-6" key={post.id}>
-              <h2 className="font-display font-semibold text-2xl">
+              <h2 className="font-semibold text-2xl">
                 <Link to={postPath}>{post.frontmatter.title}</Link>
               </h2>
               <div className="flex justify-between items-center mt-2 mb-3">

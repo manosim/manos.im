@@ -9,9 +9,7 @@ const IndexPage = ({ location }) => (
 
     <div className="flex flex-1 flex-col justify-center items-center bg-primary text-white">
       <div className="max-w-xl mx-12 my-5">
-        <h1 className="font-display font-semibold text-5xl">
-          Hello, I'm Manos.
-        </h1>
+        <h1 className="font-display text-5xl">Hello, I'm Manos.</h1>
 
         <div className="mt-4 font-light text-xl">
           Principal Engineer @{' '}

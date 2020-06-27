@@ -32,7 +32,7 @@ body {
 }
 
 a {
-  @apply text-gray-600;
+  @apply text-gray-500;
   text-decoration: none;
 }
 
@@ -50,7 +50,7 @@ a:hover, a:focus, a:active {
 }
 
 .logo {
-  height: 27px;
+  height: 1.5rem;
   max-width: 100%;
 }
 

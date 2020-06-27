@@ -26,7 +26,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
       <div className="container flex-col">
         <div className="mt-6">
-          <h2 className="font-display font-semibold text-2xl">
+          <h2 className="font-semibold text-2xl">
             <Link to={postPath}>{post.frontmatter.title}</Link>
           </h2>
 
