@@ -16,6 +16,7 @@ const IndexPage = ({ location }) => (
         <div className="mt-4 font-light text-xl">
           Principal Engineer @{' '}
           <a
+            className="hover:text-blue-400"
             href="https://www.thetimes.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
@@ -24,6 +25,7 @@ const IndexPage = ({ location }) => (
           </a>
           ,{' '}
           <a
+            className="hover:text-blue-400"
             href="https://www.news.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
