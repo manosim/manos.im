@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
+import { Article } from '../components/Article';
 import { Button } from '../components/Button';
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
@@ -14,40 +15,24 @@ const BlogPage = ({ data, location }) => {
     <Layout location={location}>
       <SEO title="Blog" />
 
-      <div className="container flex-col">
-        {posts.map(item => {
-          const post = item.node;
-          const postPath = `/blog/${post.frontmatter.slug}`;
+      {posts.map(item => {
+        const post = item.node;
+        const postPath = `/blog/${post.frontmatter.slug}`;
 
-          return (
-            <div className="mt-6" key={post.id}>
-              <h2 className="font-semibold text-2xl">
-                <Link to={postPath}>{post.frontmatter.title}</Link>
-              </h2>
-              <div className="flex justify-between items-center mt-2 mb-3">
-                <div className="flex items-center text-sm">
-                  <FontAwesomeIcon icon={faCalendarAlt} className="mr-2" />
-                  {post.frontmatter.date}
-                </div>
-              </div>
-
-              {post.frontmatter.cover && (
-                <img
-                  className="mx-auto my-5"
-                  src={`/images/posts/${post.frontmatter.cover}`}
-                  alt={post.frontmatter.title}
-                />
-              )}
-
-              <div className="flex flex-col items-start">
-                <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-
-                <Button to={postPath} />
-              </div>
-            </div>
-          );
-        })}
-      </div>
+        return (
+          <Article
+            key={post.id}
+            location={location}
+            postPath={postPath}
+            title={post.frontmatter.title}
+            slug={post.frontmatter.slug}
+            postDate={post.frontmatter.date}
+            cover={post.frontmatter.cover}
+            content={post.excerpt}
+            isPreview
+          />
+        );
+      })}
     </Layout>
   );
 };
