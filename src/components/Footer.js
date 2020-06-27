@@ -1,79 +1,53 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Box, Flex, Link } from 'rebass/styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGithub,
-  faTwitter,
-  faLinkedinIn,
-} from '@fortawesome/free-brands-svg-icons';
-
-const Container = styled(Flex)`
-  background-color: ${props => props.theme.colors.primary};
-  margin-top: ${props => (props.isHomepage ? '0' : '3rem')};
-  text-align: center;
-  color: white;
-  font-size: 0.8rem;
-`;
-
-const Icon = styled(FontAwesomeIcon)`
-  font-size: 1.25rem;
-`;
+import { faGithub, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 export const Footer = ({ location }) => {
   const isHomepage = location && location.pathname === '/';
 
   return (
-    <Container
-      py={['2rem', '3rem', '3rem']}
-      px={['1rem', '1rem', '2rem']}
-      flexDirection="column"
-      alignItems="center"
-      isHomepage={isHomepage}
-    >
-      <Box mt={1} mb={4}>
-        <Link
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://twitter.com/manosim_"
-          aria-label="Twitter"
-          variant="link"
-          mx={2}
-          p={0.5}
-        >
-          <Icon icon={faTwitter} fixedWidth />
-        </Link>
+    <div className={`bg-primary text-white text-sm py-10 px-3 ${isHomepage ? 'mt-0' : 'mt-12'}`}>
+      <div className="container flex flex-col item-center text-center">
+        <div className="mt-1 mb-4">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://twitter.com/manosim_"
+            aria-label="Twitter"
+            className="hover:text-blue-400 mx-2 p-1"
+          >
+            <FontAwesomeIcon icon={faTwitter} fixedWidth className="text-2xl" />
+          </a>
 
-        <Link
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/manosim/"
-          aria-label="GitHub Profile"
-          variant="link"
-          mx={2}
-          p={0.5}
-        >
-          <Icon icon={faGithub} fixedWidth />
-        </Link>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/manosim"
+            aria-label="GitHub"
+            className="hover:text-blue-400 mx-2 p-1"
+          >
+            <FontAwesomeIcon icon={faGithub} fixedWidth className="text-2xl" />
+          </a>
 
-        <Link
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://uk.linkedin.com/in/manosim"
-          aria-label="Linked In"
-          variant="link"
-          mx={2}
-          p={0.5}
-        >
-          <Icon icon={faLinkedinIn} fixedWidth />
-        </Link>
-      </Box>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://uk.linkedin.com/in/manosim"
+            aria-label="Linked In"
+            className="hover:text-blue-400 mx-2 p-1"
+          >
+            <FontAwesomeIcon icon={faLinkedinIn} fixedWidth className="text-2xl" />
+          </a>
+        </div>
 
-      <Box my={[1, 0]}>
-        Copyright ©{' '}
-        <Link href="https://www.manos.im/">Emmanouil Konstantinidis</Link>{' '}
-        {new Date().getFullYear()}.
-      </Box>
-    </Container>
+        <div className="my-3">
+          Copyright ©{' '}
+          <a className="hover:text-blue-400" href="https://www.manos.im/">
+            Emmanouil Konstantinidis
+          </a>{' '}
+          {new Date().getFullYear()}.
+        </div>
+      </div>
+    </div>
   );
 };

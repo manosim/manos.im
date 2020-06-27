@@ -1,50 +1,34 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Box, Flex, Heading, Link, Text } from 'rebass/styled-components';
 
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
-
-const Container = styled(Flex)`
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  background-color: ${props => props.theme.colors.primary};
-  color: white;
-`;
 
 const IndexPage = ({ location }) => (
   <Layout location={location}>
     <SEO title="Principal Engineer at The Times & The Sunday Times, NewsUK" />
 
-    <Container p={['1rem', '2rem', '3rem']}>
-      <Box maxWidth={750}>
-        <Heading as="h1" fontSize="3rem">
-          Hello, I'm Manos.
-        </Heading>
+    <div className="flex flex-1 flex-col justify-center items-center bg-primary text-white">
+      <div className="max-w-xl mx-12 my-5">
+        <h1 className="font-display text-5xl">Hello, I'm Manos.</h1>
 
-        <Text variant="lead" mt={4}>
+        <div className="mt-4 font-light text-xl">
           Principal Engineer @{' '}
-          <Link
+          <a
+            className="hover:text-blue-400"
             href="https://www.thetimes.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
           >
             The Times & The Sunday Times
-          </Link>
+          </a>
           ,{' '}
-          <Link
-            href="https://www.news.co.uk/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className="hover:text-blue-400" href="https://www.news.co.uk/" target="_blank" rel="noopener noreferrer">
             News UK
-          </Link>
+          </a>
           .
-        </Text>
-      </Box>
-    </Container>
+        </div>
+      </div>
+    </div>
   </Layout>
 );
 

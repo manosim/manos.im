@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Box, Flex, Heading, Link, Text } from 'rebass/styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBrowser } from '@fortawesome/pro-regular-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -8,7 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
 
-const getLinkIcon = linkIcon => {
+const getLinkIcon = (linkIcon) => {
   switch (linkIcon) {
     case 'browser':
       return faBrowser;
@@ -120,29 +118,6 @@ const projects = [
   },
 ];
 
-const ProjectHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const ProjectTags = styled.div`
-  word-break: break-word;
-  margin-bottom: 0.5rem;
-`;
-
-const Icon = styled(FontAwesomeIcon)`
-  margin-right: 0.75rem;
-  font-size: 1.25rem;
-`;
-
-const ProjecLogo = styled.img`
-  width: 100%;
-  max-width: 4rem;
-  height: auto;
-  align-self: flex-start;
-  margin-left: 2rem;
-`;
-
 const ProjectsPage = ({ location }) => (
   <Layout location={location}>
     <SEO
@@ -150,48 +125,37 @@ const ProjectsPage = ({ location }) => (
       keywords="projects,gitify,github,notifications,open source,code,django,rest,framework,drfdocs,trevor,backtocar,uicolor,convert,hex,rgb,goback,mobile apps,mobile apps"
     />
 
-    <Flex flexDirection="column" sx={{ maxWidth: 730, mx: 'auto' }} px={3}>
-      <Heading as="h1" mt={4} fontSize="2rem">
-        Projects
-      </Heading>
+    <div className="container flex-col">
+      <div className="mt-6">
+        <h2 className="font-semibold text-2xl">Projects</h2>
 
-      {projects.map((item, idx) => (
-        <Box mt={5} key={`project-${idx}`}>
-          <ProjectHeader>
-            <Box>
-              <Heading as="h2" sx={{ 'word-break': 'break-word' }} mb={2}>
-                {item.name}
-              </Heading>
+        {projects.map((item, idx) => (
+          <div className={`my-10 ${idx === 0 ? 'mt-6' : ''}`} key={`project-${idx}`}>
+            <div className="flex justify-between">
+              <div className="flex flex-col">
+                <div className="flex-1">
+                  <h2 className="font-semibold text-xl">{item.name}</h2>
 
-              <ProjectTags>
-                <strong>Tech</strong>: {item.uses.join(', ')}
-              </ProjectTags>
+                  <div className="text-sm break-all">{item.uses.join(', ')}</div>
+                </div>
 
-              {item.links.map((link, linkIdx) => (
-                <Link
-                  href={link.link}
-                  key={`project-link-${linkIdx}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon icon={getLinkIcon(link.icon)} />
-                </Link>
-              ))}
-            </Box>
+                <div>
+                  {item.links.map((link, linkIdx) => (
+                    <a href={link.link} key={`project-link-${linkIdx}`} target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={getLinkIcon(link.icon)} className="mr-3" />
+                    </a>
+                  ))}
+                </div>
+              </div>
 
-            {item.image && <ProjecLogo alt={item.name} src={item.image} />}
-          </ProjectHeader>
+              <div>{item.image && <img className="project-logo" alt={item.name} src={item.image} />}</div>
+            </div>
 
-          <Box>
-            <Text
-              dangerouslySetInnerHTML={{ __html: item.description }}
-              variant="lead"
-              mt={2}
-            />
-          </Box>
-        </Box>
-      ))}
-    </Flex>
+            <div className="mt-2" dangerouslySetInnerHTML={{ __html: item.description }} />
+          </div>
+        ))}
+      </div>
+    </div>
   </Layout>
 );
 

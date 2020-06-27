@@ -29,7 +29,7 @@ module.exports = {
         name: `posts`,
       },
     },
-    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {
@@ -70,10 +70,16 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        google: {
-          families: ['Sen', 'Quicksans'],
+        fonts: {
+          google: [
+            {
+              family: 'Permanent Marker',
+              variants: ['400'],
+              fontDisplay: 'swap',
+            },
+          ],
         },
       },
     },
