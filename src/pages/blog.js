@@ -1,10 +1,7 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { graphql } from 'gatsby';
 
 import { Article } from '../components/Article';
-import { Button } from '../components/Button';
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
 

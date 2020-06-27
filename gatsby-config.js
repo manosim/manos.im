@@ -70,10 +70,16 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        google: {
-          families: ['Permanent Marker'],
+        fonts: {
+          google: [
+            {
+              family: 'Permanent Marker',
+              variants: ['400'],
+              fontDisplay: 'swap',
+            },
+          ],
         },
       },
     },
