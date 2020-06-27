@@ -6,11 +6,12 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "prettier:check": "prettier --check 'src/**/*.{js,json}'",
+    "prettier:apply": "prettier --write 'src/**/*.{js,json}'",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "yarn prettier:check && echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -59,7 +60,7 @@
   "devDependencies": {
     "gatsby-plugin-postcss": "^2.3.6",
     "postcss-import": "^12.0.1",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "tailwindcss": "^1.4.6"
   }
 }

@@ -27,13 +27,11 @@ export const Navbar = ({ location }) => {
 
         <div className="w-full block flex flex-1 justify-center items-center lg:justify-end lg:w-auto mt-5 lg:mt-0">
           <ul className="flex flex-row list-none">
-            {data.site.siteMetadata.menuLinks.map(item => (
+            {data.site.siteMetadata.menuLinks.map((item) => (
               <li key={item.name.toLowerCase()}>
                 <Link
                   className={`px-2 py-3 lg:inline-block lg:mt-0 lowercase ${
-                    location.pathname === item.path
-                      ? 'text-gray-500'
-                      : 'text-white'
+                    location.pathname === item.path ? 'text-gray-500' : 'text-white'
                   } hover:text-blue-400`}
                   to={item.path}
                 >

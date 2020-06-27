@@ -1,20 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGithub,
-  faTwitter,
-  faLinkedinIn,
-} from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 export const Footer = ({ location }) => {
   const isHomepage = location && location.pathname === '/';
 
   return (
-    <div
-      className={`bg-primary text-white text-sm py-10 px-3 ${
-        isHomepage ? 'mt-0' : 'mt-12'
-      }`}
-    >
+    <div className={`bg-primary text-white text-sm py-10 px-3 ${isHomepage ? 'mt-0' : 'mt-12'}`}>
       <div className="container flex flex-col item-center text-center">
         <div className="mt-1 mb-4">
           <a
@@ -44,11 +36,7 @@ export const Footer = ({ location }) => {
             aria-label="Linked In"
             className="hover:text-blue-400 mx-2 p-1"
           >
-            <FontAwesomeIcon
-              icon={faLinkedinIn}
-              fixedWidth
-              className="text-2xl"
-            />
+            <FontAwesomeIcon icon={faLinkedinIn} fixedWidth className="text-2xl" />
           </a>
         </div>
 

@@ -11,10 +11,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO
-        title={post.frontmatter.title}
-        keywords={post.frontmatter.keywords}
-      />
+      <SEO title={post.frontmatter.title} keywords={post.frontmatter.keywords} />
 
       <Article
         location={location}

@@ -7,16 +7,7 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { Button } from './Button';
 
-export const Article = ({
-  location,
-  title,
-  postDate,
-  postPath,
-  cover,
-  content,
-  slug,
-  isPreview,
-}) => {
+export const Article = ({ location, title, postDate, postPath, cover, content, slug, isPreview }) => {
   const disqusConfig = {
     url: location.href,
     identifier: slug,
@@ -26,9 +17,7 @@ export const Article = ({
   return (
     <div className="container flex-col">
       <div className="mt-6">
-        <h2 className="font-semibold text-2xl">
-          {isPreview ? <Link to={postPath}>{title}</Link> : title}
-        </h2>
+        <h2 className="font-semibold text-2xl">{isPreview ? <Link to={postPath}>{title}</Link> : title}</h2>
 
         <div className="flex justify-between items-center mt-2 mb-3 text-sm">
           <div className="flex items-center">
@@ -50,13 +39,7 @@ export const Article = ({
           )}
         </div>
 
-        {cover && (
-          <img
-            className="mx-auto my-5"
-            src={`/images/posts/${cover}`}
-            alt={title}
-          />
-        )}
+        {cover && <img className="mx-auto my-5" src={`/images/posts/${cover}`} alt={title} />}
 
         <div className="flex flex-col items-start">
           <div dangerouslySetInnerHTML={{ __html: content }} />

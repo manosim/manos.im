@@ -6,7 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
 
-const getLinkIcon = linkIcon => {
+const getLinkIcon = (linkIcon) => {
   switch (linkIcon) {
     case 'browser':
       return faBrowser;
@@ -130,52 +130,28 @@ const ProjectsPage = ({ location }) => (
         <h2 className="font-semibold text-2xl">Projects</h2>
 
         {projects.map((item, idx) => (
-          <div
-            className={`my-10 ${idx === 0 ? 'mt-6' : ''}`}
-            key={`project-${idx}`}
-          >
+          <div className={`my-10 ${idx === 0 ? 'mt-6' : ''}`} key={`project-${idx}`}>
             <div className="flex justify-between">
               <div className="flex flex-col">
                 <div className="flex-1">
                   <h2 className="font-semibold text-xl">{item.name}</h2>
 
-                  <div className="text-sm break-all">
-                    {item.uses.join(', ')}
-                  </div>
+                  <div className="text-sm break-all">{item.uses.join(', ')}</div>
                 </div>
 
                 <div>
                   {item.links.map((link, linkIdx) => (
-                    <a
-                      href={link.link}
-                      key={`project-link-${linkIdx}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FontAwesomeIcon
-                        icon={getLinkIcon(link.icon)}
-                        className="mr-3"
-                      />
+                    <a href={link.link} key={`project-link-${linkIdx}`} target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={getLinkIcon(link.icon)} className="mr-3" />
                     </a>
                   ))}
                 </div>
               </div>
 
-              <div>
-                {item.image && (
-                  <img
-                    className="project-logo"
-                    alt={item.name}
-                    src={item.image}
-                  />
-                )}
-              </div>
+              <div>{item.image && <img className="project-logo" alt={item.name} src={item.image} />}</div>
             </div>
 
-            <div
-              className="mt-2"
-              dangerouslySetInnerHTML={{ __html: item.description }}
-            />
+            <div className="mt-2" dangerouslySetInnerHTML={{ __html: item.description }} />
           </div>
         ))}
       </div>

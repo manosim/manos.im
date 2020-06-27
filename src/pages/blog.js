@@ -12,7 +12,7 @@ const BlogPage = ({ data, location }) => {
     <Layout location={location}>
       <SEO title="Blog" />
 
-      {posts.map(item => {
+      {posts.map((item) => {
         const post = item.node;
         const postPath = `/blog/${post.frontmatter.slug}`;
 

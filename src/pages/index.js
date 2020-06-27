@@ -22,12 +22,7 @@ const IndexPage = ({ location }) => (
             The Times & The Sunday Times
           </a>
           ,{' '}
-          <a
-            className="hover:text-blue-400"
-            href="https://www.news.co.uk/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className="hover:text-blue-400" href="https://www.news.co.uk/" target="_blank" rel="noopener noreferrer">
             News UK
           </a>
           .
