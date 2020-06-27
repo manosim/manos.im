@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
+import { Button } from './Button';
+
 export const Article = ({
   location,
   title,
@@ -56,7 +58,11 @@ export const Article = ({
           />
         )}
 
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div className="flex flex-col items-start">
+          <div dangerouslySetInnerHTML={{ __html: content }} />
+
+          {isPreview && <Button to={postPath} />}
+        </div>
 
         {!isPreview && (
           <>
