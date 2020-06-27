@@ -77,7 +77,7 @@ module.exports = {
             {
               family: 'Permanent Marker',
               variants: ['400'],
-              fontDisplay: 'swap',
+              fontDisplay: 'block',
             },
           ],
         },
