@@ -57,6 +57,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "gatsby-plugin-postcss": "^2.3.6",
     "postcss-import": "^12.0.1",
     "prettier": "^2.0.5",
