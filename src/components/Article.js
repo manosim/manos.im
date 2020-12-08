@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Disqus } from 'gatsby-plugin-disqus';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { Button } from './Button';

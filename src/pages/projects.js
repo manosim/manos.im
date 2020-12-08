@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBrowser } from '@fortawesome/pro-regular-svg-icons';
+import { faWindowMaximize } from '@fortawesome/free-regular-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { Layout } from '../components/Layout';
@@ -9,7 +9,7 @@ import { SEO } from '../components/Seo';
 const getLinkIcon = (linkIcon) => {
   switch (linkIcon) {
     case 'browser':
-      return faBrowser;
+      return faWindowMaximize;
     case 'github':
       return faGithub;
     default:
