@@ -11,7 +11,7 @@ const IndexPage = ({ location }) => (
       <div className="max-w-xl mx-12 my-5">
         <h1 className="font-display text-5xl">Hello, I'm Manos.</h1>
         <div className="mt-4 font-light text-xl">
-          Engineering Manager @{' '}
+          Engineering Manager at{' '}
           <a
             className="text-formidable hover:text-formidable-dark"
             href="https://www.formidable.com/"
@@ -24,7 +24,7 @@ const IndexPage = ({ location }) => (
         </div>
 
         <div className="mt-2 font-light text-sm">
-          Previously @{' '}
+          Previously at{' '}
           <a
             className="hover:text-blue-400"
             href="https://www.thetimes.co.uk/"
