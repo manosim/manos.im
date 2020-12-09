@@ -21,6 +21,10 @@ module.exports = {
           default: 'var(--color-secondary)',
           dark: 'var(--color-secondary-dark)',
         },
+        formidable: {
+          default: '#f04d21',
+          dark: '#db3b0f',
+        },
         twitter: '#00ACEE',
       },
     },

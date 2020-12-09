@@ -2,10 +2,10 @@ module.exports = {
   siteMetadata: {
     siteUrl: process.env.SITE_URL,
     title: `Emmanouil Konstantinidis`,
-    description: `Emmanouil Konstantinidis. Principal Engineer working at The Times & The Sunday Times, News UK. Hobbies include JavaScript, Python, Swift and things other than programming.`,
+    description: `Emmanouil Konstantinidis. Engineering Manager at Formidable. Previously at The Times & The Sunday Times, News UK. Hobbies include JavaScript, Python, Swift and more.`,
     author: `@manosim_`,
     keywords:
-      'emmanouil,konstantinidis,manos.im,iamemmanouil,ekonstantinidis,principal,software,engineer,dabapps,simpplr,the times,the sunday times,newsuk,news,london,uk',
+      'emmanouil,konstantinidis,manos.im,iamemmanouil,ekonstantinidis,engineering,manager,formidable,principal,software,engineer,dabapps,simpplr,the times,the sunday times,newsuk,news,london,uk',
     menuLinks: [
       {
         name: 'Home',
