@@ -14,12 +14,12 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          default: '#08415C',
-          dark: '#062C3D',
+          default: 'var(--color-primary)',
+          dark: 'var(--color-primary-dark)',
         },
         secondary: {
-          default: '#119DA4',
-          dark: '#006A71',
+          default: 'var(--color-secondary)',
+          dark: 'var(--color-secondary-dark)',
         },
         twitter: '#00ACEE',
       },
