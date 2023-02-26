@@ -14,13 +14,13 @@ const IndexPage = ({ location }) => (
           Engineering Manager at{' '}
           <a
             className="text-formidable hover:text-formidable-dark"
-            href="https://www.formidable.com/"
+            href="https://www.nearform.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Formidable
+            NearForm
           </a>
-          , London
+          .
         </div>
 
         <div className="mt-2 font-light text-sm">
