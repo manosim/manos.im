@@ -1,11 +1,11 @@
-@import "../../node_modules/prismjs/themes/prism-tomorrow.css";
-@import "../../node_modules/@fortawesome/fontawesome-svg-core/styles.css";
+@import '../../node_modules/prismjs/themes/prism-tomorrow.css';
+@import '../../node_modules/@fortawesome/fontawesome-svg-core/styles.css';
 
 :root {
-  --color-primary: #08415C;
-  --color-primary-dark: #062C3D;
-  --color-secondary: #119DA4;
-  --color-secondary-dark: #006A71;
+  --color-primary: #04578b;
+  --color-primary-dark: #004c7b;
+  --color-secondary: #119da4;
+  --color-secondary-dark: #006a71;
 }
 
 @tailwind base;
@@ -21,7 +21,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-html, body, #___gatsby {
+html,
+body,
+#___gatsby {
   height: 100%;
 }
 
@@ -44,7 +46,9 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
   @apply text-primary-dark;
 }
 
@@ -70,6 +74,6 @@ a:hover, a:focus, a:active {
 
 @media (min-width: 1280px) {
   .container {
-      max-width: 48rem;
+    max-width: 48rem;
   }
 }
