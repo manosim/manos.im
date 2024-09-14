@@ -2,8 +2,8 @@
 @import '../../node_modules/@fortawesome/fontawesome-svg-core/styles.css';
 
 :root {
-  --color-primary: #04578b;
-  --color-primary-dark: #004c7b;
+  --color-primary: #1e254a;
+  --color-primary-dark: #191f3f;
   --color-secondary: #119da4;
   --color-secondary-dark: #006a71;
 }
