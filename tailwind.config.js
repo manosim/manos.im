@@ -21,9 +21,9 @@ module.exports = {
           default: 'var(--color-secondary)',
           dark: 'var(--color-secondary-dark)',
         },
-        nearform: {
-          default: '#130048',
-          dark: '#0e0036',
+        travelex: {
+          default: '#30375f',
+          dark: '#212644',
         },
         twitter: '#00ACEE',
       },
