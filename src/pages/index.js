@@ -13,7 +13,7 @@ const IndexPage = ({ location }) => (
         <div className="mt-4 font-medium text-xl">
           Head of Engineering at{' '}
           <a
-            className="text-nearform hover:text-gray-900"
+            className="text-travelex hover:text-gray-900"
             href="https://www.travelex.com/"
             target="_blank"
             rel="noopener noreferrer"
