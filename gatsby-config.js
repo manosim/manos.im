@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: process.env.SITE_URL,
     title: `Emmanouil Konstantinidis`,
-    description: `Emmanouil Konstantinidis. Engineering Manager at NearForm. Previously at Formidable, The Times & The Sunday Times, News UK. Hobbies include JavaScript, Python, Swift and more.`,
+    description: `Emmanouil Konstantinidis. Head of Engineering at Travelex. Previously at Nearform, Formidable, The Times & The Sunday Times, News UK. Hobbies include JavaScript, Python, Swift and more.`,
     author: `@manosim_`,
     keywords:
       'emmanouil,konstantinidis,manos.im,iamemmanouil,ekonstantinidis,engineering,manager,nearform,formidable,principal,software,engineer,dabapps,simpplr,the times,the sunday times,newsuk,news,london,uk',
