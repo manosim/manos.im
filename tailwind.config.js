@@ -22,8 +22,8 @@ module.exports = {
           dark: 'var(--color-secondary-dark)',
         },
         travelex: {
-          default: '#30375f',
-          dark: '#212644',
+          default: '#DA292F',
+          dark: '#bc2026',
         },
         twitter: '#00ACEE',
       },
