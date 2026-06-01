@@ -1,66 +1,26 @@
 {
   "name": "manosim-website",
   "description": "Repository containing the source for my website",
-  "private": true,
-  "version": "0.1.0",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "prettier:check": "prettier --check 'src/**/*.{js,json}'",
-    "prettier:apply": "prettier --write 'src/**/*.{js,json}'",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "yarn prettier:check && echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "prettier:check": "prettier --check .",
+    "prettier:apply": "prettier --write ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/manosim/manos.im.git"
+  "engines": {
+    "node": ">=24.15.0"
   },
-  "keywords": [
-    "blog",
-    "gatsby",
-    "iamemmanouil",
-    "manosim",
-    "ekonstantinidis"
-  ],
-  "author": "Emmanouil Konstantinidis",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/manosim/manos.im/issues"
-  },
-  "homepage": "https://www.manos.im/",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-regular-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.13",
-    "gatsby": "2.28.1",
-    "gatsby-image": "2.7.0",
-    "gatsby-plugin-disqus": "^1.2.2",
-    "gatsby-plugin-google-analytics": "2.7.0",
-    "gatsby-plugin-manifest": "2.8.0",
-    "gatsby-plugin-offline": "3.6.0",
-    "gatsby-plugin-postcss": "^3.3.0",
-    "gatsby-plugin-react-helmet": "3.6.0",
-    "gatsby-plugin-sharp": "2.10.1",
-    "gatsby-plugin-sitemap": "^2.8.0",
-    "gatsby-plugin-webfonts": "^1.1.3",
-    "gatsby-remark-images": "3.7.0",
-    "gatsby-remark-prismjs": "3.9.0",
-    "gatsby-source-filesystem": "2.7.0",
-    "gatsby-transformer-remark": "2.12.0",
-    "gatsby-transformer-sharp": "2.8.0",
-    "prismjs": "^1.22.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "react-helmet": "^6.1.0"
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.4.2",
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
-    "postcss-import": "^12.0.1",
-    "prettier": "^2.2.1",
-    "tailwindcss": "^1.4.6"
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

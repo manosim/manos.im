@@ -1,0 +1,27 @@
+---
+import { siteMetadata } from "../utils/constants";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Built together">
+  <!-- Hero -->
+  <main
+    class="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-18"
+  >
+    <!-- Headline -->
+    <h1
+      class="animate-fade-up [animation-delay:200ms] font-display font-extrabold text-carbon leading-[0.95] tracking-tighter mb-10"
+      style="font-size: clamp(52px, 5vw, 100px);"
+    >
+      This is a <br /><span class="text-green-500">test.</span>
+    </h1>
+
+    <!-- Description -->
+    <p
+      class="animate-fade-up [animation-delay:300ms] text-carbon/65 max-w-xl leading-relaxed font-normal mb-10"
+      style="font-size: clamp(16px, 2vw, 19px);"
+    >
+      {siteMetadata.description}
+    </p>
+  </main>
+</Layout>
