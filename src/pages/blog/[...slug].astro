@@ -2,10 +2,9 @@
 import { Image } from "astro:assets";
 import { getCollection, getEntry } from "astro:content";
 
-import { getSlug } from "../../utils/blog";
-
-import Layout from "../../layouts/Layout.astro";
+import { formatDate, getSlug } from "../../utils/blog";
 import BlogContent from "../../components/BlogContent.astro";
+import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -27,7 +26,7 @@ const coverPhotoUrl = `/images/posts/${post.data.cover}`;
   <div class="container max-w-5xl pt-16 md:pt-24 pb-16">
     <div class="text-center text-sm text-gray-600 mb-4">
       <p>
-        {post.data.publishedAt.toDateString()}
+        {formatDate(post.data.publishedAt)}
       </p>
     </div>
 

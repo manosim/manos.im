@@ -1,3 +1,11 @@
+export const formatDate = (date: Date) => {
+  return date.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+};
+
 export const getSlug = (filePath?: string) => {
   return filePath?.split("/").pop()?.replace(".mdx", "");
 };
