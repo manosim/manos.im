@@ -16,5 +16,15 @@ export const getMeta = (title: string, description?: string | null) => {
       type: "website",
       image: imageUrl,
     },
+
+    // Twitter
+    twitter: {
+      title: `${title} - ${siteMetadata.title}`,
+      creator: "@manosim_",
+      site: "@manosim_",
+      description: metaDescription,
+      image: imageUrl,
+      imageAlt: title,
+    },
   };
 };
