@@ -28,7 +28,7 @@ export const previously = [
     href: "https://www.thetimes.co.uk/"
   },
   {
-    label: "NewsUK",
+    label: "News UK",
     href: "https://www.news.co.uk/"
   },
 ];

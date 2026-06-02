@@ -1,6 +1,7 @@
 {
   "name": "manosim-website",
   "description": "Repository containing the source for my website",
+  "private": true,
   "type": "module",
   "version": "0.0.1",
   "scripts": {

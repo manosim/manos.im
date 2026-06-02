@@ -1,43 +1,58 @@
-# manos.im 
+# manos.im
+
+Personal website for [Emmanouil Konstantinidis](https://www.manos.im), built with Astro 6 and Tailwind CSS v4.
+
+## Stack
+
+- [Astro 6](https://astro.build) — static site generator
+- [Tailwind CSS v4](https://tailwindcss.com) — via `@tailwindcss/vite`
+- TypeScript — strict mode
+
+## Commands
 
 ```sh
-npm create astro@latest -- --template minimal
+npm run dev              # Start dev server at localhost:4321
+npm run build            # Build to ./dist/
+npm run preview          # Preview production build locally
+npm run prettier:check   # Check formatting
+npm run prettier:apply   # Auto-format all files
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Environment
 
-## 🚀 Project Structure
+Copy `.env.example` to `.env` and set the required variables before running locally:
 
-Inside of your Astro project, you'll see the following folders and files:
+```sh
+ENVIRONMENT="development"
+SITE_URL="http://localhost:4321"
+```
+
+## Project structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── components/
+│   ├── BlogContent.astro
+│   ├── Button.astro          # Primary / secondary variants
+│   ├── FeaturedProject.astro
+│   ├── Footer.astro
+│   ├── Glow.astro            # Ambient hero background
+│   ├── Logo.astro
+│   └── Navbar.astro
+├── layouts/
+│   └── Layout.astro
+├── pages/
+│   ├── index.astro           # Home
+│   ├── projects.astro
+│   └── blog/
+│       ├── index.astro
+│       └── [...slug].astro
+├── posts/                    # MDX blog posts (content collection)
+├── styles/
+│   └── global.css            # Tailwind theme tokens + animations
+└── utils/
+    ├── blog.ts
+    ├── constants.ts          # Site data: projects, socials, previously
+    ├── meta.ts
+    └── marked.ts
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
