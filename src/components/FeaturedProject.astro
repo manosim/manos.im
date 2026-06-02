@@ -1,0 +1,89 @@
+---
+import { ArrowRight, ArrowUpRight } from "@lucide/astro";
+
+import type { Project } from "../utils/constants";
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const href = project.links[0]?.href ?? "#";
+---
+
+<section class="container max-w-5xl pt-4 md:pt-8 pb-16 enter enter-delay-460">
+  <div class="mb-7 flex items-end justify-between gap-4">
+    <h2
+      class="font-display text-2xl md:text-3xl font-bold tracking-tight text-ink"
+    >
+      Featured
+    </h2>
+
+    <a
+      href="/projects"
+      class="group inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap font-mono text-sm text-accent hover:gap-2.5 transition-all"
+    >
+      All projects
+      <ArrowUpRight class="size-3" />
+    </a>
+  </div>
+
+  <a
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    class="group grid grid-cols-1 overflow-hidden rounded-3xl border border-line bg-surface shadow-md md:grid-cols-[minmax(0,38%)_1fr] hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+  >
+    <!-- Recessed panel -->
+    <div
+      class="relative flex flex-col justify-between gap-8 p-8 md:p-10 bg-paper"
+    >
+      <div class="flex items-center justify-between">
+        <img
+          src={project.logo}
+          alt=""
+          class="h-16 w-16 rounded-2xl object-cover ring-1 ring-inset ring-line"
+        />
+        <span
+          class="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-2"
+        >
+          {project.year}
+        </span>
+      </div>
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-2">
+          Featured
+        </p>
+        <h3
+          class="mt-1.5 font-display text-3xl md:text-4xl font-bold tracking-tight text-ink"
+        >
+          {project.name}
+        </h3>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-col justify-center gap-6 p-8 md:p-10">
+      <p class="max-w-md font-body text-lg leading-relaxed text-ink-2">
+        {project.blurb}
+      </p>
+
+      <div class="flex flex-wrap gap-1.5">
+        {
+          project.tags.map((tag) => (
+            <span class="font-mono text-[11px] tracking-[0.04em] text-ink-2 rounded-full border border-line-strong bg-surface px-2.5 py-1">
+              {tag}
+            </span>
+          ))
+        }
+      </div>
+
+      <span
+        class="inline-flex items-center gap-1.5 font-mono text-sm font-medium text-accent group-hover:gap-2.5 transition-all"
+      >
+        Explore project
+        <ArrowRight class="size-3" />
+      </span>
+    </div>
+  </a>
+</section>

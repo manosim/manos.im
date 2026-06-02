@@ -1,0 +1,47 @@
+---
+import Logo from "./Logo.astro";
+
+const links = [
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
+  { label: "Blog", href: "/blog" },
+];
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === "/"
+    ? pathname === "/" || pathname === ""
+    : pathname.startsWith(href);
+---
+
+<nav class="relative z-10">
+  <div class="container flex h-18 max-w-5xl items-center justify-between px-6">
+    <a href="/" class="group flex items-center gap-2.5">
+      <Logo class="h-8 w-8" />
+
+      <span class="font-display text-[15px] font-bold tracking-tight text-ink">
+        manos<span class="text-accent">.</span>im
+      </span>
+    </a>
+
+    <div class="flex items-center gap-7">
+      {
+        links.map((link) => {
+          const active = isActive(link.href);
+          return (
+            <a
+              href={link.href}
+              class={`group relative font-mono text-[13px] tracking-[0.02em] transition-colors duration-200 ${active ? "text-ink" : "text-ink-3 hover:text-ink"}`}
+            >
+              {link.label}
+              <span
+                class={`absolute -bottom-1.5 left-0 h-0.5 rounded-full bg-accent transition-all duration-300 ease-out ${active ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"}`}
+                aria-hidden="true"
+              />
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</nav>

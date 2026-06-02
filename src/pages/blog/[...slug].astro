@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, getEntry } from "astro:content";
+
+import { formatDate, getSlug } from "../../utils/blog";
+import BlogContent from "../../components/BlogContent.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: getSlug(post.filePath) },
+    props: { post },
+  }));
+}
+
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect("/404");
+const post = await getEntry("blog", slug);
+if (!post) return Astro.redirect("/404");
+const { title } = post.data;
+const coverPhotoUrl = `/images/posts/${post.data.cover}`;
+---
+
+<Layout title={`${title} - Blog`}>
+  <div class="container max-w-5xl pt-16 md:pt-24 pb-16">
+    <div class="text-center text-sm text-gray-600 mb-4">
+      <p>
+        {formatDate(post.data.publishedAt)}
+      </p>
+    </div>
+
+    <h2
+      class="mb-4 text-3xl text-center font-semibold tracking-tight text-gray-900 sm:text-4xl"
+    >
+      {post.data.title}
+    </h2>
+
+    <div class="my-8 md:my-12 mb-12">
+      {
+        coverPhotoUrl && (
+          <Image
+            src={coverPhotoUrl}
+            alt={post.data.title}
+            class="rounded-xl mb-8"
+            width={1200}
+            height={600}
+            loading="eager"
+          />
+        )
+      }
+
+      <BlogContent post={post} />
+    </div>
+  </div>
+</Layout>

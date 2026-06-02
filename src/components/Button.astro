@@ -1,0 +1,39 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"button"> {
+  variant?: "primary" | "secondary";
+  href?: string;
+}
+
+const {
+  variant = "primary",
+  href,
+  class: className = "",
+  ...rest
+} = Astro.props;
+
+const base =
+  "inline-flex items-center gap-2 rounded-xl px-6 py-3 font-semibold transition-all";
+
+const variants = {
+  primary:
+    "bg-accent text-white shadow-md hover:brightness-90 hover:-translate-y-px",
+  secondary:
+    "border border-line-strong text-ink-2 hover:border-accent hover:text-accent hover:bg-paper",
+};
+
+const classes = [base, variants[variant], className].filter(Boolean).join(" ");
+---
+
+{
+  href ? (
+    <a href={href} class={classes} {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button class={classes} {...rest}>
+      <slot />
+    </button>
+  )
+}
