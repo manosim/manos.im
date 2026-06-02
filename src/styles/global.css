@@ -1,7 +1,106 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
+  /* Fonts */
+  --font-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(28, 24, 19, 0.06);
+  --shadow-md: 0 6px 20px -6px rgba(28, 24, 19, 0.12);
+  --shadow-lg: 0 20px 48px -16px rgba(28, 24, 19, 0.2);
+
+  /* Core palette */
+  --color-paper: #fbf9f5;
+  --color-surface: #ffffff;
+  --color-ink: #1c1813;
+  --color-ink-2: #57503f;
+  --color-ink-3: #8b8270;
+  --color-ink-4: #b6ad98;
+  --color-line: #eae4d9;
+  --color-line-strong: #dcd4c5;
+  --color-line-soft: #f1ece3;
+  --color-accent: #3a6196;
+  --color-blue-soft: #e4e7ec;
+  --color-sage: #3f6b4f;
+  --color-sage-soft: #e7eee8;
 }
+
+:root {
+  --text-display: clamp(3.25rem, 1.6rem + 6.2vw, 6rem);
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #3a6196;
+  color: #fff;
+}
+
+@keyframes om-fadeup {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.enter {
+  opacity: 0;
+  animation: om-fadeup 0.72s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes om-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.12;
+  }
+}
+
+@keyframes om-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-24px, 18px, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter {
+    animation: none;
+    opacity: 1;
+  }
+  .om-cursor {
+    animation: none !important;
+  }
+}
+
+@utility enter-delay-0   { animation-delay:   0ms; }
+@utility enter-delay-70  { animation-delay:  70ms; }
+@utility enter-delay-80  { animation-delay:  80ms; }
+@utility enter-delay-120 { animation-delay: 120ms; }
+@utility enter-delay-160 { animation-delay: 160ms; }
+@utility enter-delay-180 { animation-delay: 180ms; }
+@utility enter-delay-200 { animation-delay: 200ms; }
+@utility enter-delay-300 { animation-delay: 300ms; }
+@utility enter-delay-340 { animation-delay: 340ms; }
+@utility enter-delay-460 { animation-delay: 460ms; }
 
 @utility container {
   margin-inline: auto;

@@ -1,8 +1,18 @@
 ---
 import "../styles/global.css";
 
-import Footer from "../components/Footer.astro";
+import { PUBLIC_GTAG_ID } from "astro:env/client";
+
 import { getMeta } from "../utils/meta";
+import Footer from "../components/Footer.astro";
+import Glow from "../components/Glow.astro";
+import GoogleTagBody from "../components/GoogleTagBody.astro";
+import GoogleTagHead from "../components/GoogleTagHead.astro";
+import Navbar from "../components/Navbar.astro";
+
+interface Props {
+  title: string;
+}
 
 const { title } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -34,13 +44,26 @@ const meta = getMeta(title);
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    {PUBLIC_GTAG_ID && <GoogleTagHead id={PUBLIC_GTAG_ID} />}
   </head>
 
-  <body>
-    <slot />
-    <Footer />
+  <body class="bg-paper text-ink">
+    {PUBLIC_GTAG_ID && <GoogleTagBody id={PUBLIC_GTAG_ID} />}
+
+    <div class="relative min-h-screen">
+      <Glow />
+
+      <div class="relative z-10 flex min-h-screen flex-col">
+        <Navbar />
+        <main class="flex-1">
+          <slot />
+        </main>
+        <Footer />
+      </div>
+    </div>
   </body>
 </html>

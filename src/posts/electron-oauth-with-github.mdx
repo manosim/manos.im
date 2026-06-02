@@ -1,14 +1,13 @@
 ---
 title: Electron. oAuth authentication with GitHub
-slug: electron-oauth-with-github
 keywords: electron,javascript,node,oauth,authentication,token
 cover: electron-oauth-github.png
-date: 2015-05-23
+publishedAt: 2015-05-23
 ---
 
 It has been a while since I read about [Electron](http://electron.atom.io/) and I couldn't wait to get my hands on it. Electron is an open source project made by [GitHub](http://www.github.com/) that allows you to build cross platform desktop apps with Web Technologies - in my case with [React](https://facebook.github.io/react/). Imagine hybrid mobile apps ([React Native](https://facebook.github.io/react-native/), [Ionic](http://www.ionicframework.com/)) but for desktops. Sounds pretty awesome and it is!
 
-<!--more-->
+{/* more */}
 
 ### Getting started with Electron
 
@@ -29,9 +28,9 @@ So once you have you project setup, you will need a button "Login with GitHub". 
 ```javascript
 // Your GitHub Applications Credentials
 var options = {
-  client_id: 'your_client_id',
-  client_secret: 'your_client_secret',
-  scopes: ['user:email', 'notifications'], // Scopes limit access for OAuth tokens.
+  client_id: "your_client_id",
+  client_secret: "your_client_secret",
+  scopes: ["user:email", "notifications"], // Scopes limit access for OAuth tokens.
 };
 
 // Build the OAuth consent page URL
@@ -39,11 +38,11 @@ var authWindow = new BrowserWindow({
   width: 800,
   height: 600,
   show: false,
-  'node-integration': false,
+  "node-integration": false,
 });
-var githubUrl = 'https://github.com/login/oauth/authorize?';
+var githubUrl = "https://github.com/login/oauth/authorize?";
 var authUrl =
-  githubUrl + 'client_id=' + options.client_id + '&scope=' + options.scopes;
+  githubUrl + "client_id=" + options.client_id + "&scope=" + options.scopes;
 authWindow.loadURL(authUrl);
 authWindow.show();
 
@@ -63,32 +62,31 @@ function handleCallback(url) {
   } else if (error) {
     alert(
       "Oops! Something went wrong and we couldn't" +
-        'log you in using Github. Please try again.'
+        "log you in using Github. Please try again.",
     );
   }
 }
 
 // Handle the response from GitHub - See Update from 4/12/2015
 
-authWindow.webContents.on('will-navigate', function(event, url) {
+authWindow.webContents.on("will-navigate", function (event, url) {
   handleCallback(url);
 });
 
-authWindow.webContents.on('did-get-redirect-request', function(
-  event,
-  oldUrl,
-  newUrl
-) {
-  handleCallback(newUrl);
-});
+authWindow.webContents.on(
+  "did-get-redirect-request",
+  function (event, oldUrl, newUrl) {
+    handleCallback(newUrl);
+  },
+);
 
 // Reset the authWindow on close
 authWindow.on(
-  'close',
-  function() {
+  "close",
+  function () {
     authWindow = null;
   },
-  false
+  false,
 );
 ```
 

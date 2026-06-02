@@ -1,14 +1,13 @@
 ---
 title: A static site with Pelican, Grunt, Travis & Github Pages
-slug: static-site-pelican-grunt-travis-github-pages
 keywords: static,site,generator,pelican,grunt,travis,github pages,python,website
 cover: pelican-grunt-travis-github.png
-date: 2015-02-21
+publishedAt: 2015-02-21
 ---
 
 As a Web Developer I decided to create a website(the one you're currently reading) to share my projects and thoughts. After completing my research on what I should use, I ended up using **Pelican**. Why? No database, markdown, code syntax highlighting, jinja2 and more. Pelican is not one of those fancy static website generators but it does the job and it does it pretty well. Below you can find my setup and how I am using [Pelican](http://www.getpelican.com/) to **generate** this website, [Grunt](http://gruntjs.com/) as a **task manager**, [Travis CI](http://www.travis-ci.org/) to **deploy** and [GitHub Pages](http://pages.github.com/) to **host** my website.
 
-<!--more-->
+{/* more */}
 
 ### Contents
 
@@ -81,22 +80,22 @@ EXTRA_PATH_METADATA = {
 The **player** of my setup. I really like to keep things simple. Instead of opening different tabs to run Pelican from a `virtualenv` and generate LESS files etc. I want to have everything in one tab and without having to activate the virtualenv. You may think that I'm being lazy but I want it to be really simple. `grunt serve` will launch your browser with your website and will also watch for any changes. Deployment? `grunt deploy`(run by Travis CI) will generate the pelican website and will also do the rest of tasks. So let's dive into `Gruntfile.js`. Once again you can find those settings at [my GitHub repository](https://github.com/ekonstantinidis/ekonstantinidis.github.io/blob/1.1.0/Gruntfile.js).
 
 ```javascript
-module.exports = function(grunt) {
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-shell');
-  grunt.loadNpmTasks('grunt-sitemap');
+module.exports = function (grunt) {
+  grunt.loadNpmTasks("grunt-contrib-clean");
+  grunt.loadNpmTasks("grunt-contrib-connect");
+  grunt.loadNpmTasks("grunt-contrib-copy");
+  grunt.loadNpmTasks("grunt-contrib-less");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-shell");
+  grunt.loadNpmTasks("grunt-sitemap");
 
   grunt.initConfig({
     shell: {
       generate: {
-        command: 'env/bin/pelican content -s pelicanconf.py',
+        command: "env/bin/pelican content -s pelicanconf.py",
       },
       deploy: {
-        command: 'pelican content -s publishconf.py',
+        command: "pelican content -s publishconf.py",
       },
     },
 
@@ -106,15 +105,15 @@ module.exports = function(grunt) {
       },
       main: {
         files: {
-          'theme/static/css/style.css': 'theme/static/less/style.less',
-          'theme/static/css/mobile.css': 'theme/static/less/mobile.less',
+          "theme/static/css/style.css": "theme/static/less/style.less",
+          "theme/static/css/mobile.css": "theme/static/less/mobile.less",
         },
       },
     },
 
     watch: {
-      files: ['content/**/*.md', 'theme/**/*.*'],
-      tasks: ['build'],
+      files: ["content/**/*.md", "theme/**/*.*"],
+      tasks: ["build"],
       options: {
         livereload: 35729,
       },
@@ -123,17 +122,17 @@ module.exports = function(grunt) {
     copy: {
       main: {
         expand: true,
-        cwd: 'theme/static/',
-        src: ['**', '!less/**'],
-        dest: 'output/static/',
+        cwd: "theme/static/",
+        src: ["**", "!less/**"],
+        dest: "output/static/",
       },
     },
 
     sitemap: {
       dist: {
-        homepage: 'http://www.iamemmanouil.com/',
-        pattern: ['output/**/*.html', '!node_modules/**/*'],
-        siteRoot: 'output/',
+        homepage: "http://www.iamemmanouil.com/",
+        pattern: ["output/**/*.html", "!node_modules/**/*"],
+        siteRoot: "output/",
       },
     },
 
@@ -142,7 +141,7 @@ module.exports = function(grunt) {
         options: {
           port: 9000,
           livereload: 35729,
-          base: 'output',
+          base: "output",
           open: true,
           debug: false,
         },
@@ -151,25 +150,25 @@ module.exports = function(grunt) {
 
     clean: {
       build: {
-        src: ['output/*'],
+        src: ["output/*"],
       },
     },
   });
 
-  grunt.registerTask('build', [
-    'clean',
-    'less:main',
-    'shell:generate',
-    'copy:main',
-    'sitemap',
+  grunt.registerTask("build", [
+    "clean",
+    "less:main",
+    "shell:generate",
+    "copy:main",
+    "sitemap",
   ]);
-  grunt.registerTask('serve', ['build', 'connect:server', 'watch']);
-  grunt.registerTask('deploy', [
-    'clean',
-    'less:main',
-    'shell:deploy',
-    'copy:main',
-    'sitemap',
+  grunt.registerTask("serve", ["build", "connect:server", "watch"]);
+  grunt.registerTask("deploy", [
+    "clean",
+    "less:main",
+    "shell:deploy",
+    "copy:main",
+    "sitemap",
   ]);
 };
 ```

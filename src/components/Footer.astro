@@ -1,0 +1,30 @@
+---
+import { socials } from "../utils/constants";
+---
+
+<footer class="border-t border-line mt-8">
+  <div
+    class="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <p class="font-mono text-xs text-ink-2">
+      &copy; Emmanouil Konstantinidis &middot; London, UK
+    </p>
+
+    <ul class="flex flex-wrap gap-x-5 gap-y-1">
+      {
+        socials.map((s) => (
+          <li>
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              class="font-mono text-xs text-ink-1 hover:text-accent transition-colors"
+            >
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>

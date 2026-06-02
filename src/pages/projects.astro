@@ -1,0 +1,97 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { projects } from "../utils/constants";
+---
+
+<Layout title="Projects">
+  <section class="container max-w-5xl pt-16 md:pt-24 pb-16">
+    <header class="mb-12 md:mb-16">
+      <p
+        class="enter font-mono text-xs uppercase tracking-[0.16em] text-accent"
+      >
+        Selected work
+      </p>
+      <h1
+        class="enter enter-delay-70 mt-4 font-display font-extrabold tracking-tight text-ink text-4xl md:text-5xl"
+      >
+        Projects
+      </h1>
+    </header>
+
+    <p
+      class="enter enter-delay-120 -mt-8 mb-12 max-w-xl text-base leading-relaxed text-ink-3"
+    >
+      Side projects and open-source tools I&rsquo;ve built over the years.
+    </p>
+
+    <div
+      class="enter enter-delay-180 grid grid-cols-1 sm:grid-cols-2 gap-5"
+    >
+      {
+        projects.map((p, i) => {
+          const num = String(i + 1).padStart(2, "0");
+          return (
+            <article class="group relative overflow-hidden rounded-2xl border border-line bg-surface p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div class="flex items-center justify-between">
+                <img
+                  src={p.logo}
+                  alt={p.name}
+                  class="h-12 w-12 rounded-xl object-cover"
+                  onerror={`this.style.display='none';document.getElementById('num-${i}').style.display='block'`}
+                />
+                <span
+                  id={`num-${i}`}
+                  class="font-display text-3xl font-bold text-ink-3 hidden"
+                >
+                  {num}
+                </span>
+                <span class="font-mono text-xs text-ink-4">{p.year}</span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold tracking-tight text-ink group-hover:text-accent transition-colors">
+                {p.name}
+              </h3>
+              <p class="mt-2 font-body text-[15px] leading-relaxed text-ink-3">
+                {p.blurb}
+              </p>
+              <div class="mt-5 flex flex-wrap gap-1.5">
+                {p.tags.map((t) => (
+                  <span class="font-mono text-[11px] tracking-[0.04em] text-ink-2 rounded-full border border-line-strong bg-surface px-2.5 py-1">
+                    {t}
+                  </span>
+                ))}
+              </div>
+              {p.links.length > 0 && (
+                <div class="mt-6 flex flex-wrap gap-x-5 gap-y-1 border-t border-line-soft pt-5">
+                  {p.links.map((l) => (
+                    <a
+                      href={l.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      class="inline-flex items-center gap-1 font-mono text-xs font-medium text-accent hover:underline underline-offset-4"
+                    >
+                      {l.label}
+                      <svg
+                        viewBox="0 0 16 16"
+                        class="h-[0.9em] w-[0.9em]"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M5 11L11 5M11 5H6M11 5V10"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </article>
+          );
+        })
+      }
+    </div>
+  </section>
+</Layout>

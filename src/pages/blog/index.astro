@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { ArrowRight } from "@lucide/astro";
+
+import { getSlug } from "../../utils/blog";
+import BlogContent from "../../components/BlogContent.astro";
+import Button from "../../components/Button.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
+);
+---
+
+<Layout title="Blog">
+  <section class="container max-w-5xl pt-16 md:pt-24 pb-16">
+    <header class="mb-12 md:mb-16">
+      <p
+        class="enter font-mono text-xs uppercase tracking-[0.16em] text-accent"
+      >
+        Writing
+      </p>
+      <h1
+        class="enter enter-delay-70 mt-4 font-display font-extrabold tracking-tight text-ink text-4xl md:text-5xl"
+      >
+        Blog
+      </h1>
+    </header>
+
+    <ul class="enter enter-delay-120">
+      {
+        posts.map((post, index) => {
+          const coverPhotoUrl = `/images/posts/${post.data.cover}`;
+          const slug = getSlug(post.filePath);
+
+          return (
+            <>
+              {index > 0 && (
+                <div class="py-16">
+                  <div class="h-px bg-linear-to-r from-transparent via-line-strong to-transparent" />
+                </div>
+              )}
+
+              <li class="md:grid md:grid-cols-10 md:gap-x-8 md:gap-y-4">
+                <div class="col-span-4 text-gray-700 mb-8">
+                  <h3 class="font-medium text-2xl sm:text-3xl text-gray-900 hover:text-accent mb-4 md:mb-8">
+                    <a href={`/blog/${slug}`}>{post.data.title}</a>
+                  </h3>
+
+                  <div>
+                    Published on{" "}
+                    <span class="font-semibold">
+                      {post.data.publishedAt.toDateString()}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="col-span-6 flex flex-col">
+                  {coverPhotoUrl && (
+                    <Image
+                      src={coverPhotoUrl}
+                      alt={post.data.title}
+                      class="rounded-xl mb-8"
+                      width={1200}
+                      height={600}
+                      loading="eager"
+                    />
+                  )}
+
+                  <BlogContent post={post} isExcerpt />
+
+                  <Button class="self-start" href={`/blog/${slug}`}>
+                    Continue reading
+                    <ArrowRight class="size-4" />
+                  </Button>
+                </div>
+              </li>
+            </>
+          );
+        })
+      }
+    </ul>
+  </section>
+</Layout>

@@ -15,8 +15,13 @@
     "node": ">=24.15.0"
   },
   "dependencies": {
+    "@astrojs/mdx": "^6.0.1",
+    "@astrojs/sitemap": "^3.7.3",
+    "@lucide/astro": "^1.17.0",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.4.2",
+    "marked": "^18.0.4",
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {

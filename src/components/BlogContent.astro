@@ -1,0 +1,25 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import { marked } from "../utils/marked";
+
+import { getExcerpt } from "../utils/blog";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  isExcerpt?: boolean;
+}
+
+const { post, isExcerpt = false } = Astro.props;
+const excerptHtml = isExcerpt ? await marked.parse(getExcerpt(post.body)) : "";
+const rendered = !isExcerpt ? await render(post) : null;
+---
+
+<div class="prose lg:prose-xl mb-8">
+  {
+    isExcerpt ? (
+      <Fragment set:html={excerptHtml} />
+    ) : (
+      rendered && <rendered.Content />
+    )
+  }
+</div>
